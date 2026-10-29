@@ -4,7 +4,7 @@
 
 > **Status:** a hobby project with one maintainer, built with heavy AI assistance. It runs end to end on the maintainer's own robot and computer, but nobody has tried it on anyone else's hardware yet. Public firmware comes with checksums and rollback steps, original starter faces and **no server built in**: you run your own. Server and brain add-ons are still being cleaned up for release.
 >
-> **Beta:** builds verified by scan and checksum, not yet tested on hardware. Please [report issues](https://github.com/dax8it/The-one-above-all-stackchan/issues).
+> **Beta:** builds verified by scan and checksum, not yet tested on hardware. Please [report issues](https://github.com/dax8it/nous-girl-stackchan/issues).
 
 > **Current firmware: `v3.6.7-dj7`** (Oct 28, 2026), with a robot, boy or girl face. Public checkpoints: v3.6, v3.6.6, v3.6.7-dj5, v3.6.7-dj7. Full history, checksums and rollbacks: [VERSIONS.md](./VERSIONS.md).
 
@@ -112,7 +112,7 @@ This project is built with a lot of help from AI coding agents: firmware patches
 
 ## Support
 
-Questions or "this didn't work for me": [open a GitHub issue](https://github.com/dax8it/The-one-above-all-stackchan/issues). Want to help? See [CONTRIBUTING.md](./CONTRIBUTING.md). Security problems: report privately, see [SECURITY.md](./SECURITY.md).
+Questions or "this didn't work for me": [open a GitHub issue](https://github.com/dax8it/nous-girl-stackchan/issues). Want to help? See [CONTRIBUTING.md](./CONTRIBUTING.md). Security problems: report privately, see [SECURITY.md](./SECURITY.md).
 
 ## Deeper reference
 

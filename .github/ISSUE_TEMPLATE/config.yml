@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Report a security problem (privately)
-    url: https://github.com/dax8it/The-one-above-all-stackchan/security/advisories/new
+    url: https://github.com/dax8it/nous-girl-stackchan/security/advisories/new
     about: Please do not open a public issue for security problems.
