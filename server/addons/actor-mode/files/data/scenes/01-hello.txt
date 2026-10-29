@@ -1,0 +1,18 @@
+# Example Actor Mode script. Say "action mode one" to start it, "stop" to end it.
+# NOUS: lines are hers (a line with no label is hers too). Any other CAPITAL label
+# (YOU, MOM, KID...) is a person's line: she waits until you say it, or "next line".
+# Cues in [brackets]: face, lights, dance, head, music, pause.
+[lights: blue]
+[face: happy]
+NOUS: Hello there! Welcome to my very first show.
+YOU: What can you do?
+NOUS: I can make faces.
+[face: thinking]
+NOUS: I can look around.
+[head: look around]
+NOUS: And I can dance!
+[dance: wiggle]
+[pause: 3]
+NOUS[es]: Y hablo un poco de español.
+[lights: rainbow]
+NOUS: Thank you for watching!

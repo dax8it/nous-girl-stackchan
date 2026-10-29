@@ -1,0 +1,33 @@
+# Add under mcp_servers: in your Hermes profile config.yaml. AgentMail's hosted MCP server.
+# The key is NOT here: ${AGENTMAIL_API_KEY} is filled in from the profile .env when Hermes connects.
+mcp_servers:
+  agentmail:
+    url: https://mcp.agentmail.to/mcp
+    headers:
+      x-api-key: "${AGENTMAIL_API_KEY}"
+    enabled: true
+    trust: full            # the voice path cannot answer approval prompts; the read-back rule is in SOUL.md
+    connect_timeout: 60
+    timeout: 60
+    tools:
+      include:
+        - list_inboxes
+        - search_inboxes
+        - get_inbox
+        - list_threads
+        - search_threads
+        - get_thread
+        - list_messages
+        - search_messages
+        - get_message
+        - send_message
+        - reply_to_message
+        - forward_message
+        - create_draft
+        - list_drafts
+        - get_draft
+        - update_draft
+        - send_draft
+        - get_attachment
+      resources: false
+      prompts: false

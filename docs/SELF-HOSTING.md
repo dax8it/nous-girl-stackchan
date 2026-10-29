@@ -51,6 +51,8 @@ The robot needs **2.4 GHz** Wi-Fi (most home routers have it; 5 GHz-only network
 5. Optional shortcut: on the same page, the **Advanced** tab has **Custom OTA URL**. Paste your address from step 1 there and tap **Save**. Then you can skip step 3.
 6. The robot joins your Wi-Fi and restarts. Your phone goes back to your normal Wi-Fi.
 
+Using a phone hotspot instead of home Wi-Fi (iPhone or Android settings, and how she reaches your server from there): [HOTSPOT.md](./HOTSPOT.md).
+
 ### Step 3. Enter your server in Settings
 
 1. On the robot, **hold the screen for 1.5 s** to open Settings (with no server set, she opens this page by herself).
@@ -143,9 +145,15 @@ docker compose restart
 
 Follow [First boot, step by step](#first-boot-step-by-step) with your address from step 2.
 
+### 5. Add Nous-Girl features (optional)
+
+Once she talks to your server, add the patched server and the features you want (DJ mode, radio, Actor Mode, multilingual voice, robot tools for Hermes) from [server/](../server/README.md). Each add-on installs into the running container with `./install-addon.sh <name> apply` and comes out with `rollback`.
+
 ## B. Anywhere: your own domain and a tunnel (optional)
 
 Only do this once A works. You need a domain you own (we write `robot.example.com`; use yours).
+
+This is also what lets her work away from home on a phone hotspot ([HOTSPOT.md](./HOTSPOT.md)).
 
 1. Create a tunnel from your computer to that name, for example with [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/), pointing `https://robot.example.com` at `http://localhost:8003` (OTA and HTTP) and the WebSocket path at `localhost:8000`.
 2. Set `server: websocket:` to `wss://robot.example.com/xiaozhi/v1/`.

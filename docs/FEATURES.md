@@ -10,7 +10,7 @@ Every feature, in the same order each time:
 
 Every Settings switch is explained in detail in [SETTINGS.md](./SETTINGS.md). Which computer can run what: [PLATFORMS.md](./PLATFORMS.md). Firmware versions: [VERSIONS.md](../VERSIONS.md).
 
-> **About "packs".** Many features were added on the maintainer's own server and Hermes profile as small add-on scripts ("packs") with `status`, `dry-run`, `apply` and `rollback`. **The packs and the patched server are not in this repo yet** (they are being scrubbed of personal settings). Until they are, the "Set it up yourself" steps tell you what each pack changes, so you can build it by hand or wait for the release. Features marked **robot only** work today with just the public firmware.
+> **About add-ons.** Many features live in the voice server or the Hermes brain, not the firmware. They are packaged as **add-ons** in [server/](../server/README.md), each with install, check and undo steps, and installed with `./install-addon.sh <name> apply` (undo: `./install-addon.sh <name> rollback`). Most server features need [patched-server](../server/addons/patched-server/) first. Features marked **robot only** work with just the public firmware.
 
 > Voice examples assume you wake her first with "Hey Nous-Girl" (or "Hey Jarvis"), or tap the screen.
 
@@ -25,21 +25,21 @@ Every Settings switch is explained in detail in [SETTINGS.md](./SETTINGS.md). Wh
 | [Head touch and moves](#head-touch-and-moves) | robot | no | yes |
 | [Dance](#dance) | robot | voice control needs Hermes robot tools | yes (Settings) |
 | [Music](#music) | robot (SD) or server | SD: no. Computer songs: yes | SD and plain server music: yes. Real next/previous: patched server |
-| [DJ mode](#dj-mode) | robot + patched server | **yes** | firmware yes, server pack not yet |
-| [Rave mode](#rave-mode) | robot + patched server | **yes** | firmware yes, server pack not yet |
-| [Internet radio](#internet-radio) | patched server | **yes** | not yet |
-| [Multilingual voice](#multilingual-voice) | server | **yes** | not yet |
+| [DJ mode](#dj-mode) | robot + patched server | **yes** | yes ([dj-mode](../server/addons/dj-mode/)) |
+| [Rave mode](#rave-mode) | robot + patched server | **yes** | yes ([rave-mode](../server/addons/rave-mode/)) |
+| [Internet radio](#internet-radio) | patched server | **yes** | yes ([radio](../server/addons/radio/)) |
+| [Multilingual voice](#multilingual-voice) | server | **yes** | yes ([multilingual](../server/addons/multilingual/)) |
 | [Camera and "what do you see"](#camera-and-what-do-you-see) | robot + server vision model | **yes** | firmware yes |
 | [Follow faces](#follow-faces) | robot | voice control needs Hermes | yes (Settings) |
 | [Hermes Agent brain and memory](#hermes-agent-brain-and-memory) | your computer | **yes** | yes (docs) |
 | [SOUL.md personality](#soulmd-personality) | Hermes | **yes** | yes (docs) |
-| [Kid-safe by default](#kid-safe-by-default) | Hermes + code guards | **yes** | rules yes, packs not yet |
+| [Kid-safe by default](#kid-safe-by-default) | Hermes + code guards | **yes** | yes (rules and add-ons) |
 | [AgentMail email](#agentmail-email) | Hermes | **yes** | config shown here |
-| [Local meme maker](#local-meme-maker) | Hermes | **yes** | not yet |
-| [Meme previews on her screen](#meme-previews-on-her-screen) | robot + patched server | **yes** | firmware yes, server pack not yet |
-| [Email this meme](#email-this-meme-email_meme) | Hermes | **yes** | not yet |
-| [Actor Mode](#actor-mode) | patched server | **yes** | not yet |
-| [Fun pack](#fun-pack-games-stories-and-kid-memory) | Hermes | **yes** | not yet |
+| [Local meme maker](#local-meme-maker) | Hermes | **yes** | yes ([local-memes](../server/addons/local-memes/)) |
+| [Meme previews on her screen](#meme-previews-on-her-screen) | robot + patched server | **yes** | yes ([meme-previews](../server/addons/meme-previews/)) |
+| [Email this meme](#email-this-meme-email_meme) | Hermes | **yes** | yes ([email-meme](../server/addons/email-meme/)) |
+| [Actor Mode](#actor-mode) | patched server | **yes** | yes ([actor-mode](../server/addons/actor-mode/), [guide](./ACTOR-MODE.md)) |
+| [Fun pack](#fun-pack-games-stories-and-kid-memory) | Hermes | **yes** | yes ([fun-pack](../server/addons/fun-pack/)) |
 | [Sleep and power](#sleep-and-power) | robot | no | yes |
 | [Crash report](#crash-report) | robot | no | yes |
 | [Wi-Fi and phone hotspot](#wi-fi-and-phone-hotspot) | robot | no | yes |
@@ -84,8 +84,9 @@ brain wants to move her -> stackchan MCP server -> voice server "hg bridge" -> r
 - **Use it:** "look happy", "make a sad face", "look left". (Needs the robot tools in Hermes.)
 - **Set it up yourself:**
   1. Pick a face when you flash: robot, boy or girl ([VERSIONS.md](../VERSIONS.md#how-to-flash)). Your own art: [SPRITES.md](./SPRITES.md).
-  2. For voice control, add the stackchan MCP server to Hermes with `robot_face` in its tool list ([HERMES.md](./HERMES.md#robot-tools-reference)). It calls the robot tool `self.face.show` with `emotion` = neutral, happy, sad, thinking, sleeping, pet, shake, speaking, listening, look_left, look_right, email or scowl.
+  2. For voice control, add the stackchan MCP server to Hermes with `robot_face` in its tool list ([HERMES.md](./HERMES.md#robot-tools-reference)). It calls the robot tool `self.face.show` with `emotion` = neutral, happy, sad, thinking, sleeping, pet, shake, speaking, listening, look_left, look_right or scowl (the robot tool itself also takes `email` and the aliases).
   3. Brain can also switch the face style with the robot tool `self.face.style` (`girl` = drawn face, `classic`).
+- **Good to know:** every face, every alias, what triggers each (moods, touch, shake, listening, speaking) and how to add your own: [EMOTES.md](./EMOTES.md).
 - **Turn it off:** the same Screen switches. A face style change is saved until you press the power key again.
 - **Added in:** v1 (faces), v3 (lip sync), v3.5 (vowel mouths), v3.6.7-dj (scowl).
 
@@ -121,16 +122,16 @@ brain wants to move her -> stackchan MCP server -> voice server "hg bridge" -> r
   2. In `data/.config.yaml`, under `plugins:`, set `play_music:` with `music_dir: "./music"` and `music_ext` (for example `.mp3`).
   3. Make sure the brain can call the server's `play_music` function, or (with Hermes) include `robot_play_music` in the stackchan MCP server.
   4. `docker compose restart`.
-  The stock server picks songs. Real next/previous with a play history, and the swipe controls for computer songs, come from the patched server (**dj** pack, not released yet).
+  The stock server picks songs. Real next/previous with a play history, and the swipe controls for computer songs, come from the [patched-server](../server/addons/patched-server/) add-on.
 - **Turn it off:** "stop", or Settings > Music > **Stop** for SD songs.
 - **Added in:** v1; v3.6.7-dj (real next/previous, swipes); dj5 (reliable swipes).
 
 ## DJ mode
 - **What it does:** she DJs your computer's songs: intros, set lists with timed face, light and dance cues, a 13-band equalizer on screen behind her face, colors on the beat, matching LEDs, and head grooving.
-- **Needs:** firmware v3.6.7-dj5 or later, **your own patched server** (dj pack), Hermes robot tools.
+- **Needs:** firmware v3.6.7-dj5 or later, **your own patched server** ([patched-server](../server/addons/patched-server/) and [dj-mode](../server/addons/dj-mode/) add-ons), Hermes robot tools ([stackchan-tools](../server/addons/stackchan-tools/)).
 - **Turn it on:** Settings > Music > **DJ mode**, or say "DJ mode".
 - **Use it:** "DJ mode" or "be my DJ" (she lists set lists and waits for your pick), "DJ mode 1", "next", "previous", "DJ mode off", "stop DJ". Tap to pause a set, "continue" to resume. Swipe for next/previous.
-- **Set it up yourself:** what the dj pack changes:
+- **Set it up yourself:** install the add-ons above. What they change:
   1. The server's `play_music.py`: per-robot play history (real next/previous), "DJ mode" / "DJ mode off" by voice before the brain sees it, DJ intros, and the song title sent to the robot.
   2. A new set list handler reading JSON files from the server's `data/setlists/`.
   3. The hg bridge: allows `self.dj.mode`, adds `POST /hg/api/music/skip` (`{"direction":"next"}` or `"prev"`), and `play_music` with `"dj": true`.
@@ -153,23 +154,23 @@ brain wants to move her -> stackchan MCP server -> voice server "hg bridge" -> r
   }
   ```
   Cue `action` can be face, lights, dance, head, pause, voice or vu; `at` is seconds into the song.
-- **Turn it off:** "DJ mode off", or the Settings switch. Pack undo: `./apply-dj.sh rollback`.
+- **Turn it off:** "DJ mode off", or the Settings switch. Undo: `./install-addon.sh dj-mode rollback` (removes the example set; the DJ code stays in patched-server).
 
 ## Rave mode
 - **What it does:** a full-screen color wash over her face that changes with the music, with the equalizer and LEDs on top. Colors are soft on purpose (at most 3 pulses a second, no red strobe). Meant for grown-ups at a party, not for kids.
-- **Needs:** firmware v3.6.7-dj5 or later, DJ mode set up, the **rave** pack (patched server + Hermes).
+- **Needs:** firmware v3.6.7-dj5 or later, DJ mode set up, the [rave-mode](../server/addons/rave-mode/) add-on (patched server + SOUL.md lines).
 - **Turn it on:** voice only: "rave mode", "let's rave", "start a rave with Groove Salad". Not saved: off after a restart.
 - **Use it:** "rave mode off" (music keeps going), "stop the rave" (music stops too). Next/previous work as usual.
 - **Set it up yourself:** add `robot_rave_mode` to the stackchan MCP server (calls `self.dj.mode` with `rave_on` / `rave_off`; it turns DJ mode on too), and add the "Rave mode" section to SOUL.md so she keeps replies short and never offers faster flashing.
-- **Turn it off:** "rave mode off". Pack undo: `./apply-rave.sh rollback`.
+- **Turn it off:** "rave mode off". Undo: remove the rave lines from SOUL.md ([rave-mode](../server/addons/rave-mode/)).
 
 ## Internet radio
 - **What it does:** plays listener-supported internet stations (SomaFM stations, Radio Paradise, Radio Swiss Jazz and Classic, and others). If a station doesn't answer in 8 s she says so and moves on.
-- **Needs:** **your own patched server** (radio pack), firmware v3.6.7-dj3 or later.
+- **Needs:** **your own patched server** ([patched-server](../server/addons/patched-server/) and [radio](../server/addons/radio/) add-ons), firmware v3.6.7-dj3 or later.
 - **Use it:** "play the radio", "play Groove Salad", "put on some jazz", "next station", "what stations do you have", "stop the radio". Tap or talk to pause, "continue" to resume. Swipes change station.
 - **Set it up yourself:** stations live in the server's `data/radio/stations.json` (`radio-stations/1` format: `default`, then `stations` with `id`, `name`, `aliases`, `url`, `genre`). The server streams with ffmpeg through her speech channel. Hermes gets `robot_radio` (play, next, previous, stop, list, status, resume) via the bridge's `POST /hg/api/radio`.
 - **Good to know:** listening only, no kid filter on stations. Please support SomaFM if you use it.
-- **Turn it off:** "stop the radio". Pack undo: `./apply-radio.sh rollback`.
+- **Turn it off:** "stop the radio". Undo: `./install-addon.sh radio rollback`.
 
 ## Multilingual voice
 - **What it does:** she answers in English, Spanish, French, German or Portuguese, each with its own voice, picking the language per sentence. Short unclear lines ("Okay!") keep the last language.
@@ -178,10 +179,10 @@ brain wants to move her -> stackchan MCP server -> voice server "hg bridge" -> r
 - **Set it up yourself:**
   1. Download the models (table in the [README](../README.md#models)). Phonon 40M multilingual is gated: accept its terms on Hugging Face. It's non-commercial (CC-BY-NC-4.0).
   2. Run one Phonon TTS server per language with [ptts-openai-server](https://github.com/gradium-ai/xn-ptts), each with its voice file, plus the English Phonon 31M server as the fallback.
-  3. The multilingual pack adds a TTS provider to the voice server that guesses each sentence's language and sends it to that language's server, falling back to English 40M, then English 31M.
+  3. The [multilingual](../server/addons/multilingual/) add-on adds a TTS provider to the voice server that guesses each sentence's language and sends it to that language's server, falling back to English 40M, then English 31M.
   4. Restart the voice server.
 - **Good to know:** the on-robot language (Settings > Language) stays English. This is only her speaking voice.
-- **Turn it off:** point the server's `TTS` back to a single voice. Pack undo: `./apply-multilingual.sh rollback`.
+- **Turn it off:** point the server's `TTS` back to a single voice. Undo: `./install-addon.sh multilingual rollback`.
 
 ## Camera and "what do you see"
 - **What it does:** she takes a photo and a vision model on your server describes it. Optional face ID ("who is here?") for people you enrolled.
@@ -214,7 +215,7 @@ brain wants to move her -> stackchan MCP server -> voice server "hg bridge" -> r
 - **Where it comes from:** there is **no kid switch on the robot**. Kid safety lives in two places:
   1. **SOUL.md rules** (the "Talking with kids" and "Hard limits" sections, see [HERMES.md](./HERMES.md#soulmd-her-personality-and-rules)). These guide the model.
   2. **Hard checks in code**, which don't depend on the model: the meme maker refuses swearing, violence, drugs, politicians and named family members; email only goes to an allow-list after a read-back; the robot tools cap head angles and light brightness; rave colors are capped for photosensitive safety.
-- **Set it up yourself:** start from the SOUL.md in [HERMES.md](./HERMES.md), keep the kids section, and use a model with good safety behavior. Grown-up features (rave mode, internet radio) are voice-only; leave their packs out if kids use the robot alone.
+- **Set it up yourself:** start from the SOUL.md in [HERMES.md](./HERMES.md), keep the kids section, and use a model with good safety behavior. Grown-up features (rave mode, internet radio) are voice-only; leave their add-ons and SOUL.md lines out if kids use the robot alone.
 
 ## AgentMail email
 - **What it does:** she has her **own** email inbox through [AgentMail](https://www.agentmail.to/), so she can send and read mail for you. She reads the address and message back and waits for your yes.
@@ -245,44 +246,44 @@ brain wants to move her -> stackchan MCP server -> voice server "hg bridge" -> r
 
 ## Local meme maker
 - **What it does:** she makes classic two-line memes on your computer with Pillow (about 60 classic templates). No cloud, no keys, no AI image model. The render takes well under a second; the whole thing takes about 5 to 10 s with her thinking and talking.
-- **Needs:** Hermes, the **local-memes** pack (not released yet).
+- **Needs:** Hermes, the [local-memes](../server/addons/local-memes/) add-on.
 - **Use it:** "make a meme about homework", "show me the latest meme", "show me the homework meme".
-- **Set it up yourself:** the pack adds a small stdio MCP server, `nousgirl_localmeme`, with two tools: `list_templates(query)` and `make_meme(template, top_text, bottom_text, lines, title)`. A script downloads the blank template pictures to your computer (they are copyrighted stills, so they are not in this repo). Each meme is saved to `~/NousGirl-memes` as the original plus 320x240 JPG and PNG copies. A word filter refuses unkind content. SOUL.md gets a "Making memes" section.
-- **Turn it off:** `./apply-local-memes.sh rollback`.
+- **Set it up yourself:** the add-on adds a small stdio MCP server, `nousgirl_localmeme`, with two tools: `list_templates(query)` and `make_meme(template, top_text, bottom_text, lines, title)`. A script downloads the blank template pictures to your computer (they are copyrighted stills, so they are not in this repo). Each meme is saved to `~/NousGirl-memes` as the original plus 320x240 JPG and PNG copies. A word filter refuses unkind content. SOUL.md gets a "Making memes" section.
+- **Turn it off:** `./install-addon.sh local-memes rollback`, and remove its block from the Hermes config.
 
 ## Meme previews on her screen
 - **What it does:** shows a saved meme on her screen. **Tap to hide it.**
-- **Needs:** firmware **dj7** (dj6 can reboot while showing a preview), **your own patched server** (meme-screen and small-preview packs), the local meme maker.
+- **Needs:** firmware **dj7** (dj6 can reboot while showing a preview), **your own patched server** ([patched-server](../server/addons/patched-server/) and [meme-previews](../server/addons/meme-previews/)), the local meme maker.
 - **Use it:** "show me the latest meme", "show me the homework meme".
 - **Set it up yourself:**
   1. Hermes tool `robot_show_meme(name)` makes a **160x120** opaque PNG in memory from the saved meme. 160 pixels wide draws at the same size as 320x240 on her screen, with a quarter of the memory.
   2. It sends it to the bridge's `POST /hg/api/show_meme`, which refuses anything bigger than 160x120 or **64 KB**, then tells the robot to fetch it with `self.screen.preview_image`.
   3. The dj7 firmware downloads previews into PSRAM, needs a `Content-Length` and refuses anything over 256 KB.
-- **Turn it off:** `./apply-meme-screen.sh rollback` (and `./apply-small-preview.sh rollback` for the size).
+- **Turn it off:** remove `robot_show_meme` from the Hermes tools and the meme-preview lines from SOUL.md ([meme-previews](../server/addons/meme-previews/)).
 
 ## Email this meme (email_meme)
 - **What it does:** emails a saved meme as a JPEG from her AgentMail inbox, **only to addresses you approved**.
-- **Needs:** AgentMail email and the local meme maker, plus the **email-meme** pack.
+- **Needs:** AgentMail email and the local meme maker, plus the [email-meme](../server/addons/email-meme/) add-on.
 - **Use it:** "email me that meme", "email the homework meme to dad". She reads it back: "I'll email the meme ... to ... Should I send it?" She sends only after a clear yes.
 - **Set it up yourself:** a separate small MCP server, `nousgirl_emailmeme`, with one tool, `email_meme(name, to, note, confirm)`:
   - The first call (no confirm) sends nothing; it returns the address and title for her to read back.
   - A send only happens with `confirm=true` matching a read-back from the last 5 minutes, once.
   - Recipients come only from an allow-list file on your computer, **outside the repo**, private permissions, one per line, optionally named: `me = <address>`.
   - At most 10 sends an hour. Every send is logged next to the memes. The AgentMail key is read from the profile `.env` at send time and never logged.
-- **Turn it off:** `./apply-email-meme.sh rollback` (keeps your allow-list and the log).
+- **Turn it off:** `./install-addon.sh email-meme rollback`, and remove its block from the Hermes config (your allow-list and the log stay).
 
 ## Actor Mode
 - **What it does:** she performs a script you wrote: lines, faces, lights, dances and pauses, in order.
-- **Needs:** **your own patched server** (scene, actor and actor-json packs).
+- **Needs:** **your own patched server** ([patched-server](../server/addons/patched-server/); example scripts in [actor-mode](../server/addons/actor-mode/)).
 - **Use it:** "action mode two" (runs script 2), or ask which scripts she has.
-- **Set it up yourself:** put scripts in the server's `data/scenes/` folder. JSON scripts use the same cue names as DJ set lists.
-- **Turn it off:** `./apply-actor.sh rollback <timestamp>`.
+- **Set it up yourself:** put scripts in the server's `data/scenes/` folder. Full format, every cue and a first-script walkthrough: [ACTOR-MODE.md](./ACTOR-MODE.md). Check a script offline with [validate_scene.py](../examples/actor-mode/validate_scene.py); a working example is [hello-show.json](../examples/actor-mode/hello-show.json).
+- **Turn it off:** `plugins.scene_mode.enabled: false` in `data/.config.yaml`, then restart. `./install-addon.sh actor-mode rollback` removes the example scripts.
 
 ## Fun pack: games, stories and kid memory
 - **What it does:** trivia, spelling bee and memory games with patient pacing, choose-your-own story time, and kid-friendly memory rules ("remember I like sharks").
-- **Needs:** Hermes, the **fun-pack v2** (Hermes skills plus a SOUL.md section).
+- **Needs:** Hermes, the [fun-pack](../server/addons/fun-pack/) add-on (Hermes skills plus a SOUL.md section).
 - **Use it:** "let's play trivia about space", "spelling bee", "tell me a story about a dragon", "remember I like sharks", "forget that I like sharks". "Stop" ends a game.
-- **Turn it off:** `./apply-fun-pack.sh rollback`, then restart the gateway.
+- **Turn it off:** `./install-addon.sh fun-pack rollback`, remove its SOUL.md section, then restart the gateway.
 
 ## Sleep and power
 - **What it does:** on battery, the screen dims after about 5 minutes (300 s) with nothing happening, and comes back when you talk or tap. On USB power it doesn't dim. She never turns herself off on a timer.
@@ -295,7 +296,7 @@ brain wants to move her -> stackchan MCP server -> voice server "hg bridge" -> r
 
 ## Wi-Fi and phone hotspot
 - **What it does:** keeps up to 10 networks, saves a phone hotspot even if the first test fails, and joins it when it shows up.
-- **Use it:** Settings > **Wi-Fi** > **Wi-Fi setup mode** to add one ([steps](./SELF-HOSTING.md#step-2-put-the-robot-on-your-wi-fi)). 2.4 GHz only; on iPhone turn on Maximize Compatibility.
+- **Use it:** Settings > **Wi-Fi** > **Wi-Fi setup mode** to add one ([steps](./SELF-HOSTING.md#step-2-put-the-robot-on-your-wi-fi)). 2.4 GHz only; on iPhone turn on Maximize Compatibility. Phone hotspot step by step, iPhone and Android: [HOTSPOT.md](./HOTSPOT.md).
 - **Turn it off:** Factory reset forgets all networks.
 
 ## Flashing, updates and rollback

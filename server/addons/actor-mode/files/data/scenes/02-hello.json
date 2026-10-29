@@ -1,0 +1,12 @@
+{
+  "title": "Hello, the JSON version",
+  "characters": ["NOUS", "YOU"],
+  "lines": [
+    {"speaker": "NOUS", "dialogue": "Hi! This script is JSON, so every line can carry an action.", "action": "face", "value": "happy"},
+    {"speaker": "YOU", "dialogue": "Show me a dance."},
+    {"speaker": "NOUS", "dialogue": "Here we go!", "action": "dance", "value": "disco"},
+    {"action": "pause", "duration": 3},
+    {"action": "lights", "value": "rainbow"},
+    {"speaker": "NOUS", "dialogue": "That's my show. Thank you!", "action": "face", "value": "happy"}
+  ]
+}

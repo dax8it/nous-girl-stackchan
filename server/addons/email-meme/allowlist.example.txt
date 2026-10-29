@@ -1,0 +1,5 @@
+# Copy to ~/.config/nousgirl/email-meme-allowlist.txt (outside any repo) and fill in real addresses.
+# One per line: an address, or "label = address". Lines starting with # are comments.
+# She can ONLY email memes to addresses on this list, always after reading the address back.
+# me = YOUR_EMAIL_ADDRESS
+# grandma = ANOTHER_APPROVED_ADDRESS

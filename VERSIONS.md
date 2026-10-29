@@ -176,26 +176,25 @@ The robot assets image is the same file in every checkpoint, so its checksum rep
 
 Building from source instead: the patched firmware source for each version is not public yet (see the open items in [docs/RELEASING.md](./docs/RELEASING.md)). The toolchain is in [docs/TOOLCHAIN-VERSIONS.md](./docs/TOOLCHAIN-VERSIONS.md).
 
-## Server and Hermes packs
+## Server and Hermes add-ons
 
-Many features live on the server or in the Hermes brain, not in the firmware. They were built as small "packs", each with its own script: `status` (read only), `dry-run` (shows changes, writes nothing), `apply` (backs up first), `rollback [TIMESTAMP]` (puts the backup back). These packs are **not in this repo yet**; they will be added after a secrets scrub. What each does is in [docs/FEATURES.md](./docs/FEATURES.md).
+Many features live on the server or in the Hermes brain, not in the firmware. They are in [server/](./server/README.md) as add-ons, installed one at a time with one script: `./install-addon.sh <name> status` (read only), `dry-run` (shows changes, writes nothing), `apply` (backs up first, rolls back by itself if the server doesn't come back), `rollback [TS]` (puts the backup back). What each feature does is in [docs/FEATURES.md](./docs/FEATURES.md).
 
-| Pack | Side | What it does | Needs firmware | Commands |
-|---|---|---|---|---|
-| multilingual | server | Phonon voices in en/es/fr/de/pt, picks the language per sentence | any | `./apply-multilingual.sh apply --dry-run` / `apply` / `rollback [STAMP]` |
-| punct | server | cleans punctuation for her screen text | any | `./apply-punct.sh dry-run` / `apply` / `rollback [TS]` |
-| scene, actor, actor-json | server | Actor Mode: scripted scenes with face, light and dance cues | any | `./apply-actor.sh apply` / `status` / `rollback <ts>` |
-| dj | server + Hermes | DJ mode, set lists, real next/previous | v3.6.7-dj+ | `./apply-dj.sh dry-run` / `apply` / `rollback [TS]` |
-| radio | server + Hermes | internet radio stations | v3.6.7-dj3+ | `./apply-radio.sh dry-run` / `apply` / `check-streams` / `rollback [TS]` |
-| rave | server + Hermes | "rave mode" by voice | v3.6.7-dj4+ | `./apply-rave.sh dry-run` / `apply` / `rollback [TS]` |
-| addonly (stackchan MCP) | Hermes | robot tools for the brain: face, lights, look, photo, dance, music | any | `./apply-addonly.sh dry-run` / `apply` / `rollback` |
-| follow-tool | Hermes | "follow me" / "stop following" | v3.6.3+ | `./apply-follow-tool.sh dry-run` / `apply` / `rollback` |
-| fun-pack v2 | Hermes | kid memory, games, story time | any | `./apply-fun-pack.sh dry-run` / `apply` / `rollback` |
-| agentmail | Hermes | her own email inbox | any | `./apply-agentmail.sh dry-run` / `apply` / `rollback` |
-| local-memes | Hermes | makes classic memes on the computer, no cloud | any | `./apply-local-memes.sh dry-run` / `apply` / `rollback [TS]` |
-| email-meme | Hermes | emails a saved meme to approved addresses after a read-back | any | `./apply-email-meme.sh dry-run` / `apply` / `rollback [TS]` |
-| meme-screen | server + Hermes | shows a saved meme on her screen | any | `./apply-meme-screen.sh dry-run` / `apply` / `rollback [TS]` |
-| small-preview | server | sends 160x120 meme previews (same size on screen, a quarter of the memory) | dj6, dj7 | `./apply-small-preview.sh dry-run` / `apply` / `rollback [TS]` |
-| meme-fullscreen | server | superseded: full-screen memes for dj6 only; replaced by small-preview | dj6 | `./apply-meme-fullscreen.sh rollback` |
+| Add-on | Side | What it does | Needs firmware |
+|---|---|---|---|
+| [patched-server](./server/addons/patched-server/) | server | **install first**: hg bridge, real next/previous, DJ, radio, rave and Actor Mode code, meme previews, screen text cleanup | any |
+| [dj-mode](./server/addons/dj-mode/) | server | example DJ set list | v3.6.7-dj5+ |
+| [radio](./server/addons/radio/) | server | internet radio stations | v3.6.7-dj3+ |
+| [rave-mode](./server/addons/rave-mode/) | server + Hermes | "rave mode" by voice | v3.6.7-dj5+ |
+| [actor-mode](./server/addons/actor-mode/) | server | example Actor Mode scripts ([guide](./docs/ACTOR-MODE.md)) | any |
+| [multilingual](./server/addons/multilingual/) | server | Phonon voices in en/es/fr/de/pt, picked per sentence | any |
+| [local-stt-mlx](./server/addons/local-stt-mlx/) | host | optional local speech-to-text on Apple Silicon | any |
+| [stackchan-tools](./server/addons/stackchan-tools/) | Hermes | robot tools for the brain: face, lights, look, photo, dance, music, DJ, radio, follow faces, memes | any (some tools need newer) |
+| [local-memes](./server/addons/local-memes/) | Hermes | classic memes made on the computer, no cloud | any |
+| [meme-previews](./server/addons/meme-previews/) | server + Hermes | 160x120 meme previews on her screen | dj7 |
+| [email-meme](./server/addons/email-meme/) | Hermes | emails a saved meme to approved addresses after a read-back | any |
+| [agentmail](./server/addons/agentmail/) | Hermes | her own email inbox | any |
+| [fun-pack](./server/addons/fun-pack/) | Hermes | kid memory, games, story time | any |
+| [hermes-profile](./server/addons/hermes-profile/) | Hermes | example `.env` with the names the add-ons use | |
 
-After any Hermes pack: `hermes -p <profile> gateway restart`. Server packs restart only the voice server container.
+After any Hermes add-on: `hermes -p <profile> gateway restart`. Server add-ons restart only the voice server container (`docker restart`, never a recreate).

@@ -1,0 +1,2674 @@
+{
+ "built": "2026-10-28 15:02 EDT",
+ "images_dir": "~/NousGirl-meme-templates",
+ "templates": [
+  {
+   "id": "drake",
+   "name": "Drakeposting",
+   "aliases": [
+    "drake",
+    "drake hotline bling",
+    "drakeposting"
+   ],
+   "file": "drake.jpg",
+   "size": [
+    511,
+    800
+   ],
+   "boxes": [
+    [
+     0.5,
+     0.0,
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     0.5,
+     0.5,
+     0.5
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = thing he says no to, box2 = thing he likes",
+   "source": {
+    "image": "https://api.memegen.link/images/drake.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/drake/config.yml",
+    "info": "http://knowyourmeme.com/memes/drakeposting"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "db",
+   "name": "Distracted Boyfriend",
+   "aliases": [
+    "distracted boyfriend"
+   ],
+   "file": "db.jpg",
+   "size": [
+    800,
+    533
+   ],
+   "boxes": [
+    [
+     0.05,
+     0.68,
+     0.4,
+     0.15
+    ],
+    [
+     0.48,
+     0.36,
+     0.26,
+     0.13
+    ],
+    [
+     0.72,
+     0.58,
+     0.28,
+     0.15
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = the new shiny thing (girl in red), box2 = the boyfriend (you), box3 = what you should be doing (girlfriend)",
+   "source": {
+    "image": "https://api.memegen.link/images/db.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/db/config.yml",
+    "info": "https://knowyourmeme.com/memes/distracted-boyfriend"
+   },
+   "colors": [
+    "white",
+    "white",
+    "white"
+   ],
+   "styles": [
+    "default",
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "ds",
+   "name": "Daily Struggle",
+   "aliases": [
+    "two buttons",
+    "daily struggle"
+   ],
+   "file": "ds.jpg",
+   "size": [
+    536,
+    800
+   ],
+   "boxes": [
+    [
+     0.085,
+     0.085,
+     0.32,
+     0.095
+    ],
+    [
+     0.455,
+     0.055,
+     0.23,
+     0.09
+    ],
+    [
+     0.04,
+     0.82,
+     0.92,
+     0.15
+    ]
+   ],
+   "upper": false,
+   "hint": "box1 = left button, box2 = right button, box3 = the sweating guy",
+   "source": {
+    "image": "https://api.memegen.link/images/ds.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/ds/config.yml",
+    "info": "https://knowyourmeme.com/memes/daily-struggle"
+   },
+   "colors": [
+    "black",
+    "black",
+    "white"
+   ],
+   "styles": [
+    "none",
+    "none",
+    "upper"
+   ]
+  },
+  {
+   "id": "cmm",
+   "name": "Change My Mind",
+   "aliases": [
+    "change my mind"
+   ],
+   "file": "cmm.jpg",
+   "size": [
+    754,
+    600
+   ],
+   "boxes": [
+    [
+     0.33,
+     0.33,
+     0.46,
+     0.25
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = the hot take on the sign",
+   "source": {
+    "image": "https://api.memegen.link/images/cmm.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/cmm/config.yml",
+    "info": "https://knowyourmeme.com/memes/steven-crowders-change-my-mind-campus-sign"
+   },
+   "colors": [
+    "black"
+   ],
+   "styles": [
+    "upper"
+   ]
+  },
+  {
+   "id": "gb",
+   "name": "Galaxy Brain",
+   "aliases": [
+    "expanding brain",
+    "galaxy brain"
+   ],
+   "file": "gb.jpg",
+   "size": [
+    566,
+    800
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     0.49,
+     0.245
+    ],
+    [
+     0.0,
+     0.255,
+     0.49,
+     0.246
+    ],
+    [
+     0.0,
+     0.51,
+     0.489,
+     0.224
+    ],
+    [
+     0.0,
+     0.746,
+     0.49,
+     0.255
+    ]
+   ],
+   "upper": false,
+   "hint": "box1..box4 = smallest brain idea to most 'enlightened' idea",
+   "source": {
+    "image": "https://api.memegen.link/images/gb.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/gb/config.yml",
+    "info": "https://knowyourmeme.com/memes/galaxy-brain"
+   },
+   "colors": [
+    "black",
+    "black",
+    "black",
+    "black"
+   ],
+   "styles": [
+    "none",
+    "none",
+    "none",
+    "none"
+   ]
+  },
+  {
+   "id": "fine",
+   "name": "This is Fine",
+   "aliases": [
+    "this is fine"
+   ],
+   "file": "fine.jpg",
+   "size": [
+    617,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = the situation, box2 = 'this is fine'",
+   "source": {
+    "image": "https://api.memegen.link/images/fine.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/fine/config.yml",
+    "info": "http://gunshowcomic.com/648"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "woman-cat",
+   "name": "Woman Yelling at a Cat",
+   "aliases": [
+    "woman yelling at cat",
+    "woman yelling at a cat"
+   ],
+   "file": "woman-cat.jpg",
+   "size": [
+    800,
+    516
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     0.5,
+     0.22
+    ],
+    [
+     0.5,
+     0.0,
+     0.5,
+     0.22
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = the angry woman, box2 = the calm cat's reply",
+   "source": {
+    "image": "https://api.memegen.link/images/woman-cat.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/woman-cat/config.yml",
+    "info": "https://knowyourmeme.com/memes/woman-yelling-at-a-cat"
+   },
+   "colors": [
+    "black",
+    "black"
+   ],
+   "styles": [
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "pooh",
+   "name": "Tuxedo Winnie the Pooh",
+   "aliases": [
+    "tuxedo winnie the pooh",
+    "pooh duality",
+    "fancy pooh"
+   ],
+   "file": "pooh.jpg",
+   "size": [
+    800,
+    480
+   ],
+   "boxes": [
+    [
+     0.38,
+     0.0,
+     0.62,
+     0.5
+    ],
+    [
+     0.38,
+     0.5,
+     0.62,
+     0.5
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = plain way, box2 = fancy way",
+   "source": {
+    "image": "https://api.memegen.link/images/pooh.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/pooh/config.yml",
+    "info": "https://knowyourmeme.com/memes/tuxedo-winnie-the-pooh"
+   },
+   "colors": [
+    "black",
+    "black"
+   ],
+   "styles": [
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "success",
+   "name": "Success Kid",
+   "aliases": [
+    "success kid"
+   ],
+   "file": "success.jpg",
+   "size": [
+    622,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: the small win",
+   "source": {
+    "image": "https://api.memegen.link/images/success.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/success/config.yml",
+    "info": "http://knowyourmeme.com/memes/success-kid-i-hate-sandcastles"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "gru",
+   "name": "Gru's Plan",
+   "aliases": [
+    "gru's plan",
+    "gru plan"
+   ],
+   "file": "gru.jpg",
+   "size": [
+    800,
+    513
+   ],
+   "boxes": [
+    [
+     0.275,
+     0.2,
+     0.2075,
+     0.2
+    ],
+    [
+     0.78,
+     0.2,
+     0.205,
+     0.2
+    ],
+    [
+     0.28,
+     0.7,
+     0.205,
+     0.2
+    ],
+    [
+     0.78,
+     0.7,
+     0.205,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = step 1, box2 = step 2, box3 = the oops, box4 = same oops (realizing)",
+   "source": {
+    "image": "https://api.memegen.link/images/gru.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/gru/config.yml",
+    "info": "https://knowyourmeme.com/memes/grus-plan"
+   },
+   "colors": [
+    "black",
+    "black",
+    "black",
+    "black"
+   ],
+   "styles": [
+    "default",
+    "default",
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "handshake",
+   "name": "Epic Handshake",
+   "aliases": [
+    "epic handshake"
+   ],
+   "file": "handshake.jpg",
+   "size": [
+    800,
+    573
+   ],
+   "boxes": [
+    [
+     -0.0275,
+     0.3,
+     0.4,
+     0.4
+    ],
+    [
+     0.4,
+     0.35,
+     0.4,
+     0.4
+    ],
+    [
+     0.15,
+     0.1,
+     0.5,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = left arm, box2 = right arm, box3 = what they agree on",
+   "source": {
+    "image": "https://api.memegen.link/images/handshake.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/handshake/config.yml",
+    "info": "https://www.deviantart.com/miloslavvonranda/art/EPIC-handshake-by-Dillon-and-Dutch-325709082"
+   },
+   "colors": [
+    "white",
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "exit",
+   "name": "Left Exit 12 Off Ramp",
+   "aliases": [
+    "left exit 12 off ramp",
+    "exit ramp"
+   ],
+   "file": "exit.jpg",
+   "size": [
+    669,
+    600
+   ],
+   "boxes": [
+    [
+     0.24,
+     0.15,
+     0.15,
+     0.22
+    ],
+    [
+     0.53,
+     0.15,
+     0.22,
+     0.22
+    ],
+    [
+     0.46,
+     0.85,
+     0.32,
+     0.1
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = straight road (sensible), box2 = exit (tempting), box3 = the car (you)",
+   "source": {
+    "image": "https://api.memegen.link/images/exit.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/exit/config.yml",
+    "info": "https://knowyourmeme.com/memes/left-exit-12-off-ramp"
+   },
+   "colors": [
+    "#BBBBBB",
+    "#BBBBBB",
+    "white"
+   ],
+   "styles": [
+    "default",
+    "thin",
+    "default"
+   ]
+  },
+  {
+   "id": "pigeon",
+   "name": "Is This a Pigeon?",
+   "aliases": [
+    "is this a pigeon",
+    "is this a butterfly"
+   ],
+   "file": "pigeon.jpg",
+   "size": [
+    800,
+    480
+   ],
+   "boxes": [
+    [
+     0.15,
+     0.0,
+     0.35,
+     0.2
+    ],
+    [
+     0.71,
+     0.3,
+     0.175,
+     0.1
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = the guy, box2 = the butterfly, box3 = 'is this ...?'",
+   "source": {
+    "image": "https://api.memegen.link/images/pigeon.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/pigeon/config.yml",
+    "info": "https://knowyourmeme.com/memes/is-this-a-pigeon"
+   },
+   "colors": [
+    "white",
+    "white",
+    "khaki"
+   ],
+   "styles": [
+    "default",
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "spongebob",
+   "name": "Mocking Spongebob",
+   "aliases": [
+    "mocking spongebob"
+   ],
+   "file": "spongebob.jpg",
+   "size": [
+    800,
+    563
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: the quote, then the mocking version",
+   "source": {
+    "image": "https://api.memegen.link/images/spongebob.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/spongebob/config.yml",
+    "info": "http://knowyourmeme.com/memes/mocking-spongebob"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "default",
+    "mock"
+   ]
+  },
+  {
+   "id": "buzz",
+   "name": "X, X Everywhere",
+   "aliases": [
+    "x x everywhere",
+    "buzz lightyear"
+   ],
+   "file": "buzz.jpg",
+   "size": [
+    789,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top = 'X', bottom = 'X everywhere'",
+   "source": {
+    "image": "https://api.memegen.link/images/buzz.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/buzz/config.yml",
+    "info": "https://imgflip.com/memetemplate/X-Everywhere"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "mordor",
+   "name": "One Does Not Simply Walk into Mordor",
+   "aliases": [
+    "one does not simply"
+   ],
+   "file": "mordor.jpg",
+   "size": [
+    800,
+    472
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top = 'one does not simply', bottom = the hard thing",
+   "source": {
+    "image": "https://api.memegen.link/images/mordor.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/mordor/config.yml",
+    "info": "http://knowyourmeme.com/memes/one-does-not-simply-walk-into-mordor"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "fry",
+   "name": "Futurama Fry",
+   "aliases": [
+    "futurama fry",
+    "not sure if"
+   ],
+   "file": "fry.jpg",
+   "size": [
+    800,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top = 'not sure if ...', bottom = 'or ...'",
+   "source": {
+    "image": "https://api.memegen.link/images/fry.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/fry/config.yml",
+    "info": "http://knowyourmeme.com/memes/futurama-fry-not-sure-if"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "harold",
+   "name": "Hide the Pain Harold",
+   "aliases": [
+    "hide the pain harold"
+   ],
+   "file": "harold.jpg",
+   "size": [
+    800,
+    533
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: smiling through it",
+   "source": {
+    "image": "https://api.memegen.link/images/harold.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/harold/config.yml",
+    "info": "https://knowyourmeme.com/memes/hide-the-pain-harold"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "rollsafe",
+   "name": "Roll Safe",
+   "aliases": [
+    "roll safe",
+    "think about it"
+   ],
+   "file": "rollsafe.jpg",
+   "size": [
+    800,
+    448
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: the 'smart' loophole",
+   "source": {
+    "image": "https://api.memegen.link/images/rollsafe.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/rollsafe/config.yml",
+    "info": "http://knowyourmeme.com/memes/roll-safe"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "same",
+   "name": "They're The Same Picture",
+   "aliases": [
+    "they're the same picture",
+    "same picture"
+   ],
+   "file": "same.jpg",
+   "size": [
+    600,
+    672
+   ],
+   "boxes": [
+    [
+     0.06,
+     0.015,
+     0.35,
+     0.3
+    ],
+    [
+     0.525,
+     0.06,
+     0.45,
+     0.3
+    ],
+    [
+     0.45,
+     0.775,
+     0.4,
+     0.15
+    ]
+   ],
+   "upper": false,
+   "hint": "box1 = thing A, box2 = thing B, box3 = 'they're the same picture'",
+   "source": {
+    "image": "https://api.memegen.link/images/same.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/same/config.yml",
+    "info": "https://knowyourmeme.com/memes/theyre-the-same-picture"
+   },
+   "colors": [
+    "black",
+    "black",
+    "white"
+   ],
+   "styles": [
+    "none",
+    "none",
+    "default"
+   ]
+  },
+  {
+   "id": "bus",
+   "name": "Two Guys on a Bus",
+   "aliases": [
+    "two guys on a bus"
+   ],
+   "file": "bus.jpg",
+   "size": [
+    800,
+    569
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.25,
+     0.4,
+     0.3
+    ],
+    [
+     0.5,
+     0.16,
+     0.4,
+     0.3
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = the gloomy side, box2 = the happy side",
+   "source": {
+    "image": "https://api.memegen.link/images/bus.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/bus/config.yml",
+    "info": "https://knowyourmeme.com/memes/two-guys-on-a-bus"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "balloon",
+   "name": "Running Away Balloon",
+   "aliases": [
+    "running away balloon"
+   ],
+   "file": "balloon.jpg",
+   "size": [
+    596,
+    800
+   ],
+   "boxes": [
+    [
+     0.61,
+     0.1,
+     0.39,
+     0.2
+    ],
+    [
+     0.8,
+     0.57,
+     0.39,
+     0.2
+    ],
+    [
+     0.0,
+     0.7,
+     0.27,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = the guy, box2 = the balloon he wants, box3 = what holds him back",
+   "source": {
+    "image": "https://api.memegen.link/images/balloon.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/balloon/config.yml",
+    "info": "https://knowyourmeme.com/memes/running-away-balloon"
+   },
+   "colors": [
+    "black",
+    "black",
+    "black"
+   ],
+   "styles": [
+    "upper",
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "reveal",
+   "name": "Scooby Doo Reveal",
+   "aliases": [
+    "scooby doo mask reveal",
+    "scooby doo"
+   ],
+   "file": "reveal.jpg",
+   "size": [
+    600,
+    800
+   ],
+   "boxes": [
+    [
+     0.04,
+     0.26,
+     0.3,
+     0.1
+    ],
+    [
+     0.0,
+     0.36,
+     1.0,
+     0.15
+    ],
+    [
+     0.04,
+     0.8,
+     0.3,
+     0.1
+    ],
+    [
+     0.0,
+     0.9,
+     1.0,
+     0.1
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = 'let's see who this really is', box2 = the mask, box3 = unmasking, box4 = the real thing",
+   "source": {
+    "image": "https://api.memegen.link/images/reveal.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/reveal/config.yml",
+    "info": "https://knowyourmeme.com/memes/lets-see-who-this-really-is"
+   },
+   "colors": [
+    "white",
+    "khaki",
+    "white",
+    "khaki"
+   ],
+   "styles": [
+    "default",
+    "upper",
+    "default",
+    "upper"
+   ]
+  },
+  {
+   "id": "panik-kalm-panik",
+   "name": "Panik Kalm Panik",
+   "aliases": [
+    "panik kalm panik"
+   ],
+   "file": "panik-kalm-panik.jpg",
+   "size": [
+    572,
+    800
+   ],
+   "boxes": [
+    [
+     0.01,
+     0.01,
+     0.45,
+     0.32
+    ],
+    [
+     0.01,
+     0.35,
+     0.45,
+     0.32
+    ],
+    [
+     0.01,
+     0.69,
+     0.45,
+     0.305
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = panik, box2 = kalm, box3 = panik again",
+   "source": {
+    "image": "https://api.memegen.link/images/panik-kalm-panik.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/panik-kalm-panik/config.yml",
+    "info": "https://knowyourmeme.com/memes/panik-kalm"
+   },
+   "colors": [
+    "black",
+    "black",
+    "black"
+   ],
+   "styles": [
+    "default",
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "spiderman",
+   "name": "Spider-Man Pointing at Spider-Man",
+   "aliases": [
+    "spider-man pointing",
+    "spiderman pointing"
+   ],
+   "file": "spiderman.jpg",
+   "size": [
+    800,
+    573
+   ],
+   "boxes": [
+    [
+     0.05,
+     0.0,
+     0.45,
+     0.15
+    ],
+    [
+     0.5,
+     0.85,
+     0.45,
+     0.15
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = left spider-man, box2 = right spider-man",
+   "source": {
+    "image": "https://api.memegen.link/images/spiderman.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/spiderman/config.yml",
+    "info": "https://knowyourmeme.com/memes/spider-man-pointing-at-spider-man"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "doge",
+   "name": "Doge",
+   "aliases": [
+    "doge"
+   ],
+   "file": "doge.jpg",
+   "size": [
+    600,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: 'such ...', 'very ...'",
+   "source": {
+    "image": "https://api.memegen.link/images/doge.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/doge/config.yml",
+    "info": "http://knowyourmeme.com/memes/doge"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "cheems",
+   "name": "Cheems",
+   "aliases": [
+    "cheems"
+   ],
+   "file": "cheems.jpg",
+   "size": [
+    630,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/cheems.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/cheems/config.yml",
+    "info": "https://knowyourmeme.com/memes/cheems"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "stonks",
+   "name": "Stonks",
+   "aliases": [
+    "stonks"
+   ],
+   "file": "stonks.jpg",
+   "size": [
+    800,
+    562
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top = the 'smart' move, bottom = 'stonks'",
+   "source": {
+    "image": "https://api.memegen.link/images/stonks.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/stonks/config.yml",
+    "info": "https://knowyourmeme.com/memes/stonks"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "wonka",
+   "name": "Condescending Wonka",
+   "aliases": [
+    "condescending wonka"
+   ],
+   "file": "wonka.jpg",
+   "size": [
+    800,
+    576
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: sarcastic question",
+   "source": {
+    "image": "https://api.memegen.link/images/wonka.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/wonka/config.yml",
+    "info": "http://knowyourmeme.com/memes/condescending-wonka-creepy-wonka"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "philosoraptor",
+   "name": "Philosoraptor",
+   "aliases": [
+    "philosoraptor"
+   ],
+   "file": "philosoraptor.jpg",
+   "size": [
+    600,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: deep silly question",
+   "source": {
+    "image": "https://api.memegen.link/images/philosoraptor.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/philosoraptor/config.yml",
+    "info": "http://knowyourmeme.com/memes/philosoraptor"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "grumpycat",
+   "name": "Grumpy Cat",
+   "aliases": [
+    "grumpy cat"
+   ],
+   "file": "grumpycat.jpg",
+   "size": [
+    600,
+    740
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: grumpy no",
+   "source": {
+    "image": "https://api.memegen.link/images/grumpycat.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/grumpycat/config.yml",
+    "info": "https://imgflip.com/memegenerator/Grumpy-Cat"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "interesting",
+   "name": "The Most Interesting Man in the World",
+   "aliases": [
+    "most interesting man",
+    "i don't always"
+   ],
+   "file": "interesting.jpg",
+   "size": [
+    600,
+    759
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top = 'I don't always ...', bottom = 'but when I do ...'",
+   "source": {
+    "image": "https://api.memegen.link/images/interesting.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/interesting/config.yml",
+    "info": "http://knowyourmeme.com/memes/the-most-interesting-man-in-the-world"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "oprah",
+   "name": "Oprah You Get a Car",
+   "aliases": [
+    "oprah you get a"
+   ],
+   "file": "oprah.jpg",
+   "size": [
+    800,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top = 'you get a ...', bottom = 'everybody gets a ...'",
+   "source": {
+    "image": "https://api.memegen.link/images/oprah.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/oprah/config.yml",
+    "info": "http://knowyourmeme.com/memes/oprah-you-get-a-car"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "kermit",
+   "name": "But That's None of My Business",
+   "aliases": [
+    "but that's none of my business",
+    "kermit tea"
+   ],
+   "file": "kermit.jpg",
+   "size": [
+    800,
+    562
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: the observation",
+   "source": {
+    "image": "https://api.memegen.link/images/kermit.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/kermit/config.yml",
+    "info": "http://knowyourmeme.com/memes/but-thats-none-of-my-business"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "money",
+   "name": "Shut Up and Take My Money!",
+   "aliases": [
+    "shut up and take my money"
+   ],
+   "file": "money.jpg",
+   "size": [
+    800,
+    450
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/money.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/money/config.yml",
+    "info": "http://knowyourmeme.com/memes/shut-up-and-take-my-money"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "morpheus",
+   "name": "Matrix Morpheus",
+   "aliases": [
+    "morpheus",
+    "what if i told you"
+   ],
+   "file": "morpheus.jpg",
+   "size": [
+    800,
+    485
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top = 'what if I told you', bottom = the reveal",
+   "source": {
+    "image": "https://api.memegen.link/images/morpheus.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/morpheus/config.yml",
+    "info": "http://knowyourmeme.com/memes/matrix-morpheus"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "noidea",
+   "name": "I Have No Idea What I'm Doing",
+   "aliases": [
+    "i have no idea what i'm doing",
+    "science dog"
+   ],
+   "file": "noidea.jpg",
+   "size": [
+    800,
+    510
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/noidea.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/noidea/config.yml",
+    "info": "http://knowyourmeme.com/memes/i-have-no-idea-what-i-m-doing"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "both",
+   "name": "Why Not Both?",
+   "aliases": [
+    "why not both"
+   ],
+   "file": "both.jpg",
+   "size": [
+    600,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.75,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top = the choice, bottom = 'why not both?'",
+   "source": {
+    "image": "https://api.memegen.link/images/both.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/both/config.yml",
+    "info": "http://knowyourmeme.com/memes/why-not-both-why-dont-we-have-both"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "regret",
+   "name": "I Immediately Regret This Decision!",
+   "aliases": [
+    "i immediately regret this decision"
+   ],
+   "file": "regret.jpg",
+   "size": [
+    671,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/regret.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/regret/config.yml",
+    "info": "https://www.youtube.com/watch?v=gd9ltJGykYc"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "tried",
+   "name": "At Least You Tried",
+   "aliases": [
+    "at least you tried"
+   ],
+   "file": "tried.jpg",
+   "size": [
+    600,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/tried.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/tried/config.yml",
+    "info": "http://knowyourmeme.com/memes/you-tried"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "yuno",
+   "name": "Y U NO Guy",
+   "aliases": [
+    "y u no"
+   ],
+   "file": "yuno.jpg",
+   "size": [
+    798,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: 'X, Y U NO ...'",
+   "source": {
+    "image": "https://api.memegen.link/images/yuno.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/yuno/config.yml",
+    "info": "http://knowyourmeme.com/memes/y-u-no-guy"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "xy",
+   "name": "X all the Y",
+   "aliases": [
+    "x all the y",
+    "all the things"
+   ],
+   "file": "xy.jpg",
+   "size": [
+    790,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top = 'X', bottom = 'all the Y'",
+   "source": {
+    "image": "https://api.memegen.link/images/xy.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/xy/config.yml",
+    "info": "http://knowyourmeme.com/memes/x-all-the-y"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "ackbar",
+   "name": "It's A Trap!",
+   "aliases": [
+    "it's a trap"
+   ],
+   "file": "ackbar.jpg",
+   "size": [
+    600,
+    777
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/ackbar.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/ackbar/config.yml",
+    "info": "http://knowyourmeme.com/memes/its-a-trap"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "aag",
+   "name": "Ancient Aliens Guy",
+   "aliases": [
+    "ancient aliens"
+   ],
+   "file": "aag.jpg",
+   "size": [
+    715,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: '... aliens'",
+   "source": {
+    "image": "https://api.memegen.link/images/aag.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/aag/config.yml",
+    "info": "http://knowyourmeme.com/memes/ancient-aliens"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "afraid",
+   "name": "Afraid to Ask Andy",
+   "aliases": [
+    "afraid to ask andy"
+   ],
+   "file": "afraid.jpg",
+   "size": [
+    611,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/afraid.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/afraid/config.yml",
+    "info": "http://knowyourmeme.com/memes/afraid-to-ask-andy"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "awkward",
+   "name": "Socially Awkward Penguin",
+   "aliases": [
+    "socially awkward penguin"
+   ],
+   "file": "awkward.jpg",
+   "size": [
+    600,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/awkward.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/awkward/config.yml",
+    "info": "http://knowyourmeme.com/memes/socially-awkward-penguin"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "chair",
+   "name": "American Chopper Argument",
+   "aliases": [
+    "american chopper argument"
+   ],
+   "file": "chair.jpg",
+   "size": [
+    720,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.2,
+     0.495,
+     0.13
+    ],
+    [
+     0.495,
+     0.2,
+     0.505,
+     0.13
+    ],
+    [
+     0.0,
+     0.535,
+     0.495,
+     0.13
+    ],
+    [
+     0.495,
+     0.525,
+     0.505,
+     0.14
+    ],
+    [
+     0.0,
+     0.87,
+     0.5,
+     0.13
+    ],
+    [
+     0.5,
+     0.87,
+     0.5,
+     0.13
+    ]
+   ],
+   "upper": true,
+   "hint": "box1..box6: the argument back and forth",
+   "source": {
+    "image": "https://api.memegen.link/images/chair.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/chair/config.yml",
+    "info": "https://knowyourmeme.com/memes/american-chopper-argument"
+   },
+   "colors": [
+    "khaki",
+    "white",
+    "khaki",
+    "white",
+    "khaki",
+    "white"
+   ],
+   "styles": [
+    "default",
+    "default",
+    "default",
+    "default",
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "home",
+   "name": "We Have Food at Home",
+   "aliases": [
+    "we have food at home"
+   ],
+   "file": "home.jpg",
+   "size": [
+    600,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.1
+    ],
+    [
+     0.0,
+     0.1,
+     1.0,
+     0.1
+    ],
+    [
+     0.0,
+     0.2,
+     1.0,
+     0.1
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = kid's request, box2 = 'we have X at home', box3 = the sad X at home",
+   "source": {
+    "image": "https://api.memegen.link/images/home.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/home/config.yml",
+    "info": "https://knowyourmeme.com/memes/we-have-food-at-home"
+   },
+   "colors": [
+    "black",
+    "black",
+    "black"
+   ],
+   "styles": [
+    "default",
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "midwit",
+   "name": "Midwit",
+   "aliases": [
+    "midwit",
+    "bell curve"
+   ],
+   "file": "midwit.jpg",
+   "size": [
+    771,
+    600
+   ],
+   "boxes": [
+    [
+     0.02,
+     0.46,
+     0.283,
+     0.1
+    ],
+    [
+     0.13,
+     0.02,
+     0.7,
+     0.1
+    ],
+    [
+     0.687,
+     0.386,
+     0.283,
+     0.1
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = simple left, box2 = overthinking middle, box3 = simple right",
+   "source": {
+    "image": "https://api.memegen.link/images/midwit.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/midwit/config.yml",
+    "info": "https://knowyourmeme.com/memes/iq-bell-curve-midwit"
+   },
+   "colors": [
+    "black",
+    "black",
+    "black"
+   ],
+   "styles": [
+    "default",
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "khaby-lame",
+   "name": "Khaby Lame Shrug",
+   "aliases": [
+    "khaby lame shrug"
+   ],
+   "file": "khaby-lame.jpg",
+   "size": [
+    601,
+    600
+   ],
+   "boxes": [
+    [
+     0.02,
+     0.02,
+     0.45,
+     0.47
+    ],
+    [
+     0.02,
+     0.51,
+     0.45,
+     0.47
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom: the obvious easy fix",
+   "source": {
+    "image": "https://api.memegen.link/images/khaby-lame.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/khaby-lame/config.yml",
+    "info": "https://knowyourmeme.com/photos/2132291-khaby-lame-shrug-its-that-simple"
+   },
+   "colors": [
+    "black",
+    "black"
+   ],
+   "styles": [
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "headaches",
+   "name": "Types of Headaches",
+   "aliases": [
+    "types of headaches"
+   ],
+   "file": "headaches.jpg",
+   "size": [
+    600,
+    704
+   ],
+   "boxes": [
+    [
+     0.5,
+     0.64,
+     0.5,
+     0.08
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = the worst headache cause",
+   "source": {
+    "image": "https://api.memegen.link/images/headaches.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/headaches/config.yml",
+    "info": "https://knowyourmeme.com/memes/types-of-headaches"
+   },
+   "colors": [
+    "black"
+   ],
+   "styles": [
+    "default"
+   ]
+  },
+  {
+   "id": "millers",
+   "name": "You Guys Are Getting Paid?",
+   "aliases": [
+    "you guys are getting paid"
+   ],
+   "file": "millers.jpg",
+   "size": [
+    600,
+    600
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.35,
+     0.5,
+     0.15
+    ],
+    [
+     0.5,
+     0.35,
+     0.5,
+     0.15
+    ],
+    [
+     0.0,
+     0.85,
+     0.5,
+     0.15
+    ],
+    [
+     0.5,
+     0.85,
+     0.5,
+     0.15
+    ]
+   ],
+   "upper": true,
+   "hint": "box1..box4: the back and forth",
+   "source": {
+    "image": "https://api.memegen.link/images/millers.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/millers/config.yml",
+    "info": "https://knowyourmeme.com/photos/1712302-you-guys-are-getting-paid"
+   },
+   "colors": [
+    "white",
+    "white",
+    "white",
+    "white"
+   ],
+   "styles": [
+    "default",
+    "default",
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "glasses",
+   "name": "Peter Parker's Glasses",
+   "aliases": [
+    "peter parker's glasses"
+   ],
+   "file": "glasses.jpg",
+   "size": [
+    791,
+    600
+   ],
+   "boxes": [
+    [
+     0.5,
+     0.0,
+     0.5,
+     0.49
+    ],
+    [
+     0.5,
+     0.51,
+     0.5,
+     0.49
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/glasses.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/glasses/config.yml",
+    "info": "https://knowyourmeme.com/memes/peter-parkers-glasses"
+   },
+   "colors": [
+    "black",
+    "black"
+   ],
+   "styles": [
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "firsttry",
+   "name": "First Try!",
+   "aliases": [
+    "first try"
+   ],
+   "file": "firsttry.jpg",
+   "size": [
+    800,
+    588
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/firsttry.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/firsttry/config.yml",
+    "info": "https://www.youtube.com/watch?v=44-RsrF_V_w"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "boat",
+   "name": "I Should Buy a Boat Cat",
+   "aliases": [
+    "i should buy a boat"
+   ],
+   "file": "boat.jpg",
+   "size": [
+    800,
+    589
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/boat.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/boat/config.yml",
+    "info": "http://knowyourmeme.com/memes/i-should-buy-a-boat-cat"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "right",
+   "name": "Anakin and Padme Change the World For the Better",
+   "aliases": [
+    "anakin padme",
+    "for the better right"
+   ],
+   "file": "right.jpg",
+   "size": [
+    600,
+    600
+   ],
+   "boxes": [
+    [
+     0.09,
+     0.01,
+     0.25,
+     0.1
+    ],
+    [
+     0.65,
+     0.01,
+     0.25,
+     0.1
+    ],
+    [
+     0.0,
+     0.399,
+     0.499,
+     0.1
+    ],
+    [
+     0.502,
+     0.399,
+     0.499,
+     0.1
+    ],
+    [
+     0.502,
+     0.9,
+     0.499,
+     0.1
+    ]
+   ],
+   "upper": true,
+   "hint": "box1 = Anakin's plan, box2 = Padme smiling, box3 = Anakin silent (can be empty), box4 = Padme 'for the better, right?', box5 = Padme worried 'right?'",
+   "source": {
+    "image": "https://api.memegen.link/images/right.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/right/config.yml",
+    "info": "https://www.reddit.com/r/MemeTemplatesOfficial/comments/nia6wu/im_going_to_change_the_world_for_the_better_right/"
+   },
+   "colors": [
+    "white",
+    "white",
+    "white",
+    "khaki",
+    "khaki"
+   ],
+   "styles": [
+    "upper",
+    "upper",
+    "default",
+    "default",
+    "default"
+   ]
+  },
+  {
+   "id": "sparta",
+   "name": "This is Sparta!",
+   "aliases": [
+    "this is sparta"
+   ],
+   "file": "sparta.jpg",
+   "size": [
+    800,
+    422
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/sparta.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/sparta/config.yml",
+    "info": "https://www.youtube.com/watch?v=QkWS9PiXekE"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "fwp",
+   "name": "First World Problems",
+   "aliases": [
+    "first world problems"
+   ],
+   "file": "fwp.jpg",
+   "size": [
+    800,
+    565
+   ],
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.2
+    ],
+    [
+     0.0,
+     0.8,
+     1.0,
+     0.2
+    ]
+   ],
+   "upper": true,
+   "hint": "top/bottom",
+   "source": {
+    "image": "https://api.memegen.link/images/fwp.jpg",
+    "boxes": "https://github.com/jacebrowning/memegen/blob/main/templates/fwp/config.yml",
+    "info": "http://knowyourmeme.com/memes/first-world-problems"
+   },
+   "colors": [
+    "white",
+    "white"
+   ],
+   "styles": [
+    "upper",
+    "upper"
+   ]
+  },
+  {
+   "id": "surprised-pikachu",
+   "name": "Surprised Pikachu",
+   "aliases": [
+    "surprised pikachu"
+   ],
+   "file": "surprised-pikachu.jpg",
+   "size": [
+    800,
+    800
+   ],
+   "boxes": [
+    [
+     0.02,
+     0.01,
+     0.96,
+     0.13
+    ],
+    [
+     0.02,
+     0.14,
+     0.96,
+     0.13
+    ],
+    [
+     0.02,
+     0.27,
+     0.96,
+     0.12
+    ]
+   ],
+   "upper": false,
+   "hint": "box1 = doing the silly thing, box2 = the obvious result, box3 = shocked reaction",
+   "source": {
+    "image": "https://i.imgflip.com/2kbn1e.jpg",
+    "boxes": "hand-measured",
+    "info": "https://imgflip.com/memetemplate/155067746"
+   },
+   "colors": [
+    "black",
+    "black",
+    "black"
+   ],
+   "styles": [
+    "none",
+    "none",
+    "none"
+   ]
+  },
+  {
+   "id": "monkey-puppet",
+   "name": "Monkey Puppet",
+   "aliases": [
+    "monkey puppet",
+    "awkward look monkey"
+   ],
+   "file": "monkey-puppet.jpg",
+   "size": [
+    800,
+    666
+   ],
+   "boxes": [
+    [
+     0.02,
+     0.01,
+     0.96,
+     0.34
+    ]
+   ],
+   "upper": false,
+   "hint": "box1 = the awkward moment (one caption on the white top)",
+   "source": {
+    "image": "https://i.imgflip.com/2gnnjh.jpg",
+    "boxes": "hand-measured",
+    "info": "https://imgflip.com/memetemplate/148909805"
+   },
+   "colors": [
+    "black"
+   ],
+   "styles": [
+    "none"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+# Add under mcp_servers: in your Hermes profile config.yaml (for a profile named nous-girl:
+# ~/.hermes/profiles/nous-girl/config.yaml). Change the path to where install-addon.sh put the file
+# (default ~/.nous-girl/hermes/stackchan-tools/stackchan_mcp.py; write the full path, ~ is not expanded in args).
+mcp_servers:
+  stackchan:
+    command: uv
+    args: [run, --no-project, --quiet, --python, "3.12",
+           --with, "mcp>=1.2,<2", --with, httpx, --with, pillow,
+           python, /FULL/PATH/TO/.nous-girl/hermes/stackchan-tools/stackchan_mcp.py]
+    env:
+      HG_BRIDGE_URL: http://127.0.0.1:8003         # the voice server's HTTP port as seen from the Hermes computer
+      HG_BRIDGE_TOKEN: "${HG_BRIDGE_TOKEN}"        # filled in from the profile .env; never write the token here
+      # STACKCHAN_SAVED_DANCES: "dance1"           # optional: recorded dances she may play by name
+      # STACKCHAN_FACEID_NAMES: "Sam,Robin"        # optional: the only names robot_who_is_here may return
+      # NG_MEMES_DIR: /FULL/PATH/TO/NousGirl-memes # optional: where saved memes are (default ~/NousGirl-memes)
+    enabled: true
+    trust: full            # the voice path cannot answer approval prompts; the limits live in the script
+    connect_timeout: 120   # first start downloads mcp, httpx and pillow into the uv cache
+    timeout: 60            # the bridge waits up to 45 s for the robot
+    tools:
+      include:
+        - robot_lights
+        - robot_face
+        - robot_look
+        - robot_what_do_you_see
+        - robot_dance
+        - robot_play_music
+        - robot_music_sd
+        - robot_music_skip
+        - robot_dj_mode
+        - robot_rave_mode
+        - robot_radio
+        - robot_follow_faces
+        - robot_who_is_here
+        - robot_show_meme
+        - robot_status
+      resources: false
+      prompts: false

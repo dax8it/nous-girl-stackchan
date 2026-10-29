@@ -64,5 +64,5 @@ The release notes are the matching section of VERSIONS.md.
 ## Still open
 
 1. **Firmware source.** The patch series against upstream is not in the repo yet.
-2. **Server and Hermes packs.** Not in the repo yet; each needs a scrub of personal paths, addresses and hostnames first.
+2. **Server and Hermes add-ons.** Released in [server/](../server/README.md). Still held back: the server's test suite (personal fixtures), the face ID server (stores face data), personal scripts and set lists, and every model, voice and meme picture (their own licenses).
 3. **Testing.** Public builds have not been flashed on a robot yet (beta). They differ from the tested builds in the faces, the Server page, the blank default server with its "No server yet" screen, and the allow-list host.

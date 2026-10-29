@@ -1,0 +1,41 @@
+# Keys the patched server reads from data/.config.yaml. Merge them into YOUR config by hand;
+# do not replace the whole file. Every value here is a placeholder: make up your own.
+# Never commit data/.config.yaml or post it anywhere: it holds your keys.
+
+server:
+  # Optional: the OTA URL on the robot must then end in ?k=<this key>.
+  # hg_ota_key: "MAKE_UP_A_LONG_RANDOM_KEY"
+  auth:
+    # Optional: only these robots (device id = Wi-Fi MAC, lower case) get a token.
+    # hg_bind_devices: ["aa:bb:cc:dd:ee:ff"]
+    # hg_bind_clients: ["YOUR_CLIENT_ID"]
+
+# The hg bridge: the small local API that Hermes robot tools call.
+# Only answers localhost and private LAN addresses, and never requests that came
+# through a Cloudflare tunnel (except the optional /hg/music page).
+hg_bridge:
+  enabled: true
+  token: ""   # REQUIRED: make up a long random token; same value as HG_BRIDGE_TOKEN in the Hermes .env
+  # music_token: "ANOTHER_RANDOM_TOKEN"        # optional, only for the /hg/music?k=... page
+  # meme_base_url: "https://YOUR_SERVER_HOST"  # optional; default is the host in server.websocket
+
+plugins:
+  play_music:
+    music_dir: "./music"                       # your songs (a volume mount in docker-compose)
+    music_ext: [".mp3", ".wav", ".p3"]
+    hg_voice_shortcut: true                    # "play <song>", "next song", DJ mode, radio and rave by voice
+  scene_mode:
+    enabled: true                              # Actor Mode ("action mode one"); false turns it off
+
+# Optional: a photo model that answers in English and can turn off "thinking".
+# selected_module:
+#   VLLM: MyVisionModel
+# VLLM:
+#   MyVisionModel:
+#     type: openai_en
+#     base_url: http://host.docker.internal:11434/v1   # any OpenAI-compatible server, Ollama shown
+#     model_name: YOUR_VISION_MODEL
+#     api_key: none
+#     reply_language: English
+#     reasoning_effort: none
+#     max_tokens: 300
