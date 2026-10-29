@@ -61,7 +61,7 @@ What she's connected to, and how to add a network.
 | **Wi-Fi setup mode** | Restarts her into her own setup hotspot, **`Xiaozhi-XXXX`**. Join it from your phone and add a network ([step-by-step](./SELF-HOSTING.md#step-2-put-the-robot-on-your-wi-fi)). While in setup mode she keeps looking and joins any saved network that shows up. | | Adding a new network, a phone hotspot, or fixing a wrong password. |
 | Saved networks (N of 10) | Lists saved network **names** (never passwords), up to 10. | read only | Checking which networks she knows. |
 
-**Good to know:** only **2.4 GHz** Wi-Fi works. On an iPhone hotspot, turn on **Maximize Compatibility**. A phone hotspot is saved even if the first test fails, and she joins it when it appears. To forget all networks, use **Factory reset** in [Restart](#restart).
+**Good to know:** only **2.4 GHz** Wi-Fi works. On an iPhone hotspot, turn on **Maximize Compatibility**. A phone hotspot is saved even if the first test fails, and she joins it when it appears. To forget all networks, use **Factory reset** in [Restart](#restart). Phone hotspot setup for iPhone and Android: [HOTSPOT.md](./HOTSPOT.md).
 
 ## Wake words
 

@@ -1,0 +1,19 @@
+# Add under mcp_servers: in your Hermes profile config.yaml. Use full paths (~ is not expanded in args).
+mcp_servers:
+  nousgirl_localmeme:
+    command: uv
+    args: [run, --no-project, --quiet, --python, "3.12", --with, "mcp>=1.2,<2", --with, pillow, python,
+           /FULL/PATH/TO/.nous-girl/hermes/local-memes/nousgirl_localmeme_mcp.py]
+    env:
+      NG_MEME_BLOCKED_NAMES: "FirstName1,FirstName2"   # real names that must never go on a meme (your kids, family)
+      # NG_TEMPLATES_DIR: /FULL/PATH/TO/NousGirl-meme-templates   # default ~/NousGirl-meme-templates
+      # NG_MEMES_DIR: /FULL/PATH/TO/NousGirl-memes                # default ~/NousGirl-memes
+      # NG_MEME_FONT: /FULL/PATH/TO/Anton-Regular.ttf             # needed where Impact is not installed
+    enabled: true
+    trust: full
+    connect_timeout: 120
+    timeout: 30
+    tools:
+      include: [list_templates, make_meme]
+      resources: false
+      prompts: false

@@ -1,0 +1,33 @@
+# Five Phonon 40M multilingual servers, one per language (Phonon picks its text rules per server).
+# Image and settings from https://github.com/gradium-ai/xn-ptts (ptts-openai-server/compose.hub.yaml).
+# The 40M models are gated (CC BY-NC 4.0, non-commercial): accept the terms on
+# https://huggingface.co/gradium/phonon-40m-multilingual, then: export HF_TOKEN=... ; docker compose -f phonon-compose.example.yml up -d
+# Ports are bound to 127.0.0.1 because the server has no authentication.
+x-phonon: &phonon
+  image: ghcr.io/gradium-ai/ptts-openai-server:latest
+  restart: unless-stopped
+  volumes:
+    - phonon-cache:/home/phonon/.cache/huggingface
+services:
+  phonon-en:
+    <<: *phonon
+    environment: {PTTS_MODEL: "hf://gradium/phonon-40m-multilingual", PTTS_LANG: en, PTTS_QUANT: q8, PTTS_IGNORE_SPEED: "true", HF_TOKEN: "${HF_TOKEN:-}", HF_HOME: /home/phonon/.cache/huggingface}
+    ports: ["127.0.0.1:8661:8880"]
+  phonon-es:
+    <<: *phonon
+    environment: {PTTS_MODEL: "hf://gradium/phonon-40m-multilingual", PTTS_LANG: es, PTTS_QUANT: q8, PTTS_IGNORE_SPEED: "true", HF_TOKEN: "${HF_TOKEN:-}", HF_HOME: /home/phonon/.cache/huggingface}
+    ports: ["127.0.0.1:8681:8880"]
+  phonon-fr:
+    <<: *phonon
+    environment: {PTTS_MODEL: "hf://gradium/phonon-40m-multilingual", PTTS_LANG: fr, PTTS_QUANT: q8, PTTS_IGNORE_SPEED: "true", HF_TOKEN: "${HF_TOKEN:-}", HF_HOME: /home/phonon/.cache/huggingface}
+    ports: ["127.0.0.1:8682:8880"]
+  phonon-de:
+    <<: *phonon
+    environment: {PTTS_MODEL: "hf://gradium/phonon-40m-multilingual", PTTS_LANG: de, PTTS_QUANT: q8, PTTS_IGNORE_SPEED: "true", HF_TOKEN: "${HF_TOKEN:-}", HF_HOME: /home/phonon/.cache/huggingface}
+    ports: ["127.0.0.1:8683:8880"]
+  phonon-pt:
+    <<: *phonon
+    environment: {PTTS_MODEL: "hf://gradium/phonon-40m-multilingual", PTTS_LANG: pt, PTTS_QUANT: q8, PTTS_IGNORE_SPEED: "true", HF_TOKEN: "${HF_TOKEN:-}", HF_HOME: /home/phonon/.cache/huggingface}
+    ports: ["127.0.0.1:8684:8880"]
+volumes:
+  phonon-cache:

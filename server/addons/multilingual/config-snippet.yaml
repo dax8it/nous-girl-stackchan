@@ -1,0 +1,31 @@
+# Merge into data/.config.yaml by hand. Keep your existing TTS block so you can switch back.
+prompt_template: data/agent-base-prompt-ml.txt   # top level: the base prompt with the language rule
+
+selected_module:
+  TTS: PhononMLTTS
+
+TTS:
+  PhononMLTTS:                       # Phonon 40M multilingual, one server per language
+    type: phonon_ml
+    api_key: local                   # the Phonon server ignores it
+    api_url: http://host.docker.internal:8661/v1/audio/speech
+    model: tts-1
+    voice: Harper
+    format: wav
+    speed: 1.0
+    output_dir: tmp/
+    language: English                # fills {{language}} in agent-base-prompt-ml.txt
+    default_lang: en
+    lang_urls:                       # on Linux with all services in one compose file, use http://phonon-en:8880/... etc.
+      en: http://host.docker.internal:8661/v1/audio/speech
+      es: http://host.docker.internal:8681/v1/audio/speech
+      fr: http://host.docker.internal:8682/v1/audio/speech
+      de: http://host.docker.internal:8683/v1/audio/speech
+      pt: http://host.docker.internal:8684/v1/audio/speech
+    lang_voices:                     # voice names your Phonon servers offer
+      en: Harper
+      es: Noa
+      fr: "Noémie"
+      de: Jette
+      pt: Isadora
+    # fallback_url: http://host.docker.internal:8660/v1/audio/speech   # optional: an English phonon-31m-en server

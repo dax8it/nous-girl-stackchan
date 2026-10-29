@@ -1,0 +1,20 @@
+{
+  "title": "My first set",
+  "format": "dj-setlist/1",
+  "comment": "Example DJ set list. Put songs in the server's music folder and change each track to a song file name (without the extension is fine). Say 'DJ mode one' to start, 'next' or 'previous' to step, 'stop' to end.",
+  "defaults": {"face": "happy", "lights": "party", "groove": true, "gap": 2, "vu": {"on": true, "color": "blue"}},
+  "loop": false,
+  "shuffle": false,
+  "songs": [
+    {"id": "song1", "track": "My-Song",
+     "intro": [{"speaker": "NOUS", "dialogue": "DJ time! Lights down.", "lang": "en"}],
+     "cues": [{"at": 0, "action": "vu", "value": "purple"}, {"at": 0, "action": "lights", "value": "purple"},
+              {"at": 30, "action": "face", "value": "scowl", "duration": 2}]},
+    {"id": "song2", "track": "Song-2",
+     "cues": [{"at": 0, "action": "vu", "value": "warm"}, {"at": 0, "action": "lights", "value": "warm white"},
+              {"at": 20, "action": "dance", "value": "sway", "duration": 6}]},
+    {"id": "song3", "track": "Song-3",
+     "intro": [{"speaker": "NOUS", "dialogue": "Last one. Make it count!", "lang": "en"}],
+     "cues": [{"at": 0, "action": "vu", "value": "rainbow"}, {"at": 45, "action": "vu", "value": "pulse", "duration": 4}]}
+  ]
+}

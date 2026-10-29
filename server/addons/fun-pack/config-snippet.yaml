@@ -1,0 +1,10 @@
+# OPTIONAL, recommended for kids: merge into your Hermes profile config.yaml.
+# Pins the voice path (api_server) to a small, kid-safe tool list, so terminal, file,
+# code execution, browser, cron jobs, delegation and connections are OFF for voice.
+# MCP servers you configured (stackchan, local memes, ...) are still added on top.
+platform_toolsets:
+  api_server: [image_gen, memory, session_search, skills, todo, vision, web]
+
+# Kid memory goes to MEMORY.md. The default limit (2200 characters) fills fast.
+memory:
+  memory_char_limit: 3500

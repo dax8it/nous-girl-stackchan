@@ -1,0 +1,20 @@
+{
+  "title": "Hello show",
+  "characters": ["NOUS", "YOU"],
+  "comment": "A short, kid-safe first show. Say \"action mode\" and pick it, or copy it to data/scenes/03-hello-show.json and say \"action mode three\".",
+  "lines": [
+    {"action": [{"action": "lights", "value": "blue"}, {"action": "face", "value": "happy"}]},
+    {"speaker": "NOUS", "dialogue": "Hello everyone! Welcome to my robot show."},
+    {"speaker": "YOU", "dialogue": "What can you do?"},
+    {"speaker": "NOUS", "dialogue": "I can look around the room.", "action": "head", "value": "look around"},
+    {"action": "pause", "duration": 2},
+    {"speaker": "NOUS", "dialogue": "I can think really hard.", "action": "face", "value": "thinking"},
+    {"speaker": "NOUS", "dialogue": "And I can change my lights.", "action": "lights", "value": ["green", "purple", "rainbow"], "duration": 1},
+    {"speaker": "YOU", "dialogue": "Can you dance?"},
+    {"speaker": "NOUS", "dialogue": "You bet! Here comes the wiggle.", "action": "dance", "value": "wiggle"},
+    {"action": "pause", "duration": 4},
+    {"speaker": "NOUS", "dialogue": "Hola amigos, me encanta bailar.", "lang": "es"},
+    {"speaker": "NOUS", "dialogue": "Thank you for watching my show!", "action": [{"action": "face", "value": "pet"}, {"action": "head", "value": "nod"}]},
+    {"action": "lights", "value": "normal"}
+  ]
+}

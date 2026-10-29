@@ -1,0 +1,22 @@
+# Example compose file for the voice server with the Nous-Girl add-ons.
+# Based on upstream main/xiaozhi-server/docker-compose.yml (commit 4745186c). Copy it next to
+# your data/ folder, check the image line, then: docker compose up -d
+# After that, install add-ons with ./install-addon.sh (it never recreates the container).
+services:
+  xiaozhi-esp32-server:
+    image: ghcr.nju.edu.cn/xinnan-tech/xiaozhi-esp32-server:server_latest   # upstream image; or your own build
+    container_name: xiaozhi-esp32-server
+    restart: always
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - TZ=UTC                       # set your time zone, e.g. America/New_York
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # lets the container reach Hermes, Ollama, Phonon on the host (Linux needs this line)
+    ports:
+      - "8000:8000"                  # WebSocket (voice)
+      - "8003:8003"                  # HTTP: OTA, vision, hg bridge
+    volumes:
+      - ./data:/opt/xiaozhi-esp32-server/data        # config, radio stations, set lists, scenes
+      - ./music:/opt/xiaozhi-esp32-server/music      # your songs for music, DJ and rave mode
+      - ./models/SenseVoiceSmall/model.pt:/opt/xiaozhi-esp32-server/models/SenseVoiceSmall/model.pt

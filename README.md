@@ -26,13 +26,13 @@ Hermes setup, her profile and how to write her personality file (`SOUL.md`): [do
 
 Every feature, with how to turn it on, what to say, how to set it up on your own server and how to undo it: [docs/FEATURES.md](./docs/FEATURES.md). Every Settings screen option, explained: [docs/SETTINGS.md](./docs/SETTINGS.md). Windows, Linux and macOS: [docs/PLATFORMS.md](./docs/PLATFORMS.md).
 
-- **Faces and lip sync:** animated faces that follow her state, vowel-shaped mouth, moods from happy to scowl. Three CC0 starter faces, or [make your own](./docs/SPRITES.md).
+- **Faces and lip sync:** animated faces that follow her state, vowel-shaped mouth, moods from happy to scowl. Three CC0 starter faces, or [make your own](./docs/SPRITES.md). Every face and what triggers it: [docs/EMOTES.md](./docs/EMOTES.md).
 - **Wake words:** "Hey Nous-Girl" and "Hey Jarvis". Tap the screen to stop her.
 - **Lights, dance and head touch:** 12 RGB LEDs, preset and recorded dances, a 3-pad head sensor.
 - **Music, DJ mode and radio:** songs from your computer or an SD card, set lists, a live 13-band equalizer, beat-synced colors, internet radio, and a rave mode for grown-ups.
 - **Multilingual voice:** English, Spanish, French, German and Portuguese, each with its own voice.
 - **Camera:** "what do you see", face ID, and follow faces with on-robot face detection.
-- **Actor Mode:** she performs scripts with timed face, light and dance cues.
+- **Actor Mode:** she performs scripts with timed face, light and dance cues. Write your own: [docs/ACTOR-MODE.md](./docs/ACTOR-MODE.md).
 - **Fun pack:** trivia, spelling bee, memory games and story time, with kid-safe memory.
 - **Email:** her own AgentMail inbox. She reads back and waits for a yes before sending.
 - **Local memes:** classic memes made on your computer, shown on her screen, and emailed only to approved addresses after a read-back.
@@ -68,7 +68,7 @@ Windows, Linux, macOS, a home server or the cloud: [docs/PLATFORMS.md](./docs/PL
 4. **Optional:** set up Hermes as her brain: [docs/HERMES.md](./docs/HERMES.md).
 5. **Say "Hey Nous-Girl".**
 
-Our patched server and the add-on packs are not in this repo yet; they are being scrubbed of personal settings first.
+Our patched server and the add-ons (DJ mode, radio, Actor Mode, multilingual voice, robot tools for Hermes, memes, email, fun pack) are in [server/](./server/README.md), each with install, check and undo steps. Away from home Wi-Fi? Use your phone as a hotspot: [docs/HOTSPOT.md](./docs/HOTSPOT.md).
 
 ## Models
 
@@ -114,7 +114,7 @@ These are planned or staged on the maintainer's machine. None of them are in a r
 - **More languages.** Testing voices and models for Chinese, Japanese, Dutch and others. Phonon multilingual already covers English, Spanish, French, German and Portuguese.
 - **Classifier for learning.** One approve / reject / log step for what she learns: memories, object names and scene descriptions. Simple rules run first, and an optional local classifier model ([Cloudflare clef-flash](https://huggingface.co/Cloudflare/clef-flash), about 19 GB) can review the rest. Anything unclear waits for a grown-up to approve.
 - **Memory with Hermes Agent.** Documenting how her long-term memory works with [Hermes memory](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory): what she keeps, how to view and clear it, and kid-safe rules.
-- **The server fork and add-on packs** in this repo, and a beginner setup script.
+- **A beginner setup script** for the voice server and add-ons. The add-ons themselves are already in [server/](./server/README.md).
 
 ## AI transparency
 
@@ -132,6 +132,10 @@ Questions or "this didn't work for me": [open a GitHub issue](https://github.com
 - [docs/PLATFORMS.md](./docs/PLATFORMS.md): what runs on Windows, Linux and macOS.
 - [docs/HERMES.md](./docs/HERMES.md): Hermes Agent setup, her profile, writing SOUL.md.
 - [docs/SELF-HOSTING.md](./docs/SELF-HOSTING.md): run your own voice server, home-only or with your own domain.
+- [server/README.md](./server/README.md): the patched voice server and every add-on, with the installer.
+- [docs/HOTSPOT.md](./docs/HOTSPOT.md): run her from an iPhone or Android hotspot.
+- [docs/EMOTES.md](./docs/EMOTES.md): every face, alias and what triggers it, and how to add one.
+- [docs/ACTOR-MODE.md](./docs/ACTOR-MODE.md): Actor Mode scripts, the full format and a first-script walkthrough.
 - [docs/SPRITES.md](./docs/SPRITES.md): make your own face, with AI image prompts.
 - [faces/starter/](./faces/starter/): the CC0 starter faces and the script that draws them.
 - [faces/tribute/nous-girl/](./faces/tribute/nous-girl/README.md): the Nous-Girl tribute face (fan art, not MIT).
