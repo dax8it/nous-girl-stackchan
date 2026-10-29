@@ -1,5 +1,14 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Ask a question or get setup help
+    url: https://github.com/dax8it/nous-girl-stackchan/discussions/categories/q-a
+    about: Questions go to Discussions Q&A, where answers help the next person too.
+  - name: Share an idea
+    url: https://github.com/dax8it/nous-girl-stackchan/discussions/categories/ideas
+    about: Ideas and wishes are discussed in Discussions first.
+  - name: Show your build
+    url: https://github.com/dax8it/nous-girl-stackchan/discussions/categories/show-and-tell
+    about: Share your robot, your own face or a script in Show and tell.
   - name: Report a security problem (privately)
     url: https://github.com/dax8it/nous-girl-stackchan/security/advisories/new
     about: Please do not open a public issue for security problems.

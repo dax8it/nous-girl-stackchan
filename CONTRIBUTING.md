@@ -4,7 +4,10 @@ Thanks for helping. This is a small hobby project with one maintainer, so please
 
 ## Report a problem or ask a question
 
-- Open an [issue](https://github.com/dax8it/nous-girl-stackchan/issues/new/choose) and pick **Bug report**, **Feature request** or **Question**.
+- **Questions and setup help:** [Discussions Q&A](https://github.com/dax8it/nous-girl-stackchan/discussions/categories/q-a).
+- **Ideas:** [Discussions Ideas](https://github.com/dax8it/nous-girl-stackchan/discussions/categories/ideas). **Your build:** [Show and tell](https://github.com/dax8it/nous-girl-stackchan/discussions/categories/show-and-tell).
+- **Something broken:** open an [issue](https://github.com/dax8it/nous-girl-stackchan/issues/new/choose) and pick **Bug report** (or **Feature request** for a specific, agreed change).
+- **Quick chat:** X DMs to [@alexcovo_eth](https://x.com/alexcovo_eth). Replies are best effort.
 - Include your firmware version (Settings > About) and face.
 - **Redact logs first:** no Wi-Fi names or passwords, server addresses, device IDs, tokens, email addresses or personal details.
 - Security problems: see [SECURITY.md](./SECURITY.md). Don't post them publicly.

@@ -2,7 +2,7 @@
 
 ## Report a problem privately
 
-Please **don't open a public issue** for security problems. Use GitHub's private reporting instead:
+Please **don't open a public issue or discussion, or send it by X DM,** for security problems. Use GitHub's private reporting instead:
 
 **[Report a vulnerability](https://github.com/dax8it/nous-girl-stackchan/security/advisories/new)** (Security tab > Report a vulnerability).
 
