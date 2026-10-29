@@ -1,10 +1,10 @@
 # Nous-Girl
 
-**A self-hosted [StackChan](https://github.com/m5stack/StackChan) robot with a headphone-girl face, a real memory, and a DJ habit.**
+**A self-hosted [StackChan](https://github.com/m5stack/StackChan) robot with a face you choose, a real memory, and a DJ habit.**
 
-> **Status:** a hobby project with one maintainer, built with heavy AI assistance. It runs end to end on the maintainer's own robot and computer, but nobody has tried it on anyone else's hardware yet. Firmware binaries come with checksums and rollback steps; server and brain add-ons are still being cleaned up for release.
+> **Status:** a hobby project with one maintainer, built with heavy AI assistance. It runs end to end on the maintainer's own robot and computer, but nobody has tried it on anyone else's hardware yet. Public firmware comes with checksums and rollback steps, original starter faces and **no server built in**: you run your own. Server and brain add-ons are still being cleaned up for release.
 
-> **Current firmware: `v3.6.7-dj7`** (Oct 28, 2026). Fallback: `v3.6.7-dj5`. Full history, checksums and rollbacks: [VERSIONS.md](./VERSIONS.md).
+> **Current firmware: `v3.6.7-dj7`** (Oct 28, 2026), with a robot, boy or girl face. Public checkpoints: v3.6, v3.6.6, v3.6.7-dj5, v3.6.7-dj7. Full history, checksums and rollbacks: [VERSIONS.md](./VERSIONS.md).
 
 Nous-Girl runs custom firmware on the M5Stack StackChan K151 (CoreS3). The [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) voice server runs in Docker on your computer and handles listening and speaking with local models. Her brain is [Hermes Agent](https://hermes-agent.nousresearch.com/) from Nous Research, which gives her long-term memory and tools, or a plain local model through [Ollama](https://ollama.com/) if you want to keep it simple.
 
@@ -24,7 +24,7 @@ Hermes setup, her profile and how to write her personality file (`SOUL.md`): [do
 
 Every feature, with voice commands, the version that added it, setup and undo: [docs/FEATURES.md](./docs/FEATURES.md).
 
-- **Faces and lip sync:** animated headphone-girl faces that follow her state, vowel-shaped mouth, moods from happy to scowl.
+- **Faces and lip sync:** animated faces that follow her state, vowel-shaped mouth, moods from happy to scowl. Three CC0 starter faces, or [make your own](./docs/SPRITES.md).
 - **Wake words:** "Hey Nous-Girl" and "Hey Jarvis". Tap the screen to stop her.
 - **Lights, dance and head touch:** 12 RGB LEDs, preset and recorded dances, a 3-pad head sensor.
 - **Music, DJ mode and radio:** songs from your computer or an SD card, set lists, a live 13-band equalizer, beat-synced colors, internet radio, and a rave mode for grown-ups.
@@ -41,7 +41,7 @@ Every feature, with voice commands, the version that added it, setup and undo: [
 | Component | Host | Notes |
 |---|---|---|
 | StackChan K151 (robot) | ESP32-S3 on your desk | Nous-Girl firmware, see [VERSIONS.md](./VERSIONS.md) |
-| xiaozhi-esp32-server | your computer, Docker | voice in/out, OTA, robot bridge |
+| xiaozhi-esp32-server | your computer, Docker | voice in/out, OTA, robot bridge. Your own server: [docs/SELF-HOSTING.md](./docs/SELF-HOSTING.md) |
 | Speech-to-text | your computer | Parakeet (MLX) on a Mac |
 | Text-to-speech | your computer | Phonon voice servers |
 | Hermes Agent (optional) | your computer | profile `nous-girl`, API server on localhost |
@@ -49,9 +49,9 @@ Every feature, with voice commands, the version that added it, setup and undo: [
 
 ## Get it running
 
-1. **Back up your robot,** then flash the current firmware. Exact commands, including moving from stock firmware: [VERSIONS.md](./VERSIONS.md#how-to-flash).
-2. **Start the voice server** ([xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server)) in Docker and download the models below.
-3. **Connect the robot:** hold the screen 1.5 s for Settings, join Wi-Fi, and enter your server's OTA URL on the Server page.
+1. **Back up your robot,** then flash the current firmware (pick robot, boy or girl). Exact commands, including moving from stock firmware: [VERSIONS.md](./VERSIONS.md#how-to-flash).
+2. **Start your own voice server** ([xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server)) in Docker on your computer, home-only or with your own domain: [docs/SELF-HOSTING.md](./docs/SELF-HOSTING.md). Download the models below.
+3. **Connect the robot:** hold the screen 1.5 s for Settings, join Wi-Fi, and type **your** server's OTA URL on the Server page (for example `http://192.168.1.25:8003/xiaozhi/ota/`).
 4. **Optional:** set up Hermes as her brain: [docs/HERMES.md](./docs/HERMES.md).
 5. **Say "Hey Nous-Girl".**
 
@@ -73,9 +73,15 @@ No model files are in this repo. Download them from the links.
 | [Silero VAD](https://github.com/snakers4/silero-vad) | detects when someone is speaking | 6.9 MB | MIT, ships with the server |
 | [esp-dl face detect](https://github.com/espressif/esp-dl) | follow faces, on the robot | in firmware | MIT |
 
-## Gallery
+## Gallery: bring your own face
 
-Coming soon: one picture per face (neutral, happy, sad, thinking, sleeping, pet, shake, speaking, listening, look left/right, email, scowl) and the DJ screen. Waiting on the artwork license.
+Public builds ship three original starter faces, drawn by a script and released as CC0. **Robot** is the default; **boy** and **girl** are separate downloads.
+
+![Robot, boy and girl starter faces](./faces/starter/starter-faces-combined.png)
+
+Every frame of each face: [robot](./faces/starter/robot/preview.png), [boy](./faces/starter/boy/preview.png), [girl](./faces/starter/girl/preview.png).
+
+The maintainer's own robot uses a tribute face that is not part of this repo. You can add your own art to your robot: the exact format, AI image prompts and conversion steps are in [docs/SPRITES.md](./docs/SPRITES.md). Only publish art you made or have the right to share.
 
 ## Coming soon (not released yet)
 
@@ -87,7 +93,7 @@ These are planned or staged on the maintainer's machine. None of them are in a r
 - **More languages.** Testing voices and models for Chinese, Japanese, Dutch and others. Phonon multilingual already covers English, Spanish, French, German and Portuguese.
 - **Classifier for learning.** One approve / reject / log step for what she learns: memories, object names and scene descriptions. Simple rules run first, and an optional local classifier model ([Cloudflare clef-flash](https://huggingface.co/Cloudflare/clef-flash), about 19 GB) can review the rest. Anything unclear waits for a grown-up to approve.
 - **Memory with Hermes Agent.** Documenting how her long-term memory works with [Hermes memory](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory): what she keeps, how to view and clear it, and kid-safe rules.
-- **The server fork and add-on packs** in this repo, a beginner setup script, and the artwork gallery.
+- **The server fork and add-on packs** in this repo, and a beginner setup script.
 
 ## AI transparency
 
@@ -102,9 +108,12 @@ Questions or "this didn't work for me": [open a GitHub issue](https://github.com
 - [VERSIONS.md](./VERSIONS.md): every firmware version, checksums, flashing and rollback.
 - [docs/FEATURES.md](./docs/FEATURES.md): every feature in plain English.
 - [docs/HERMES.md](./docs/HERMES.md): Hermes Agent setup, her profile, writing SOUL.md.
+- [docs/SELF-HOSTING.md](./docs/SELF-HOSTING.md): run your own voice server, home-only or with your own domain.
+- [docs/SPRITES.md](./docs/SPRITES.md): make your own face, with AI image prompts.
+- [faces/starter/](./faces/starter/): the CC0 starter faces and the script that draws them.
 - [docs/RELEASING.md](./docs/RELEASING.md): release tags and assets.
 - [docs/TOOLCHAIN-VERSIONS.md](./docs/TOOLCHAIN-VERSIONS.md): the exact ESP-IDF toolchain.
-- [sprite-scripts/](./sprite-scripts/): scripts used to build the face frames.
+- [sprite-scripts/](./sprite-scripts/): scripts that turn key pictures into face animations.
 
 ## References
 

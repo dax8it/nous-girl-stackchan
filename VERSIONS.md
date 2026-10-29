@@ -2,14 +2,28 @@
 
 Every firmware build, oldest to newest, with what it added, what's known to be wrong with it, its SHA-256, and how to flash it or roll back to it. If you want to start from an earlier version, pick a row and use its flash command.
 
-> **Current recommended: `v3.6.7-dj7`** (Oct 28, 2026). Confirmed working on the maintainer's robot.
+> **Current recommended: `v3.6.7-dj7`** (Oct 28, 2026), with a robot (default), boy or girl face.
 > **Safe fallback: `v3.6.7-dj5`.** Avoid `v3.6.7-dj6`: it can reboot while showing a meme preview.
 
 All times are US Eastern. All builds target the **M5Stack StackChan K151 (CoreS3, ESP32-S3, 16 MB flash)**, built with ESP-IDF 6.1.0 (see [docs/TOOLCHAIN-VERSIONS.md](./docs/TOOLCHAIN-VERSIONS.md)). Upstream bases: [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) and fairy-stackchan.
 
 ## Where the binaries are
 
-Binaries are **not committed to git**. Each version is a [GitHub Release](https://github.com/dax8it/The-one-above-all-stackchan/releases) with its `.bin` attached (see [docs/RELEASING.md](./docs/RELEASING.md)). Checksums for every file are in [firmware/SHA256SUMS](./firmware/SHA256SUMS). Check before you flash:
+Binaries are **not committed to git**. Four checkpoints have a [GitHub Release](https://github.com/dax8it/The-one-above-all-stackchan/releases) with **public builds**: **v3.6, v3.6.6, v3.6.7-dj5 and v3.6.7-dj7**. Every other version is described here for history, with no download.
+
+A public build is that version rebuilt with the CC0 starter faces ([faces/starter/](./faces/starter/)) and **no server address inside**: you type your own on the Server page ([docs/SELF-HOSTING.md](./docs/SELF-HOSTING.md)). Settings > About says `Nous-Girl public <version> (<face> face)`. Details: [docs/RELEASING.md](./docs/RELEASING.md).
+
+Each release has, per face:
+
+| File | Flash at | Use |
+|---|---|---|
+| `nous-girl-<version>-<face>-full-0x0.bin` | `0x0` | first install, from stock firmware or an older layout (wipes Wi-Fi) |
+| `nous-girl-<version>-<face>-app.bin` | `0x20000` | update or roll back, keeps Wi-Fi |
+| `nous-girl-<version>-<face>-assets.bin` | `0xB00000` | faces and wake-word models; flash with the app when you switch faces |
+
+v3.6.7-dj7 comes in `robot`, `boy` and `girl`. The other checkpoints come in `robot` only; to use another face with them, build it yourself ([docs/SPRITES.md](./docs/SPRITES.md)).
+
+Checksums: [firmware/SHA256SUMS](./firmware/SHA256SUMS) and `SHA256SUMS` in each release. Check before you flash:
 
 ```
 shasum -a 256 -c SHA256SUMS --ignore-missing
@@ -25,23 +39,23 @@ shasum -a 256 -c SHA256SUMS --ignore-missing
 | v3.1 | Oct 22 | Settings taps fixed | old | superseded |
 | v3.2 | Oct 22 | v3.1 + "Home server" preset | old | superseded |
 | v3.3 | Oct 22 | Fixes no sound / dragging speech | old | superseded |
-| v3.4 | Oct 22 | Shake reaction ends properly | old | **last old-layout checkpoint** |
-| v3.5 | Oct 23 | Vowel lip sync, party face, head touch, talking lights | old | checkpoint |
-| v3.6 | Oct 23 | On-device face detection, **new partition table** | new | **first new-layout checkpoint (full flash)** |
+| v3.4 | Oct 22 | Shake reaction ends properly | old | last old-layout checkpoint (no public build) |
+| v3.5 | Oct 23 | Vowel lip sync, party face, head touch, talking lights | old | superseded |
+| v3.6 | Oct 23 | On-device face detection, **new partition table** | new | **public checkpoint**, first on the new layout |
 | v3.6.1 | Oct 23 | Memory fix for connect errors, level head | new | superseded |
 | v3.6.2 | Oct 23 | Photo / face ID reliability | new | superseded |
 | v3.6.3 | Oct 23 | Follow faces actually runs, voice switch | new | superseded |
 | v3.6.4 | Oct 23 | Photo fixes, step-by-step photo logs | new | superseded |
 | v3.6.5 | Oct 23 | Battery power-on fix, phone hotspot setup | new | superseded |
-| v3.6.6 | Oct 23 | Crash report at boot, no Wi-Fi scan while connected | new | **pre-DJ checkpoint** |
+| v3.6.6 | Oct 23 | Crash report at boot, no Wi-Fi scan while connected | new | **public checkpoint**, last before DJ |
 | v3.6.6-ir | Oct 24 | Side build: IR remote learn/send | new | experimental, never run on hardware |
 | v3.6.7-dj | Oct 27 | DJ mode, set lists, swipe next/prev, scowl face | new | superseded |
 | v3.6.7-dj2 | Oct 27 | 13-band equalizer screen | new | superseded |
 | v3.6.7-dj3 | Oct 27 | Color cycling EQ, beat flash, LEDs match | new | superseded |
 | v3.6.7-dj4 | Oct 27 | Rave mode | new | superseded |
-| v3.6.7-dj5 | Oct 27 | Reliable swipes, rave by voice only | new | **fallback** |
+| v3.6.7-dj5 | Oct 27 | Reliable swipes, rave by voice only | new | **public checkpoint**, fallback |
 | v3.6.7-dj6 | Oct 28 | Full-screen meme tool | new | **known crash, avoid** |
-| v3.6.7-dj7 | Oct 28 | Meme preview crash fixed, memory freed | new | **current recommended** |
+| v3.6.7-dj7 | Oct 28 | Meme preview crash fixed, memory freed | new | **public checkpoint**, current recommended |
 
 "Layout" is the flash partition table. **old** = app slots at 0x20000/0x410000, assets at 0x800000. **new** (`16m_hg36`, from v3.6) = two 5.4375 MB app slots at 0x20000/0x590000, assets 5 MB at 0xB00000. Moving between old and new needs one full flash (see [Moving between layouts](#moving-between-layouts)).
 
@@ -57,15 +71,24 @@ esptool --chip esp32s3 -p PORT -b 460800 read-flash 0x0 0x1000000 my-stackchan-b
 
 Keep that file private: it holds your Wi-Fi and settings.
 
-**App-only flash** (keeps Wi-Fi and settings). Works between any two versions on the same layout:
+**First install** (from stock firmware, an older layout, or if unsure). Wipes Wi-Fi and settings, so you redo Wi-Fi setup after. Pick your face:
 
 ```
-esptool --chip esp32s3 -p PORT -b 460800 --before default-reset --after hard-reset write-flash --flash-mode dio --flash-size 16MB --flash-freq 80m 0x20000 xiaozhi-v3.6.7-dj7.bin
+esptool --chip esp32s3 -p PORT -b 460800 --before default-reset --after no-reset erase-flash
+```
+```
+esptool --chip esp32s3 -p PORT -b 460800 --before default-reset --after hard-reset write-flash --flash-mode dio --flash-size 16MB --flash-freq 80m 0x0 nous-girl-v3.6.7-dj7-robot-full-0x0.bin
 ```
 
-Swap the file name for any other version. Settings > About shows the version afterwards.
+**Update, roll back or switch face** (already on v3.6 or later, keeps Wi-Fi and settings). Flash the app and the assets of the same version and face:
 
-**Rolling back** is the same command with the older file. Roll back one step at a time, and only when something is broken. Don't run several rollback commands in a row: the last one wins.
+```
+esptool --chip esp32s3 -p PORT -b 460800 --before default-reset --after hard-reset write-flash --flash-mode dio --flash-size 16MB --flash-freq 80m 0x20000 nous-girl-v3.6.7-dj7-robot-app.bin 0xb00000 nous-girl-v3.6.7-dj7-robot-assets.bin
+```
+
+Swap the version or face in the file names for any other public build. Settings > About shows the version and face afterwards.
+
+**Rolling back** is the same command with an older checkpoint (v3.6.7-dj5, v3.6.6, v3.6). Roll back one step at a time, and only when something is broken. Don't run several rollback commands in a row: the last one wins.
 
 **Restore your backup** (exactly what you had before):
 
@@ -75,21 +98,12 @@ esptool --chip esp32s3 -p PORT -b 460800 --before default-reset --after hard-res
 
 ### Moving between layouts
 
-- **Old to new (anything up to v3.5, or stock firmware, to v3.6 or later):** do one full flash of `headphone-girl-merged-0x0-v3.6.bin` at `0x0`, then app-only flash the version you want. The full flash wipes Wi-Fi, so you redo hotspot setup.
-
-  ```
-  esptool --chip esp32s3 -p PORT -b 460800 --before default-reset --after no-reset erase-flash
-  ```
-  ```
-  esptool --chip esp32s3 -p PORT -b 460800 --before default-reset --after hard-reset write-flash --flash-mode dio --flash-size 16MB --flash-freq 80m 0x0 headphone-girl-merged-0x0-v3.6.bin
-  ```
-  ```
-  esptool --chip esp32s3 -p PORT -b 460800 --before default-reset --after hard-reset write-flash --flash-mode dio --flash-size 16MB --flash-freq 80m 0x20000 xiaozhi-v3.6.7-dj7.bin
-  ```
-- **New back to old (v3.6+ to v3.4 or earlier):** full flash `headphone-girl-merged-0x0-v3.4.bin` at `0x0` (same erase + write commands, different file). For v3.5, flash v3.4 full first, then `xiaozhi-v3.5.bin` at `0x20000`.
-- v3 and later on the old layout also need the assets (faces and wake-word models) at `0x800000`. The merged images already include them.
+- **To the new layout** (stock firmware or anything up to v3.5): use the **first install** above. Every `full-0x0` image already has the new partition table.
+- **Back to the old layout** (v3.5 or earlier): there is no public old-layout build. Restore your own backup.
 
 ## Version notes
+
+File names in these notes are the maintainer's own builds, kept for history. They are not published; use the public checkpoints above.
 
 ### v1, v2, v3 (Oct 22): the first builds
 - **v1** `headphone-girl-merged-0x0.bin`, full flash at 0x0. Headphone-girl GIF faces that follow her state, 12 RGB lights, music and dancing, joystick dance recorder, microSD support, camera.
@@ -133,37 +147,30 @@ v3.6.6 plus the built-in IR receiver and transmitter: tools `self.ir.learn`, `se
 
 ## Checksums (SHA-256)
 
-| Version | File | SHA-256 |
-|---|---|---|
-| v1 | headphone-girl-merged-0x0.bin | `09256623232e2d0c4c0752ffae4eb59610fdacb364301c42fcf39dbaf71b94e1` |
-| v2 | headphone-girl-merged-0x0-v2.bin | `d2c5b13ad87458e2835965656e09746d8902455064462a8db1a77230f4d4ff9b` |
-| v3 | headphone-girl-merged-0x0-v3.bin | `9596811ce338e386cfdd2b1f91da1ec0a31c4068f7f6a6f805b312a2135823f7` |
-| v3.1 | headphone-girl-merged-0x0-v3.1.bin | `ae35bbb4a0431d456ed3de749f0a06bf091f2fd9735b2d7a8d5bc9678b3535de` |
-| v3.1 | xiaozhi-v3.1.bin (app) | `393578e5b3106f31cfce4bb5f049f411a3bd9dac50731a2fc6251eb9da1bc90e` |
-| v3.2 | headphone-girl-merged-0x0-v3.2.bin | `ae2b457ee08c6ec388b14648375b68402f2216f11eef0e1331e6d89fb23e7894` |
-| v3.2 | xiaozhi-v3.2.bin (app) | `ca196569fcb5763eccf987699711b57604cf99de5496e7ee0a595ed849f9a3b0` |
-| v3.3 | headphone-girl-merged-0x0-v3.3.bin | `8fb733b2623a7d0c6cfbc0f5dd1560a622be785672ced82128f7e3f55d5c067b` |
-| v3.3 | xiaozhi-v3.3.bin (app) | `653d89526847049e38d6123a98e1e7b4a1525ad34ed2902d8151abdb50f4e32e` |
-| v3.4 | headphone-girl-merged-0x0-v3.4.bin | `4749f83a397fadef288790ee35a063f7b6892898cb05242612152dd09f69551d` |
-| v3.4 | xiaozhi-v3.4.bin (app) | `49026fe36fcabd050204f0304f604d68c528acb66df4433eb46443371b88c6cc` |
-| v3.5 | xiaozhi-v3.5.bin (app, old layout) | `43ab6866d8ee307675135d5e4f327f78e883944dbdaf6c9d3b15b75ab8416a85` |
-| v3.6 | headphone-girl-merged-0x0-v3.6.bin | `a591d6273fdb8286f31b34c6685701df1a71e4a432a969eaf85c234333fbe40a` |
-| v3.6 | xiaozhi-v3.6.bin (app) | `06544d4271bf838879916dd57170e26c54f8f46d13bf7827dd4d9f9b9a36fe40` |
-| v3.6 | assets-v3.6.bin (0xB00000) | `430a0920ec8564dd1d06d61a93d51eabe637fa315f691ffd1ef4048d715a2536` |
-| v3.6.1 | xiaozhi-v3.6.1.bin | `cde1059ed7b9073e85602815622603a6592ca9e9e73c49956af89d5ec06d0e15` |
-| v3.6.2 | xiaozhi-v3.6.2.bin | `0c04230d6788887bcbc583601a532c020a11c16724b92f322e44e11c02518a14` |
-| v3.6.3 | xiaozhi-v3.6.3.bin | `4d390253ec071f75bdb7ddca629b76a7c18d01cd8af286afccaf47915284ed8d` |
-| v3.6.4 | xiaozhi-v3.6.4.bin | `a66455457e4511f9e596e554005cad01588f85f61f17b0f9b99158efbd1761f0` |
-| v3.6.5 | xiaozhi-v3.6.5.bin | `297ee9ee68242f4c8b7fb8da9e13cf155636f6ec9965b7755d8f65f59a1efc34` |
-| v3.6.6 | xiaozhi-v3.6.6.bin | `973c2d9c3c8d66180714048dd174f818509c6b876994d1a35bdf738fca494678` |
-| v3.6.6-ir | xiaozhi-v3.6.6-ir.bin | `cce39b27c54a36bdfedcea4212ce30e6562cab3fad71cebd6761057886bc3a8f` |
-| v3.6.7-dj | xiaozhi-v3.6.7-dj.bin | `9f4751fbc324861d0eaaf410c2d07c1a1c51564dfd1cc8456811236e4cadaa1c` |
-| v3.6.7-dj2 | xiaozhi-v3.6.7-dj2.bin | `3ce465b9565c3dedb4a436baf6e3b7dfa095c0aeceb5cb4992a642e4c9efdea2` |
-| v3.6.7-dj3 | xiaozhi-v3.6.7-dj3.bin | `8318768942524ccca989334ceb02034659de268cae0cd3fb64a9e78c3714583c` |
-| v3.6.7-dj4 | xiaozhi-v3.6.7-dj4.bin | `6048f09f160566a2f88da7e6e3f80860cba94d4cc7aaa422a1c6f67b738f7916` |
-| v3.6.7-dj5 | xiaozhi-v3.6.7-dj5.bin | `766105b069b6901733725ffb02026c39eea2f41d81c1ff6d60f9adf24e15a89e` |
-| v3.6.7-dj6 | xiaozhi-v3.6.7-dj6.bin | `887caee15817fecad4d4e7b13d66bdbed5339136d5b19b1ae690e8edcf34618c` |
-| v3.6.7-dj7 | xiaozhi-v3.6.7-dj7.bin | `cd6fefa5d7551ef9a78dfbb81a649b7f2b86315ea97b1e37543b6b1ab628bc04` |
+Public builds only. Same list as [firmware/SHA256SUMS](./firmware/SHA256SUMS).
+
+| Version | Face | File | SHA-256 |
+|---|---|---|---|
+| v3.6.7-dj7 | boy | `nous-girl-v3.6.7-dj7-boy-app.bin` | `9f95b36146145f6d70c4f9c4f5c5942539686bf75c467a30ad4b276f1781a71c` |
+| v3.6.7-dj7 | boy | `nous-girl-v3.6.7-dj7-boy-assets.bin` | `dffa0340c81bc7b0336d8f1b21d0d48730a44d5b17b2fc2dd54e960c357cdc53` |
+| v3.6.7-dj7 | boy | `nous-girl-v3.6.7-dj7-boy-full-0x0.bin` | `1fde8775ed9160a45df2d3cca42613fba6ca43cb68a282f63d62977686b3a1c6` |
+| v3.6.7-dj7 | girl | `nous-girl-v3.6.7-dj7-girl-app.bin` | `57fb611174620345f4c4bd28c2ef25b9e69700f993d579dc02dec94864762680` |
+| v3.6.7-dj7 | girl | `nous-girl-v3.6.7-dj7-girl-assets.bin` | `268390a3dc25856069aeaaec27db938114405f8c28ebc39f5a6db15f3fe64d8d` |
+| v3.6.7-dj7 | girl | `nous-girl-v3.6.7-dj7-girl-full-0x0.bin` | `f3657f67728a9bd5b850e1d517c9550ad29714ea462fefe9aabf5ed0ad906c26` |
+| v3.6.7-dj7 | robot | `nous-girl-v3.6.7-dj7-robot-app.bin` | `910689910cdc73bf7a42f3c482418b59d3dfc2ca40e4a64a3790a865273d8b53` |
+| v3.6.7-dj7 | robot | `nous-girl-v3.6.7-dj7-robot-assets.bin` | `699f7f52029c1657d59194f72f373122ce36fa1a517a7417e38982a63a303cd8` |
+| v3.6.7-dj7 | robot | `nous-girl-v3.6.7-dj7-robot-full-0x0.bin` | `54c492de2a09ecd9cb6ceaf01c29a10cde27905678dd6131043e547e910dc0a0` |
+| v3.6.7-dj5 | robot | `nous-girl-v3.6.7-dj5-robot-app.bin` | `a04188e7cccc52bd844fb2ff93a9baf40afa57b72199c24eba85551a28728c8b` |
+| v3.6.7-dj5 | robot | `nous-girl-v3.6.7-dj5-robot-assets.bin` | `699f7f52029c1657d59194f72f373122ce36fa1a517a7417e38982a63a303cd8` |
+| v3.6.7-dj5 | robot | `nous-girl-v3.6.7-dj5-robot-full-0x0.bin` | `8ffaec86350702e54b88e5b6242275d092739667877d8c1699cde334866c013e` |
+| v3.6.6 | robot | `nous-girl-v3.6.6-robot-app.bin` | `326e63b3e070b6c093f4fc11048f442a675487e3ae71d39b7023532148445568` |
+| v3.6.6 | robot | `nous-girl-v3.6.6-robot-assets.bin` | `699f7f52029c1657d59194f72f373122ce36fa1a517a7417e38982a63a303cd8` |
+| v3.6.6 | robot | `nous-girl-v3.6.6-robot-full-0x0.bin` | `cffed976dc7f301dceac22b13f2742040efe39dfc85f22fc2568452ac85bee28` |
+| v3.6 | robot | `nous-girl-v3.6-robot-app.bin` | `bcca8dad2fe6af479cec0caa41f24675ffb60bedf19cfdc4f843c3dfd5086fc2` |
+| v3.6 | robot | `nous-girl-v3.6-robot-assets.bin` | `699f7f52029c1657d59194f72f373122ce36fa1a517a7417e38982a63a303cd8` |
+| v3.6 | robot | `nous-girl-v3.6-robot-full-0x0.bin` | `645daed12c05e88ecf75831b08bc4716d30d0565c843a4604f583502844afcfa` |
+
+The robot assets image is the same file in every checkpoint, so its checksum repeats.
 
 Building from source instead: the patched firmware source for each version is not public yet (see the open items in [docs/RELEASING.md](./docs/RELEASING.md)). The toolchain is in [docs/TOOLCHAIN-VERSIONS.md](./docs/TOOLCHAIN-VERSIONS.md).
 

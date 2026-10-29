@@ -15,10 +15,10 @@ Voice examples assume you wake her first with "Hey Nous-Girl" (or "Hey Jarvis").
 - **Undo:** turn it off in Settings. No flash needed.
 
 ## Faces, lip sync and moods
-- **What it does:** animated headphone-girl faces that follow her state (listening, thinking, speaking, sleeping), a mouth that moves with her voice, and moods: happy, sad, thinking, pet (loving), shake (dizzy), look left/right, email, scowl.
+- **What it does:** animated faces (public builds: the CC0 robot, boy or girl starter face, or [your own](./SPRITES.md)) that follow her state (listening, thinking, speaking, sleeping), a mouth that moves with her voice, and moods: happy, sad, thinking, pet (loving), shake (dizzy), look left/right, email, scowl.
 - **How to use:** automatic. Her brain can also set a face ("look happy").
 - **Added in:** v1 (faces), v3 (lip sync), v3.5 (vowel mouth shapes, talking in other moods, party face), v3.6.7-dj (scowl).
-- **Setup:** Settings > Screen: lip sync on/off, vowel mouth shapes, talking lights. The power key switches face style (girl or classic) in v3.6+.
+- **Setup:** Settings > Screen: lip sync on/off, vowel mouth shapes, talking lights. The power key switches face style (drawn face or classic line face) in v3.6+.
 - **Undo:** the same switches.
 
 ## Lights
