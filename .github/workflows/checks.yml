@@ -48,6 +48,7 @@ jobs:
             --exclude '^https://robot\.example\.com'
             --exclude '^http://(192\.168|localhost|127\.0\.0\.1)'
             --exclude '^https://github\.com/dax8it/nous-girl-stackchan/(releases|issues|security)'
+            --exclude '^https://(www\.)?(x|twitter)\.com'
             '**/*.md'
           fail: true
 
