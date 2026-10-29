@@ -1,6 +1,6 @@
 # Third-party notices
 
-This repo's own code and docs are under the [MIT License](LICENSE). The firmware builds published in this repo's releases also contain the third-party software listed below. Each part keeps its own license. Full license texts are in [licenses/](licenses/). Where an upstream component is Apache-2.0, the full text is [licenses/Apache-2.0.txt](licenses/Apache-2.0.txt); none of the Apache-2.0 components in the build ship a NOTICE file.
+Nous-Girl is created by Alex Covo (X: [@alexcovo_eth](https://x.com/alexcovo_eth)). This repo's own code and docs are under the [MIT License](LICENSE), copyright 2026 Alex Covo (dax8it). The firmware builds published in this repo's releases also contain the third-party software listed below. Each part keeps its own license. Full license texts are in [licenses/](licenses/). Where an upstream component is Apache-2.0, the full text is [licenses/Apache-2.0.txt](licenses/Apache-2.0.txt); none of the Apache-2.0 components in the build ship a NOTICE file.
 
 How this list was made: every license below was read from the LICENSE file or `idf_component.yml` in the actual dj7 source tree used for the release builds (xiaozhi-esp32 `5d54beb7` plus the fairy-stackchan layer, ESP-IDF 6.1.0, component versions from `dependencies.lock`), or from the upstream repository. Items we could not confirm are marked **unconfirmed**. Email addresses inside upstream license texts were replaced with "email omitted, see upstream"; the upstream files are unchanged.
 

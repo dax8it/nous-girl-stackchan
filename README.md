@@ -136,9 +136,13 @@ Questions or "this didn't work for me": [open a GitHub issue](https://github.com
 - [docs/TOOLCHAIN-VERSIONS.md](./docs/TOOLCHAIN-VERSIONS.md): the exact ESP-IDF toolchain.
 - [sprite-scripts/](./sprite-scripts/): scripts that turn key pictures into face animations.
 
+## Credits
+
+Created by **Alex Covo**. X: [@alexcovo_eth](https://x.com/alexcovo_eth). Built on the open source projects listed in [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
+
 ## License
 
-- Code and docs: [MIT](./LICENSE), copyright 2026 dax8it.
+- Code and docs: [MIT](./LICENSE), copyright 2026 Alex Covo (dax8it).
 - Starter faces in `faces/starter/`: [CC0](./faces/starter/LICENSE) (public domain).
 - Tribute art in `faces/tribute/`: **excluded** from the MIT license, see [its README](./faces/tribute/nous-girl/README.md).
 - Firmware builds also contain third-party software (xiaozhi-esp32, ESP-IDF, LVGL, esp-sr, M5Stack and more), each under its own license: see [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) and the full texts in [licenses/](./licenses/).
