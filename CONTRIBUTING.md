@@ -4,7 +4,7 @@ Thanks for helping. This is a small hobby project with one maintainer, so please
 
 ## Report a problem or ask a question
 
-- Open an [issue](https://github.com/dax8it/The-one-above-all-stackchan/issues/new/choose) and pick **Bug report**, **Feature request** or **Question**.
+- Open an [issue](https://github.com/dax8it/nous-girl-stackchan/issues/new/choose) and pick **Bug report**, **Feature request** or **Question**.
 - Include your firmware version (Settings > About) and face.
 - **Redact logs first:** no Wi-Fi names or passwords, server addresses, device IDs, tokens, email addresses or personal details.
 - Security problems: see [SECURITY.md](./SECURITY.md). Don't post them publicly.

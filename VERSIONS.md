@@ -5,13 +5,13 @@ Every firmware build, oldest to newest, with what it added, what's known to be w
 > **Current recommended: `v3.6.7-dj7`** (Oct 28, 2026), with a robot (default), boy or girl face.
 > **Safe fallback: `v3.6.7-dj5`.** Avoid `v3.6.7-dj6`: it can reboot while showing a meme preview.
 >
-> **Beta:** builds verified by scan and checksum, not yet tested on hardware. All public builds are pre-releases. Please [report issues](https://github.com/dax8it/The-one-above-all-stackchan/issues).
+> **Beta:** builds verified by scan and checksum, not yet tested on hardware. All public builds are pre-releases. Please [report issues](https://github.com/dax8it/nous-girl-stackchan/issues).
 
 All times are US Eastern. All builds target the **M5Stack StackChan K151 (CoreS3, ESP32-S3, 16 MB flash)**, built with ESP-IDF 6.1.0 (see [docs/TOOLCHAIN-VERSIONS.md](./docs/TOOLCHAIN-VERSIONS.md)). Upstream bases: [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) and fairy-stackchan.
 
 ## Where the binaries are
 
-Binaries are **not committed to git**. Four checkpoints have a [GitHub Release](https://github.com/dax8it/The-one-above-all-stackchan/releases) with **public builds**: **v3.6, v3.6.6, v3.6.7-dj5 and v3.6.7-dj7**. Every other version is described here for history, with no download.
+Binaries are **not committed to git**. Four checkpoints have a [GitHub Release](https://github.com/dax8it/nous-girl-stackchan/releases) with **public builds**: **v3.6, v3.6.6, v3.6.7-dj5 and v3.6.7-dj7**. Every other version is described here for history, with no download.
 
 A public build is that version rebuilt with the CC0 starter faces ([faces/starter/](./faces/starter/)) and **no server address inside**, not even the upstream cloud. An unconfigured robot connects nowhere and opens Settings > Server; you type your own address ([first boot steps](./docs/SELF-HOSTING.md#first-boot-step-by-step)). Settings > About says `Nous-Girl public <version> (<face> face)`. Details: [docs/RELEASING.md](./docs/RELEASING.md).
 

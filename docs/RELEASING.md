@@ -16,7 +16,7 @@ Every other version is documented in VERSIONS.md (notes only, no download).
 
 Every public release is published as a **pre-release** (`gh release create --prerelease`) and its notes start with:
 
-> **Beta:** builds verified by scan and checksum, not yet tested on hardware. Please [report issues](https://github.com/dax8it/The-one-above-all-stackchan/issues).
+> **Beta:** builds verified by scan and checksum, not yet tested on hardware. Please [report issues](https://github.com/dax8it/nous-girl-stackchan/issues).
 
 v3.6.7-dj7 is still the one the docs recommend.
 
