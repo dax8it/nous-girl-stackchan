@@ -2,13 +2,28 @@
 
 **A self-hosted [StackChan](https://github.com/m5stack/StackChan) robot with a face you choose, a real memory, and a DJ habit.**
 
-> **Status:** a hobby project with one maintainer, built with heavy AI assistance. It runs end to end on the maintainer's own robot and computer, but nobody has tried it on anyone else's hardware yet. Public firmware comes with checksums and rollback steps, original starter faces and **no server built in**: you run your own. Server and brain add-ons are still being cleaned up for release.
+> **Status:** a hobby project with one maintainer, built with heavy AI assistance. It runs end to end on the maintainer's own robot and computer, but nobody has tried it on anyone else's hardware yet. Public firmware comes with checksums and rollback steps, original starter faces and **no server built in**: you run your own. Server and brain add-ons are in [server/](./server/README.md).
 >
-> **Beta:** builds verified by scan and checksum, not yet tested on hardware. Please [report issues](https://github.com/dax8it/nous-girl-stackchan/issues).
+> **Beta:** builds verified by scan and checksum, not yet tested on hardware. Stuck or found a bug? See [Where to get help](#where-to-get-help).
 
 > **Current firmware: `v3.6.7-dj7`** (Oct 28, 2026), with a robot, boy or girl face. Public checkpoints: v3.6, v3.6.6, v3.6.7-dj5, v3.6.7-dj7. Full history, checksums and rollbacks: [VERSIONS.md](./VERSIONS.md).
 
 Nous-Girl runs custom firmware on the M5Stack StackChan K151 (CoreS3). The [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) voice server runs in Docker on your computer and handles listening and speaking with local models. Her brain is [Hermes Agent](https://hermes-agent.nousresearch.com/) from Nous Research, which gives her long-term memory and tools, or a plain local model through [Ollama](https://ollama.com/) if you want to keep it simple.
+
+## Where to get help
+
+New to this? No question is too basic. Pick the one that fits:
+
+| You want to... | Go here |
+|---|---|
+| Ask a question or get help setting up | [Discussions: Q&A](https://github.com/dax8it/nous-girl-stackchan/discussions/categories/q-a) |
+| Report something that's broken | [Issues](https://github.com/dax8it/nous-girl-stackchan/issues/new/choose) (a short form walks you through it) |
+| Suggest an idea or a new feature | [Discussions: Ideas](https://github.com/dax8it/nous-girl-stackchan/discussions/categories/ideas) |
+| Show off your robot or your own face | [Discussions: Show and tell](https://github.com/dax8it/nous-girl-stackchan/discussions/categories/show-and-tell) |
+| Report a security problem | privately, see [SECURITY.md](./SECURITY.md) (please not in public) |
+| Just say hi or ask something quick | X DMs to [@alexcovo_eth](https://x.com/alexcovo_eth) |
+
+This is a hobby project with one maintainer, so replies are best effort and may take a few days. Before posting logs or photos, remove Wi-Fi names and passwords, server addresses, tokens and email addresses.
 
 ## Pick a brain
 
@@ -122,7 +137,7 @@ This project is built with a lot of help from AI coding agents: firmware patches
 
 ## Support
 
-Questions or "this didn't work for me": [open a GitHub issue](https://github.com/dax8it/nous-girl-stackchan/issues). Want to help? See [CONTRIBUTING.md](./CONTRIBUTING.md). Security problems: report privately, see [SECURITY.md](./SECURITY.md).
+Questions: [Discussions Q&A](https://github.com/dax8it/nous-girl-stackchan/discussions/categories/q-a). "This didn't work for me": [open an issue](https://github.com/dax8it/nous-girl-stackchan/issues/new/choose). All the options: [Where to get help](#where-to-get-help). Want to help? See [CONTRIBUTING.md](./CONTRIBUTING.md). Security problems: report privately, see [SECURITY.md](./SECURITY.md).
 
 ## Deeper reference
 
