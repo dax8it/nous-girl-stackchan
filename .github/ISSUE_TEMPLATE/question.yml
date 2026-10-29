@@ -1,0 +1,20 @@
+name: Question
+description: Ask how something works or how to set it up.
+labels: [question, triage]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Firmware version (if it matters)
+      description: Settings > About.
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you tried
+      description: Remove passwords, addresses and personal details.

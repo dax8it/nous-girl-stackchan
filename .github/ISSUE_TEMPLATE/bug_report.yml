@@ -1,0 +1,61 @@
+name: Bug report
+description: Something doesn't work as described.
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. **Before you paste logs, remove** Wi-Fi names and passwords, server addresses, device IDs, tokens, email addresses and anything personal.
+  - type: input
+    id: version
+    attributes:
+      label: Firmware version
+      description: Settings > About, for example "Nous-Girl public v3.6.7-dj7 (robot face)".
+    validations:
+      required: true
+  - type: dropdown
+    id: face
+    attributes:
+      label: Face
+      options: [robot, boy, girl, my own face, not sure]
+    validations:
+      required: true
+  - type: dropdown
+    id: board
+    attributes:
+      label: Board
+      options: [M5Stack StackChan K151 (CoreS3), other CoreS3, other]
+    validations:
+      required: true
+  - type: dropdown
+    id: flash
+    attributes:
+      label: How you flashed
+      options: [full image at 0x0, app + assets, app only, built it myself, not sure]
+    validations:
+      required: true
+  - type: dropdown
+    id: server
+    attributes:
+      label: Server and brain
+      options: [own server + Hermes, own server + Ollama, own server + other model, official xiaozhi cloud, no server yet]
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs (redacted)
+      description: Serial log, Settings > About crash report, or server log lines. Redact personal details first.
+      render: text
+  - type: checkboxes
+    id: redacted
+    attributes:
+      label: Privacy
+      options:
+        - label: I removed passwords, tokens, addresses, device IDs and personal details from everything above.
+          required: true

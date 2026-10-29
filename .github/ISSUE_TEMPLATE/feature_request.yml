@@ -1,0 +1,20 @@
+name: Feature request
+description: Suggest an idea for the robot, the faces or the docs.
+labels: [enhancement, triage]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: What should she do, and who is it for?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it helps
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Links, sketches, similar projects. Keep it kid-safe.

@@ -3,6 +3,8 @@
 **A self-hosted [StackChan](https://github.com/m5stack/StackChan) robot with a face you choose, a real memory, and a DJ habit.**
 
 > **Status:** a hobby project with one maintainer, built with heavy AI assistance. It runs end to end on the maintainer's own robot and computer, but nobody has tried it on anyone else's hardware yet. Public firmware comes with checksums and rollback steps, original starter faces and **no server built in**: you run your own. Server and brain add-ons are still being cleaned up for release.
+>
+> **Beta:** builds verified by scan and checksum, not yet tested on hardware. Please [report issues](https://github.com/dax8it/The-one-above-all-stackchan/issues).
 
 > **Current firmware: `v3.6.7-dj7`** (Oct 28, 2026), with a robot, boy or girl face. Public checkpoints: v3.6, v3.6.6, v3.6.7-dj5, v3.6.7-dj7. Full history, checksums and rollbacks: [VERSIONS.md](./VERSIONS.md).
 
@@ -36,6 +38,15 @@ Every feature, with voice commands, the version that added it, setup and undo: [
 - **Local memes:** classic memes made on your computer, shown on her screen, and emailed only to approved addresses after a read-back.
 - **Crash report:** Settings > About shows why she last restarted.
 
+## First boot
+
+Public firmware has no server built in, so a new robot connects nowhere until you set one. Full steps and troubleshooting: [docs/SELF-HOSTING.md](./docs/SELF-HOSTING.md#first-boot-step-by-step).
+
+1. **Find your server address.** Own server: `http://<your-computer-ip>:8003/xiaozhi/ota/` (Mac: `ipconfig getifaddr en0`; Windows: `ipconfig`; Linux: `hostname -I`). Or the official xiaozhi cloud: `https://api.tenclass.net/xiaozhi/ota/`.
+2. **Join her setup Wi-Fi.** Turn her on, join the `Xiaozhi-XXXX` network from your phone, open `http://192.168.4.1` if the page doesn't pop up, and pick your home Wi-Fi (2.4 GHz) and password.
+3. **Set the server.** Hold the screen 1.5 s > **Server**, type your address, tap **Save + restart**.
+4. **Check it worked.** She plays a "ready" sound with no error, Settings > Server shows your address, and "Hey Nous-Girl" gets an answer.
+
 ## What runs where
 
 | Component | Host | Notes |
@@ -51,7 +62,7 @@ Every feature, with voice commands, the version that added it, setup and undo: [
 
 1. **Back up your robot,** then flash the current firmware (pick robot, boy or girl). Exact commands, including moving from stock firmware: [VERSIONS.md](./VERSIONS.md#how-to-flash).
 2. **Start your own voice server** ([xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server)) in Docker on your computer, home-only or with your own domain: [docs/SELF-HOSTING.md](./docs/SELF-HOSTING.md). Download the models below.
-3. **Connect the robot:** hold the screen 1.5 s for Settings, join Wi-Fi, and type **your** server's OTA URL on the Server page (for example `http://192.168.1.25:8003/xiaozhi/ota/`).
+3. **Connect the robot:** follow [First boot](#first-boot).
 4. **Optional:** set up Hermes as her brain: [docs/HERMES.md](./docs/HERMES.md).
 5. **Say "Hey Nous-Girl".**
 
@@ -101,7 +112,7 @@ This project is built with a lot of help from AI coding agents: firmware patches
 
 ## Support
 
-Questions or "this didn't work for me": [open a GitHub issue](https://github.com/dax8it/The-one-above-all-stackchan/issues).
+Questions or "this didn't work for me": [open a GitHub issue](https://github.com/dax8it/The-one-above-all-stackchan/issues). Want to help? See [CONTRIBUTING.md](./CONTRIBUTING.md). Security problems: report privately, see [SECURITY.md](./SECURITY.md).
 
 ## Deeper reference
 

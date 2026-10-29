@@ -1,0 +1,57 @@
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  safety-scan:
+    name: Safety scan (secrets, emails, private domains, LAN IPs, file size, relative links)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Run safety scan
+        env:
+          # One domain per line, stored as a repository secret so it never appears in the repo.
+          # Not available to pull requests from forks; the check is skipped there with a note.
+          PRIVATE_DOMAINS: ${{ secrets.PRIVATE_DOMAINS }}
+        run: python3 .github/scripts/safety_scan.py
+
+  links:
+    name: Markdown links (external)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-retries 3
+            --accept 200,206,429
+            --exclude-path .github
+            --exclude '^https://your-server\.example'
+            --exclude '^https://robot\.example\.com'
+            --exclude '^http://(192\.168|localhost|127\.0\.0\.1)'
+            --exclude '^https://github\.com/dax8it/The-one-above-all-stackchan/(releases|issues|security)'
+            '**/*.md'
+          fail: true
+
+  # Firmware build check: skipped on purpose. This repo holds docs, face assets and
+  # scripts, not the patched firmware source, so there is nothing to build yet.
+  # When the source is added, add a job using espressif/esp-idf-ci-action with
+  # esp_idf_version v6.1 and target esp32s3, running `idf.py build`.

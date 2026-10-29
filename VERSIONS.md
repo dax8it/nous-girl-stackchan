@@ -4,6 +4,8 @@ Every firmware build, oldest to newest, with what it added, what's known to be w
 
 > **Current recommended: `v3.6.7-dj7`** (Oct 28, 2026), with a robot (default), boy or girl face.
 > **Safe fallback: `v3.6.7-dj5`.** Avoid `v3.6.7-dj6`: it can reboot while showing a meme preview.
+>
+> **Beta:** builds verified by scan and checksum, not yet tested on hardware. All public builds are pre-releases. Please [report issues](https://github.com/dax8it/The-one-above-all-stackchan/issues).
 
 All times are US Eastern. All builds target the **M5Stack StackChan K151 (CoreS3, ESP32-S3, 16 MB flash)**, built with ESP-IDF 6.1.0 (see [docs/TOOLCHAIN-VERSIONS.md](./docs/TOOLCHAIN-VERSIONS.md)). Upstream bases: [78/xiaozhi-esp32](https://github.com/78/xiaozhi-esp32) and fairy-stackchan.
 
@@ -11,7 +13,7 @@ All times are US Eastern. All builds target the **M5Stack StackChan K151 (CoreS3
 
 Binaries are **not committed to git**. Four checkpoints have a [GitHub Release](https://github.com/dax8it/The-one-above-all-stackchan/releases) with **public builds**: **v3.6, v3.6.6, v3.6.7-dj5 and v3.6.7-dj7**. Every other version is described here for history, with no download.
 
-A public build is that version rebuilt with the CC0 starter faces ([faces/starter/](./faces/starter/)) and **no server address inside**: you type your own on the Server page ([docs/SELF-HOSTING.md](./docs/SELF-HOSTING.md)). Settings > About says `Nous-Girl public <version> (<face> face)`. Details: [docs/RELEASING.md](./docs/RELEASING.md).
+A public build is that version rebuilt with the CC0 starter faces ([faces/starter/](./faces/starter/)) and **no server address inside**, not even the upstream cloud. An unconfigured robot connects nowhere and opens Settings > Server; you type your own address ([first boot steps](./docs/SELF-HOSTING.md#first-boot-step-by-step)). Settings > About says `Nous-Girl public <version> (<face> face)`. Details: [docs/RELEASING.md](./docs/RELEASING.md).
 
 Each release has, per face:
 
@@ -151,24 +153,24 @@ Public builds only. Same list as [firmware/SHA256SUMS](./firmware/SHA256SUMS).
 
 | Version | Face | File | SHA-256 |
 |---|---|---|---|
-| v3.6.7-dj7 | boy | `nous-girl-v3.6.7-dj7-boy-app.bin` | `9f95b36146145f6d70c4f9c4f5c5942539686bf75c467a30ad4b276f1781a71c` |
+| v3.6.7-dj7 | boy | `nous-girl-v3.6.7-dj7-boy-app.bin` | `fb17929f93d98462b78dbe5a4c0c3279e9cd84dd7f5a77bd047856b701eebed2` |
 | v3.6.7-dj7 | boy | `nous-girl-v3.6.7-dj7-boy-assets.bin` | `dffa0340c81bc7b0336d8f1b21d0d48730a44d5b17b2fc2dd54e960c357cdc53` |
-| v3.6.7-dj7 | boy | `nous-girl-v3.6.7-dj7-boy-full-0x0.bin` | `1fde8775ed9160a45df2d3cca42613fba6ca43cb68a282f63d62977686b3a1c6` |
-| v3.6.7-dj7 | girl | `nous-girl-v3.6.7-dj7-girl-app.bin` | `57fb611174620345f4c4bd28c2ef25b9e69700f993d579dc02dec94864762680` |
+| v3.6.7-dj7 | boy | `nous-girl-v3.6.7-dj7-boy-full-0x0.bin` | `cc61838bcd16f569c13aa1779fda7ef6da9b6994094f4025e73145bedaafce2f` |
+| v3.6.7-dj7 | girl | `nous-girl-v3.6.7-dj7-girl-app.bin` | `bccc5b8be15d5a16bc076ffa34d759b55758c1644ba0383948d180a57e17605d` |
 | v3.6.7-dj7 | girl | `nous-girl-v3.6.7-dj7-girl-assets.bin` | `268390a3dc25856069aeaaec27db938114405f8c28ebc39f5a6db15f3fe64d8d` |
-| v3.6.7-dj7 | girl | `nous-girl-v3.6.7-dj7-girl-full-0x0.bin` | `f3657f67728a9bd5b850e1d517c9550ad29714ea462fefe9aabf5ed0ad906c26` |
-| v3.6.7-dj7 | robot | `nous-girl-v3.6.7-dj7-robot-app.bin` | `910689910cdc73bf7a42f3c482418b59d3dfc2ca40e4a64a3790a865273d8b53` |
+| v3.6.7-dj7 | girl | `nous-girl-v3.6.7-dj7-girl-full-0x0.bin` | `eeabb36c07c9583c9d33af4f74e9f39ef84d40ece1674b7684811fbc1c03de85` |
+| v3.6.7-dj7 | robot | `nous-girl-v3.6.7-dj7-robot-app.bin` | `717704999fbf59b2c4a04ebed572f64cd32f0a29cca8fe7442d35648e2c9fbdb` |
 | v3.6.7-dj7 | robot | `nous-girl-v3.6.7-dj7-robot-assets.bin` | `699f7f52029c1657d59194f72f373122ce36fa1a517a7417e38982a63a303cd8` |
-| v3.6.7-dj7 | robot | `nous-girl-v3.6.7-dj7-robot-full-0x0.bin` | `54c492de2a09ecd9cb6ceaf01c29a10cde27905678dd6131043e547e910dc0a0` |
-| v3.6.7-dj5 | robot | `nous-girl-v3.6.7-dj5-robot-app.bin` | `a04188e7cccc52bd844fb2ff93a9baf40afa57b72199c24eba85551a28728c8b` |
+| v3.6.7-dj7 | robot | `nous-girl-v3.6.7-dj7-robot-full-0x0.bin` | `62b85e98aa961b5ee61af8ace44596a1a74efd582b5dbf4389dd137055535162` |
+| v3.6.7-dj5 | robot | `nous-girl-v3.6.7-dj5-robot-app.bin` | `de4c2cf5f48fc33a7c410edb3b63a648a6f59683eba414d659ae0497db9b2e31` |
 | v3.6.7-dj5 | robot | `nous-girl-v3.6.7-dj5-robot-assets.bin` | `699f7f52029c1657d59194f72f373122ce36fa1a517a7417e38982a63a303cd8` |
-| v3.6.7-dj5 | robot | `nous-girl-v3.6.7-dj5-robot-full-0x0.bin` | `8ffaec86350702e54b88e5b6242275d092739667877d8c1699cde334866c013e` |
-| v3.6.6 | robot | `nous-girl-v3.6.6-robot-app.bin` | `326e63b3e070b6c093f4fc11048f442a675487e3ae71d39b7023532148445568` |
+| v3.6.7-dj5 | robot | `nous-girl-v3.6.7-dj5-robot-full-0x0.bin` | `59504ea171d477a531f087c45ff4d766a43b6562cb1d05e0b168fd0f9d03f44f` |
+| v3.6.6 | robot | `nous-girl-v3.6.6-robot-app.bin` | `7887a1e81ef8046caea9a0300cdf7b8e0142d12aaf8e46cf9ef6d87e7b7e051b` |
 | v3.6.6 | robot | `nous-girl-v3.6.6-robot-assets.bin` | `699f7f52029c1657d59194f72f373122ce36fa1a517a7417e38982a63a303cd8` |
-| v3.6.6 | robot | `nous-girl-v3.6.6-robot-full-0x0.bin` | `cffed976dc7f301dceac22b13f2742040efe39dfc85f22fc2568452ac85bee28` |
-| v3.6 | robot | `nous-girl-v3.6-robot-app.bin` | `bcca8dad2fe6af479cec0caa41f24675ffb60bedf19cfdc4f843c3dfd5086fc2` |
+| v3.6.6 | robot | `nous-girl-v3.6.6-robot-full-0x0.bin` | `630fa8ba2382eb5130bfdd17e46099d38df591923bd188a4099071d00544b30b` |
+| v3.6 | robot | `nous-girl-v3.6-robot-app.bin` | `bab665cb0407444c99803feea049228d0ab0a0184db13d1781a790338930b79a` |
 | v3.6 | robot | `nous-girl-v3.6-robot-assets.bin` | `699f7f52029c1657d59194f72f373122ce36fa1a517a7417e38982a63a303cd8` |
-| v3.6 | robot | `nous-girl-v3.6-robot-full-0x0.bin` | `645daed12c05e88ecf75831b08bc4716d30d0565c843a4604f583502844afcfa` |
+| v3.6 | robot | `nous-girl-v3.6-robot-full-0x0.bin` | `eda082e40e55585541e3af27f8511203189bff3985713a70490af8e56c9f5a5a` |
 
 The robot assets image is the same file in every checkpoint, so its checksum repeats.
 

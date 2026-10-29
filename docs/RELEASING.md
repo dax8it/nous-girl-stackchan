@@ -6,11 +6,19 @@ Firmware binaries are published as **GitHub Release assets**, never committed to
 
 Only **public builds** of the checkpoints. A public build is the same firmware rebuilt with:
 
-- **no server address inside.** The Server page has a "LAN example" button (`http://192.168.1.10:8003/xiaozhi/ota/`, a sample to edit) and asks for your own server. The meme download allow-list only has a placeholder host. See [SELF-HOSTING.md](./SELF-HOSTING.md).
+- **no server address inside**, not even the upstream default (`CONFIG_OTA_URL` is blank and the xiaozhi.me button is removed). An unconfigured robot connects nowhere, says "No server yet" and opens Settings > Server. The "LAN example" button fills `http://192.168.1.10:8003/xiaozhi/ota/` as a sample to edit. The meme download allow-list only has a placeholder host. See [SELF-HOSTING.md](./SELF-HOSTING.md#first-boot-step-by-step).
 - **the CC0 starter faces** (robot, boy, girl) instead of the maintainer's tribute art. See [SPRITES.md](./SPRITES.md).
 - Settings > About says `Nous-Girl public <version> (<face> face)`.
 
 Every other version is documented in VERSIONS.md (notes only, no download).
+
+## Beta
+
+Every public release is published as a **pre-release** (`gh release create --prerelease`) and its notes start with:
+
+> **Beta:** builds verified by scan and checksum, not yet tested on hardware. Please [report issues](https://github.com/dax8it/The-one-above-all-stackchan/issues).
+
+v3.6.7-dj7 is still the one the docs recommend.
 
 ## Tags
 
@@ -18,7 +26,7 @@ The firmware was built outside this repo, so no commit here matches a build. Eac
 
 | Tag | Faces | Notes |
 |---|---|---|
-| `fw-v3.6.7-dj7` | robot, boy, girl | **latest**, recommended |
+| `fw-v3.6.7-dj7` | robot, boy, girl | recommended (beta) |
 | `fw-v3.6.7-dj5` | robot | fallback before the meme features |
 | `fw-v3.6.6` | robot | last build before DJ mode |
 | `fw-v3.6` | robot | first build on the new flash layout |
@@ -40,7 +48,7 @@ The release notes are the matching section of VERSIONS.md.
 
 ## Checks before every release
 
-1. The domain check: `strings` on every `.bin` finds no personal server address, email address or home path.
+1. The domain check: `strings` on every `.bin` finds no personal server address, no `api.tenclass.net`, no email address and no home path.
 2. The face check: the assets image holds the 12 starter GIFs of the face in its file name.
 3. The app fits its slot (`0x570000`).
 4. `shasum -a 256 -c SHA256SUMS` passes.
@@ -57,4 +65,4 @@ The release notes are the matching section of VERSIONS.md.
 
 1. **Firmware source.** The patch series against upstream is not in the repo yet.
 2. **Server and Hermes packs.** Not in the repo yet; each needs a scrub of personal paths, addresses and hostnames first.
-3. **Testing.** Public builds have not been flashed on a robot yet. They differ from the tested builds only in the faces, the Server page text and the allow-list host.
+3. **Testing.** Public builds have not been flashed on a robot yet (beta). They differ from the tested builds in the faces, the Server page, the blank default server with its "No server yet" screen, and the allow-list host.
