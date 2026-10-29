@@ -41,7 +41,7 @@ All of these are listed as build components in the dj7 `project_description.json
 | 78/esp_lcd_nv3023 | 1.0.1 | https://github.com/MakerM0/esp_lcd_nv3023 | Apache-2.0 | see upstream | [Apache-2.0.txt](licenses/Apache-2.0.txt) |
 | 78/uart-eth-modem | 0.6.5 | https://github.com/78/uart-eth-modem | Apache-2.0 | see upstream | [Apache-2.0.txt](licenses/Apache-2.0.txt) |
 | 78/uart-uhci | 0.3.3 | https://github.com/78/uart-uhci | Apache-2.0 (declared in the component manifest; no license file in the package) | see upstream | [Apache-2.0.txt](licenses/Apache-2.0.txt) |
-| 78/xiaozhi-fonts | 2.0.0 | https://github.com/78/noto-fonts | Apache-2.0 (declared in the component manifest; no license file in the package) | see upstream | [Apache-2.0.txt](licenses/Apache-2.0.txt) |
+| 78/xiaozhi-fonts | 2.0.0 | `github.com/78/noto-fonts` (manifest link; repo not public) | Apache-2.0 (declared in the component manifest; no license file in the package) | see upstream | [Apache-2.0.txt](licenses/Apache-2.0.txt) |
 | cube32esp/xpowerslib | 0.3.3 | https://github.com/cube32esp/XPowersLib | MIT | Copyright (c) 2022 lewis he | [cube32esp__xpowerslib.txt](licenses/cube32esp__xpowerslib.txt) |
 | esphome/esp-hub75 | 0.3.6 | https://github.com/esphome-libs/esp-hub75 | MIT | Copyright (c) 2025 Stuart Parmenter | [esphome__esp-hub75.txt](licenses/esphome__esp-hub75.txt) |
 | espressif2022/esp_emote_assets | 0.1.2 | https://github.com/espressif2022/esp_emote_assets | Apache-2.0 (declared in the component manifest; no license file in the package) | Espressif Systems (Shanghai) Co., Ltd. (per source headers) | [Apache-2.0.txt](licenses/Apache-2.0.txt) |
@@ -54,7 +54,7 @@ All of these are listed as build components in the dj7 `project_description.json
 | espressif/button | 4.2.2 | https://github.com/espressif/esp-iot-solution/tree/master/components/button | Apache-2.0 | Espressif Systems (Shanghai) Co., Ltd. | [Apache-2.0.txt](licenses/Apache-2.0.txt) |
 | espressif/cjson | 1.7.19~2 | https://github.com/espressif/idf-extra-components/tree/master/cjson | MIT | Copyright (c) 2009-2017 Dave Gamble and cJSON contributors | [espressif__cjson.txt](licenses/espressif__cjson.txt) |
 | espressif/cmake_utilities | 0.5.0 | https://github.com/espressif/esp-iot-solution/tree/master/tools/cmake_utilities | Apache-2.0 | Espressif Systems (Shanghai) Co., Ltd. | [Apache-2.0.txt](licenses/Apache-2.0.txt) |
-| espressif/dl_fft | 0.8.0 | https://github.com/espressif/esp-dl/tree/master/esp-dl/tools/dl_fft | MIT (declared in the component manifest; no license file in the package) | see upstream | none shipped upstream |
+| espressif/dl_fft | 0.8.0 | https://github.com/espressif/esp-dl (manifest path `esp-dl/tools/dl_fft`) | MIT (declared in the component manifest; no license file in the package) | see upstream | none shipped upstream |
 | espressif/esp-dsp | 1.8.0 | https://github.com/espressif/esp-dsp | Apache-2.0 | Espressif Systems (Shanghai) Co., Ltd. | [Apache-2.0.txt](licenses/Apache-2.0.txt) |
 | espressif/esp-sr | 2.4.7 | https://github.com/espressif/esp-sr | Espressif MIT (modified MIT) | Copyright (c) 2018 Espressif Systems (Shanghai) PTE LTD | [espressif__esp-sr.txt](licenses/espressif__esp-sr.txt) |
 | espressif/esp32-camera | 2.1.8 | https://github.com/espressif/esp32-camera | Apache-2.0 | Espressif Systems (Shanghai) Co., Ltd. | [Apache-2.0.txt](licenses/Apache-2.0.txt) |
