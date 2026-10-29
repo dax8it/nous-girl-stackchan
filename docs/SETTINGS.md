@@ -65,7 +65,7 @@ What she's connected to, and how to add a network.
 
 ## Wake words
 
-How she knows you're talking to her.
+How she knows you're talking to her. Full guide, including how to make your own phrase: [WAKE-WORDS.md](./WAKE-WORDS.md).
 
 | Item | What it does | Default | When to change it |
 |---|---|---|---|
