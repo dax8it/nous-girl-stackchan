@@ -24,7 +24,7 @@ Hermes setup, her profile and how to write her personality file (`SOUL.md`): [do
 
 ## Features
 
-Every feature, with voice commands, the version that added it, setup and undo: [docs/FEATURES.md](./docs/FEATURES.md).
+Every feature, with how to turn it on, what to say, how to set it up on your own server and how to undo it: [docs/FEATURES.md](./docs/FEATURES.md). Every Settings screen option, explained: [docs/SETTINGS.md](./docs/SETTINGS.md). Windows, Linux and macOS: [docs/PLATFORMS.md](./docs/PLATFORMS.md).
 
 - **Faces and lip sync:** animated faces that follow her state, vowel-shaped mouth, moods from happy to scowl. Three CC0 starter faces, or [make your own](./docs/SPRITES.md).
 - **Wake words:** "Hey Nous-Girl" and "Hey Jarvis". Tap the screen to stop her.
@@ -57,6 +57,8 @@ Public firmware has no server built in, so a new robot connects nowhere until yo
 | Text-to-speech | your computer | Phonon voice servers |
 | Hermes Agent (optional) | your computer | profile `nous-girl`, API server on localhost |
 | Model | cloud or Ollama | your choice |
+
+Windows, Linux, macOS, a home server or the cloud: [docs/PLATFORMS.md](./docs/PLATFORMS.md). Only macOS (Apple Silicon) is tested so far.
 
 ## Get it running
 
@@ -107,7 +109,7 @@ This is fan art, not affiliated with or endorsed by Nous Research. The character
 These are planned or staged on the maintainer's machine. None of them are in a release.
 
 - **Lite mode with Liquid AI LFM3.** A second Hermes profile running Liquid AI's small [LFM3-1.7B](https://huggingface.co/LiquidAI/LFM3-1.7B-GGUF) model locally through llama.cpp (about 1 GB at 4-bit, built for agent tool calling, 16 languages). She keeps her personality, robot tools and memory, but no email or computer tools. A small router lets you switch brains by voice: "lite mode" and "full mode". Next tests: speed and tool-calling quality, then an end-to-end audio model from [Liquid AI](https://www.liquid.ai/models) such as [LFM2.5-Audio](https://huggingface.co/LiquidAI/LFM2.5-Audio-1.5B).
-- **Nous Portal cloud agent.** Running her brain as a Hermes agent hosted by Nous Research through [Nous Portal](https://portal.nousresearch.com/) with a model subscription, so nothing has to run on your computer except the voice server.
+- **Nous-hosted version.** Running her agent and its model entirely in Nous Research's cloud with [Hermes Cloud](https://portal.nousresearch.com/cloud) (always-on hosted Hermes Agent, billed through [Nous Portal](https://portal.nousresearch.com/)), so only the voice server runs at home. Not tested yet.
 - **Fully local brain with Ollama.** Testing setups B and C with [Ollama](https://ollama.com/) models and documenting which ones handle her robot tools well.
 - **More languages.** Testing voices and models for Chinese, Japanese, Dutch and others. Phonon multilingual already covers English, Spanish, French, German and Portuguese.
 - **Classifier for learning.** One approve / reject / log step for what she learns: memories, object names and scene descriptions. Simple rules run first, and an optional local classifier model ([Cloudflare clef-flash](https://huggingface.co/Cloudflare/clef-flash), about 19 GB) can review the rest. Anything unclear waits for a grown-up to approve.
@@ -125,7 +127,9 @@ Questions or "this didn't work for me": [open a GitHub issue](https://github.com
 ## Deeper reference
 
 - [VERSIONS.md](./VERSIONS.md): every firmware version, checksums, flashing and rollback.
-- [docs/FEATURES.md](./docs/FEATURES.md): every feature in plain English.
+- [docs/FEATURES.md](./docs/FEATURES.md): every feature: turn it on, use it, set it up yourself.
+- [docs/SETTINGS.md](./docs/SETTINGS.md): every Settings screen option, gesture and default.
+- [docs/PLATFORMS.md](./docs/PLATFORMS.md): what runs on Windows, Linux and macOS.
 - [docs/HERMES.md](./docs/HERMES.md): Hermes Agent setup, her profile, writing SOUL.md.
 - [docs/SELF-HOSTING.md](./docs/SELF-HOSTING.md): run your own voice server, home-only or with your own domain.
 - [docs/SPRITES.md](./docs/SPRITES.md): make your own face, with AI image prompts.

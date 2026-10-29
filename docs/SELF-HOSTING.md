@@ -81,6 +81,8 @@ The robot needs **2.4 GHz** Wi-Fi (most home routers have it; 5 GHz-only network
 - About 15 GB of free disk for models.
 - The robot on firmware from [VERSIONS.md](../VERSIONS.md).
 
+On Windows or Linux? Differences for Docker, ports and speech models: [PLATFORMS.md](./PLATFORMS.md). Every robot Settings option: [SETTINGS.md](./SETTINGS.md).
+
 ## A. Home only (LAN)
 
 ### 1. Start the voice server
