@@ -1,0 +1,31 @@
+# Never commit secrets or local config
+.env
+.env.*
+!.env.example
+*.config.yaml
+data/.config.yaml
+*.pem
+*.key
+
+# Firmware binaries, flash dumps and source snapshots go to GitHub Releases, not git
+*.bin
+*.tgz
+*.elf
+*.map
+backup-*.bin
+factory-backup*
+
+# Logs, build output, caches
+logs/
+*.log
+build/
+__pycache__/
+*.pyc
+.DS_Store
+*.bak*
+
+# Media and models (see README for download steps)
+music/
+models/
+*.wav
+*.mp3

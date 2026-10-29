@@ -1,0 +1,116 @@
+# Nous-Girl
+
+**A self-hosted [StackChan](https://github.com/m5stack/StackChan) robot with a headphone-girl face, a real memory, and a DJ habit.**
+
+> **Status:** a hobby project with one maintainer, built with heavy AI assistance. It runs end to end on the maintainer's own robot and computer, but nobody has tried it on anyone else's hardware yet. Firmware binaries come with checksums and rollback steps; server and brain add-ons are still being cleaned up for release.
+
+> **Current firmware: `v3.6.7-dj7`** (Oct 28, 2026). Fallback: `v3.6.7-dj5`. Full history, checksums and rollbacks: [VERSIONS.md](./VERSIONS.md).
+
+Nous-Girl runs custom firmware on the M5Stack StackChan K151 (CoreS3). The [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) voice server runs in Docker on your computer and handles listening and speaking with local models. Her brain is [Hermes Agent](https://hermes-agent.nousresearch.com/) from Nous Research, which gives her long-term memory and tools, or a plain local model through [Ollama](https://ollama.com/) if you want to keep it simple.
+
+## Pick a brain
+
+> **If you want your robot to remember you, you need Hermes Agent.** Without Hermes she still talks, but starts fresh every conversation.
+
+| Setup | What it is | Memory | Tools (web, email, memes, skills) | Robot tools (face, look, dance, photo) | Fully local? | Difficulty |
+|---|---|---|---|---|---|---|
+| **A. Hermes + any model** | Voice server sends her words to Hermes; Hermes uses any model, cloud or local | **Yes, long-term** | Yes | Yes, through the stackchan MCP server | Depends on the model | Hardest |
+| **B. Hermes + Ollama** | Same as A, with the model running in Ollama on your computer | **Yes, long-term** | Yes (internet tools still need internet) | Yes | **Yes** | Medium |
+| **C. Ollama only** | Voice server talks straight to Ollama | No, fresh every time | No | Yes, if the model can call tools | **Yes** | Easiest |
+
+Hermes setup, her profile and how to write her personality file (`SOUL.md`): [docs/HERMES.md](./docs/HERMES.md).
+
+## Features
+
+Every feature, with voice commands, the version that added it, setup and undo: [docs/FEATURES.md](./docs/FEATURES.md).
+
+- **Faces and lip sync:** animated headphone-girl faces that follow her state, vowel-shaped mouth, moods from happy to scowl.
+- **Wake words:** "Hey Nous-Girl" and "Hey Jarvis". Tap the screen to stop her.
+- **Lights, dance and head touch:** 12 RGB LEDs, preset and recorded dances, a 3-pad head sensor.
+- **Music, DJ mode and radio:** songs from your computer or an SD card, set lists, a live 13-band equalizer, beat-synced colors, internet radio, and a rave mode for grown-ups.
+- **Multilingual voice:** English, Spanish, French, German and Portuguese, each with its own voice.
+- **Camera:** "what do you see", face ID, and follow faces with on-robot face detection.
+- **Actor Mode:** she performs scripts with timed face, light and dance cues.
+- **Fun pack:** trivia, spelling bee, memory games and story time, with kid-safe memory.
+- **Email:** her own AgentMail inbox. She reads back and waits for a yes before sending.
+- **Local memes:** classic memes made on your computer, shown on her screen, and emailed only to approved addresses after a read-back.
+- **Crash report:** Settings > About shows why she last restarted.
+
+## What runs where
+
+| Component | Host | Notes |
+|---|---|---|
+| StackChan K151 (robot) | ESP32-S3 on your desk | Nous-Girl firmware, see [VERSIONS.md](./VERSIONS.md) |
+| xiaozhi-esp32-server | your computer, Docker | voice in/out, OTA, robot bridge |
+| Speech-to-text | your computer | Parakeet (MLX) on a Mac |
+| Text-to-speech | your computer | Phonon voice servers |
+| Hermes Agent (optional) | your computer | profile `nous-girl`, API server on localhost |
+| Model | cloud or Ollama | your choice |
+
+## Get it running
+
+1. **Back up your robot,** then flash the current firmware. Exact commands, including moving from stock firmware: [VERSIONS.md](./VERSIONS.md#how-to-flash).
+2. **Start the voice server** ([xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server)) in Docker and download the models below.
+3. **Connect the robot:** hold the screen 1.5 s for Settings, join Wi-Fi, and enter your server's OTA URL on the Server page.
+4. **Optional:** set up Hermes as her brain: [docs/HERMES.md](./docs/HERMES.md).
+5. **Say "Hey Nous-Girl".**
+
+Our patched server and the add-on packs are not in this repo yet; they are being scrubbed of personal settings first.
+
+## Models
+
+No model files are in this repo. Download them from the links.
+
+| Model | Used for | Size | License |
+|---|---|---|---|
+| [gradium/phonon-40m-multilingual](https://huggingface.co/gradium/phonon-40m-multilingual) | her voice in en/es/fr/de/pt | 72 MB | **CC-BY-NC-4.0, gated** (accept terms, non-commercial) |
+| [gradium/phonon-31m-en](https://huggingface.co/gradium/phonon-31m-en) | English fallback voice | 160 MB | Apache-2.0 |
+| [gradium/phonon-voices](https://huggingface.co/gradium/phonon-voices) | voice files (Harper, Zoey and others) | about 256 KB each | Apache-2.0 |
+| [ptts-openai-server](https://github.com/gradium-ai/xn-ptts) | serves Phonon as an OpenAI-style TTS endpoint | 24 MB binary | Apache-2.0 / MIT |
+| [mlx-community/parakeet-tdt-0.6b-v3](https://huggingface.co/mlx-community/parakeet-tdt-0.6b-v3) | speech-to-text | 2.3 GB | CC-BY-4.0 (credit NVIDIA) |
+| [mlx-community/whisper-large-v3-turbo-asr-fp16](https://huggingface.co/mlx-community/whisper-large-v3-turbo-asr-fp16) | backup speech-to-text | 1.5 GB | MIT |
+| [Ollama gemma4:e4b](https://ollama.com/library/gemma4) | vision ("what do you see"), brain in setup C | 9.6 GB | Apache-2.0 |
+| [Silero VAD](https://github.com/snakers4/silero-vad) | detects when someone is speaking | 6.9 MB | MIT, ships with the server |
+| [esp-dl face detect](https://github.com/espressif/esp-dl) | follow faces, on the robot | in firmware | MIT |
+
+## Gallery
+
+Coming soon: one picture per face (neutral, happy, sad, thinking, sleeping, pet, shake, speaking, listening, look left/right, email, scowl) and the DJ screen. Waiting on the artwork license.
+
+## Coming soon (not released yet)
+
+These are planned or staged on the maintainer's machine. None of them are in a release.
+
+- **Lite mode with Liquid AI LFM3.** A second Hermes profile running Liquid AI's small [LFM3-1.7B](https://huggingface.co/LiquidAI/LFM3-1.7B-GGUF) model locally through llama.cpp (about 1 GB at 4-bit, built for agent tool calling, 16 languages). She keeps her personality, robot tools and memory, but no email or computer tools. A small router lets you switch brains by voice: "lite mode" and "full mode". Next tests: speed and tool-calling quality, then an end-to-end audio model from [Liquid AI](https://www.liquid.ai/models) such as [LFM2.5-Audio](https://huggingface.co/LiquidAI/LFM2.5-Audio-1.5B).
+- **Nous Portal cloud agent.** Running her brain as a Hermes agent hosted by Nous Research through [Nous Portal](https://portal.nousresearch.com/) with a model subscription, so nothing has to run on your computer except the voice server.
+- **Fully local brain with Ollama.** Testing setups B and C with [Ollama](https://ollama.com/) models and documenting which ones handle her robot tools well.
+- **More languages.** Testing voices and models for Chinese, Japanese, Dutch and others. Phonon multilingual already covers English, Spanish, French, German and Portuguese.
+- **Classifier for learning.** One approve / reject / log step for what she learns: memories, object names and scene descriptions. Simple rules run first, and an optional local classifier model ([Cloudflare clef-flash](https://huggingface.co/Cloudflare/clef-flash), about 19 GB) can review the rest. Anything unclear waits for a grown-up to approve.
+- **Memory with Hermes Agent.** Documenting how her long-term memory works with [Hermes memory](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory): what she keeps, how to view and clear it, and kid-safe rules.
+- **The server fork and add-on packs** in this repo, a beginner setup script, and the artwork gallery.
+
+## AI transparency
+
+This project is built with a lot of help from AI coding agents: firmware patches, server packs, tests and these docs. A human reviews, flashes and tests everything on the real robot before it is called working.
+
+## Support
+
+Questions or "this didn't work for me": [open a GitHub issue](https://github.com/dax8it/The-one-above-all-stackchan/issues).
+
+## Deeper reference
+
+- [VERSIONS.md](./VERSIONS.md): every firmware version, checksums, flashing and rollback.
+- [docs/FEATURES.md](./docs/FEATURES.md): every feature in plain English.
+- [docs/HERMES.md](./docs/HERMES.md): Hermes Agent setup, her profile, writing SOUL.md.
+- [docs/RELEASING.md](./docs/RELEASING.md): release tags and assets.
+- [docs/TOOLCHAIN-VERSIONS.md](./docs/TOOLCHAIN-VERSIONS.md): the exact ESP-IDF toolchain.
+- [sprite-scripts/](./sprite-scripts/): scripts used to build the face frames.
+
+## References
+
+- StackChan: https://github.com/m5stack/StackChan
+- xiaozhi-esp32 firmware (upstream): https://github.com/78/xiaozhi-esp32
+- xiaozhi-esp32-server: https://github.com/xinnan-tech/xiaozhi-esp32-server
+- Hermes Agent: https://hermes-agent.nousresearch.com/ ([GitHub](https://github.com/NousResearch/hermes-agent))
+- esptool: https://github.com/espressif/esptool
+- Layout inspired by [Dotty](https://github.com/BrettKinny/dotty-stackchan), another self-hosted StackChan.
