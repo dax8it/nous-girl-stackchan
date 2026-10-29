@@ -42,7 +42,7 @@ Hermes setup, her profile and how to write her personality file (`SOUL.md`): [do
 Every feature, with how to turn it on, what to say, how to set it up on your own server and how to undo it: [docs/FEATURES.md](./docs/FEATURES.md). Every Settings screen option, explained: [docs/SETTINGS.md](./docs/SETTINGS.md). Windows, Linux and macOS: [docs/PLATFORMS.md](./docs/PLATFORMS.md).
 
 - **Faces and lip sync:** animated faces that follow her state, vowel-shaped mouth, moods from happy to scowl. Three CC0 starter faces, or [make your own](./docs/SPRITES.md). Every face and what triggers it: [docs/EMOTES.md](./docs/EMOTES.md).
-- **Wake words:** "Hey Nous-Girl" and "Hey Jarvis". Tap the screen to stop her.
+- **Wake words:** "Hey Nous-Girl" and "Hey Jarvis", with a sensitivity setting. Tap the screen to stop her. Switch, tune or make your own: [docs/WAKE-WORDS.md](./docs/WAKE-WORDS.md).
 - **Lights, dance and head touch:** 12 RGB LEDs, preset and recorded dances, a 3-pad head sensor.
 - **Music, DJ mode and radio:** songs from your computer or an SD card, set lists, a live 13-band equalizer, beat-synced colors, internet radio, and a rave mode for grown-ups.
 - **Multilingual voice:** English, Spanish, French, German and Portuguese, each with its own voice.

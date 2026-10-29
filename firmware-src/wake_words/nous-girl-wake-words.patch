@@ -1,0 +1,54 @@
+--- a/main/audio/wake_words/custom_wake_word.cc
++++ b/main/audio/wake_words/custom_wake_word.cc
+@@ -2,6 +2,7 @@
+ #include "audio_service.h"
+ #include "system_info.h"
+ #include "assets.h"
++#include "settings.h"
+ 
+ #include <esp_log.h>
+ #include <esp_mn_iface.h>
+@@ -99,6 +100,32 @@
+         ParseWakenetModelConfig();
+     }
+ 
++    // Nous-Girl v3: our English wake phrases (NVS namespace "hg"), spelled the
++    // way MultiNet7's built-in English G2P says them.
++    // To use your own phrase, see docs/WAKE-WORDS.md in the Nous-Girl repo.
++    //   ww_nous  "Hey Nous-Girl" -> "hey noose girl" (+ near-homophone "hey news girl")
++    //   ww_yub   "Hey YuB"       -> "hey yub" (rhymes with tub). Default OFF: short
++    //            two-syllable phrase, more false wakes until tested on hardware.
++    //   ww_sens  0 low = 0.30, 1 normal = 0.20 (upstream default), 2 high = 0.12
++    {
++        Settings hs("hg", false);
++        int sens = hs.GetInt("ww_sens", 1);
++        threshold_ = (sens == 0) ? 0.30f : (sens == 2) ? 0.12f : 0.20f;
++        language_ = "en";
++        commands_.clear();
++        if (hs.GetInt("ww_nous", 1) != 0) {
++            commands_.push_back({"hey noose girl", "Hey Nous-Girl", "wake"});
++            commands_.push_back({"hey news girl", "Hey Nous-Girl", "wake"});
++        }
++        if (hs.GetInt("ww_yub", 0) != 0) {
++            commands_.push_back({"hey yub", "Hey YuB", "wake"});
++        }
++        if (commands_.empty()) {
++            ESP_LOGW(TAG, "no custom wake phrases enabled");
++            return false;
++        }
++    }
++
+     if (models_ == nullptr || models_->num == -1) {
+         ESP_LOGE(TAG, "Failed to initialize wakenet model");
+         return false;
+@@ -122,7 +149,9 @@
+     input_buffer_.reserve(multinet_->get_samp_chunksize(multinet_model_data_));
+     esp_mn_commands_clear();
+     for (int i = 0; i < commands_.size(); i++) {
+-        esp_mn_commands_add(i + 1, commands_[i].command.c_str());
++        if (esp_mn_commands_add(i + 1, commands_[i].command.c_str()) != ESP_OK) {
++            ESP_LOGW(TAG, "wake phrase rejected by MultiNet: %s", commands_[i].command.c_str());
++        }
+     }
+     esp_mn_commands_update();
+     
