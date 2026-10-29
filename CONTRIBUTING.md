@@ -28,6 +28,7 @@ Thanks for helping. This is a small hobby project with one maintainer, so please
 
 - Only add art you made yourself or that has an open license that allows sharing and changes (for example CC0 or CC BY). Say which license in the pull request and in a `LICENSE` file next to the art.
 - No fan art of characters you don't own, no images of real people, no AI images made to copy a living artist's style.
+- `faces/tribute/` holds fan art that is not openly licensed; do not copy it into other faces or builds you publish.
 - The starter faces in `faces/starter/` are CC0. Use them as the template: [docs/SPRITES.md](./docs/SPRITES.md).
 
 ## Review
