@@ -87,6 +87,32 @@ model:
   base_url: http://localhost:11434/v1
 ```
 
+## Robot tools reference
+
+These are the tools the stackchan MCP server gives her brain. List the ones you want under `tools: include:` (step 5 above). Each one calls a fixed robot tool through the voice server's hg bridge, with limits checked before anything reaches the robot. Values outside a range are clamped; unknown names are refused.
+
+| Hermes tool | What it does | Robot tool it calls | Limits / notes | Needs |
+|---|---|---|---|---|
+| `robot_face` | set a face: neutral, happy, sad, thinking, sleeping, pet, shake, speaking, listening, look_left, look_right, email, scowl | `self.face.show` | fixed list | any |
+| `robot_lights` | colors, moods, rainbow, off, back to normal | `self.led.light` | brightness 0 to 80 | any |
+| `robot_look` | point her head | `self.servo.set_angles` | yaw -90 to 90, pitch 3 to 85 (3 = level), speed 100 to 600 | any |
+| `robot_dance` | preset, play a saved dance, stop, list | `self.dance.*` | presets wiggle, nod, disco, robot, sway; loops 1 to 5; saved dances only if named in `STACKCHAN_SAVED_DANCES` | any |
+| `robot_what_do_you_see` | take a photo and describe it | `self.camera.take_photo` | question up to 300 characters, one photo per 5 s | vision model on the server |
+| `robot_who_is_here` | name an enrolled face, or "unknown" | face ID on the server | read only | face ID setup |
+| `robot_follow_faces` | follow faces on or off | `self.camera.follow_faces` | | v3.6.3+ |
+| `robot_play_music` | play a song from the server's music folder, optional dance, optional DJ mode | bridge `play_music` | | music folder |
+| `robot_music_sd` | play, stop, list, now playing (SD card songs) | `self.music.sd` | | SD card |
+| `robot_music_skip` | next or previous song | bridge `music/skip` | | dj pack |
+| `robot_dj_mode` | DJ mode on or off | `self.dj.mode` | | dj pack, v3.6.7-dj5+ |
+| `robot_rave_mode` | rave on or off, optional song or station | `self.dj.mode` | soft colors only | rave pack |
+| `robot_radio` | play, next, previous, stop, list, status, resume | bridge `radio` | | radio pack |
+| `robot_show_meme` | show a saved meme on her screen | bridge `show_meme`, then `self.screen.preview_image` | 160x120 PNG, 64 KB | meme packs, dj7 |
+| `robot_status` | is she online, and which robot tools she has | bridge `GET /hg/api/tools` | read only | any |
+
+**The bridge side.** Hermes reaches the robot through the hg bridge in the patched voice server (not released yet). It is switched on in the voice server's `data/.config.yaml` with an `hg_bridge:` block (`enabled: true` plus a long random token you make up). The same token goes in the Hermes profile `.env` as `HG_BRIDGE_TOKEN`; the MCP server block only holds `HG_BRIDGE_URL`. The bridge only answers callers on localhost or your private network, and only runs allow-listed robot tools.
+
+**Tip:** start with `robot_face`, `robot_lights`, `robot_look` and `robot_dance`. Add more once those work. Each tool also needs a short SOUL.md line saying when to use it.
+
 ## SOUL.md: her personality and rules
 
 **What it is:** a plain Markdown file that Hermes reads at the start of every conversation. It tells her who she is, how to talk, what she must never do, and how to use her tools. It guides the model; it does not enforce anything by itself, so keep hard safety checks in code too (like the email allow-list).
