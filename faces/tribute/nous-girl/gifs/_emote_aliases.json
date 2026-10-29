@@ -1,0 +1,24 @@
+{
+  "shake.gif": [
+    "shake",
+    "dizzy",
+    "confused"
+  ],
+  "pet.gif": [
+    "pet",
+    "love"
+  ],
+  "sleeping.gif": [
+    "sleeping",
+    "sleepy"
+  ],
+  "speaking.gif": [
+    "speaking",
+    "talking"
+  ],
+  "email.gif": [
+    "email",
+    "sending",
+    "mail"
+  ]
+}

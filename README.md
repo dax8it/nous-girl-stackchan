@@ -92,7 +92,15 @@ Public builds ship three original starter faces, drawn by a script and released 
 
 Every frame of each face: [robot](./faces/starter/robot/preview.png), [boy](./faces/starter/boy/preview.png), [girl](./faces/starter/girl/preview.png).
 
-The maintainer's own robot uses a tribute face that is not part of this repo. You can add your own art to your robot: the exact format, AI image prompts and conversion steps are in [docs/SPRITES.md](./docs/SPRITES.md). Only publish art you made or have the right to share.
+You can add your own art to your robot: the exact format, AI image prompts and conversion steps are in [docs/SPRITES.md](./docs/SPRITES.md). Only publish art you made or have the right to share.
+
+## Tribute: Nous-Girl
+
+The maintainer's own robot wears a fan-made tribute to **Nous Research's Nous-Girl** character. The files are in [faces/tribute/nous-girl/](./faces/tribute/nous-girl/README.md) so you can put her on your own StackChan.
+
+![Nous-Girl tribute sprite sheet](./faces/tribute/nous-girl/preview.png)
+
+This is fan art, not affiliated with or endorsed by Nous Research. The character and her likeness belong to their owners. These files are **not** under the repo's MIT license: personal, non-commercial use only, and they will be removed if the rights holder asks. Public builds still ship the robot starter face.
 
 ## Coming soon (not released yet)
 
@@ -122,9 +130,19 @@ Questions or "this didn't work for me": [open a GitHub issue](https://github.com
 - [docs/SELF-HOSTING.md](./docs/SELF-HOSTING.md): run your own voice server, home-only or with your own domain.
 - [docs/SPRITES.md](./docs/SPRITES.md): make your own face, with AI image prompts.
 - [faces/starter/](./faces/starter/): the CC0 starter faces and the script that draws them.
+- [faces/tribute/nous-girl/](./faces/tribute/nous-girl/README.md): the Nous-Girl tribute face (fan art, not MIT).
+- [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md): every third-party part of the firmware and its license.
 - [docs/RELEASING.md](./docs/RELEASING.md): release tags and assets.
 - [docs/TOOLCHAIN-VERSIONS.md](./docs/TOOLCHAIN-VERSIONS.md): the exact ESP-IDF toolchain.
 - [sprite-scripts/](./sprite-scripts/): scripts that turn key pictures into face animations.
+
+## License
+
+- Code and docs: [MIT](./LICENSE), copyright 2026 dax8it.
+- Starter faces in `faces/starter/`: [CC0](./faces/starter/LICENSE) (public domain).
+- Tribute art in `faces/tribute/`: **excluded** from the MIT license, see [its README](./faces/tribute/nous-girl/README.md).
+- Firmware builds also contain third-party software (xiaozhi-esp32, ESP-IDF, LVGL, esp-sr, M5Stack and more), each under its own license: see [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) and the full texts in [licenses/](./licenses/).
+- Models and the voice server are downloaded separately under their own terms (see [Models](#models)).
 
 ## References
 
