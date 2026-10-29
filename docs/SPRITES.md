@@ -143,3 +143,9 @@ It writes `out/<face>/gifs/` (12 GIFs and `_emote_aliases.json`), `hg_mouth_fram
 ## Switching between the starter faces
 
 Each public release has one download per face: `robot`, `boy`, `girl`. Pick one and flash its full image (first time) or its app and assets (already on v3.6+). The face is chosen at build time, so switching means flashing the other face's app and assets. Your Wi-Fi and settings stay.
+
+## The Nous-Girl tribute face
+
+The maintainer's own face is in [faces/tribute/nous-girl/](../faces/tribute/nous-girl/README.md). It uses the same format, so switching works the same way: copy its `gifs/` into `fairy-assets/`, copy `hg_mouth_frames.h` and `hg_face_layout.h` into `main/boards/m5stack/core-s3/`, then build and flash the app. Its `sprite_sheet.png` and `sprite_sheet.json` are a good reference for frame counts and timing.
+
+It is fan art of Nous Research's character, not covered by the repo's MIT license, and for personal non-commercial use only. Do not publish builds or products with it. See its README for the full terms.

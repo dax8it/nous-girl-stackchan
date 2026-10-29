@@ -1,0 +1,279 @@
+{
+  "cell": {
+    "w": 320,
+    "h": 240
+  },
+  "background": "white",
+  "rows": [
+    {
+      "row": 0,
+      "name": "neutral",
+      "frames": [
+        "neutral_00.png",
+        "neutral_01.png",
+        "neutral_02.png",
+        "neutral_03.png",
+        "neutral_04.png",
+        "neutral_05.png"
+      ],
+      "frame_count": 6,
+      "ms_per_frame": [
+        600,
+        600,
+        600,
+        600,
+        120,
+        600
+      ],
+      "gif": "neutral.gif"
+    },
+    {
+      "row": 1,
+      "name": "happy",
+      "frames": [
+        "happy_00.png",
+        "happy_01.png",
+        "happy_02.png",
+        "happy_03.png"
+      ],
+      "frame_count": 4,
+      "ms_per_frame": [
+        160,
+        160,
+        160,
+        160
+      ],
+      "gif": "happy.gif"
+    },
+    {
+      "row": 2,
+      "name": "sad",
+      "frames": [
+        "sad_00.png",
+        "sad_01.png",
+        "sad_02.png",
+        "sad_03.png",
+        "sad_04.png"
+      ],
+      "frame_count": 5,
+      "ms_per_frame": [
+        300,
+        220,
+        220,
+        220,
+        400
+      ],
+      "gif": "sad.gif"
+    },
+    {
+      "row": 3,
+      "name": "thinking",
+      "frames": [
+        "thinking_00.png",
+        "thinking_01.png",
+        "thinking_02.png",
+        "thinking_03.png",
+        "thinking_04.png"
+      ],
+      "frame_count": 5,
+      "ms_per_frame": [
+        350,
+        350,
+        350,
+        700,
+        300
+      ],
+      "gif": "thinking.gif"
+    },
+    {
+      "row": 4,
+      "name": "sleeping",
+      "frames": [
+        "sleeping_00.png",
+        "sleeping_01.png",
+        "sleeping_02.png",
+        "sleeping_03.png",
+        "sleeping_04.png",
+        "sleeping_05.png"
+      ],
+      "frame_count": 6,
+      "ms_per_frame": [
+        420,
+        420,
+        420,
+        420,
+        420,
+        420
+      ],
+      "gif": "sleeping.gif"
+    },
+    {
+      "row": 5,
+      "name": "pet",
+      "frames": [
+        "pet_00.png",
+        "pet_01.png",
+        "pet_02.png",
+        "pet_03.png",
+        "pet_04.png",
+        "pet_05.png"
+      ],
+      "frame_count": 6,
+      "ms_per_frame": [
+        160,
+        160,
+        160,
+        160,
+        160,
+        160
+      ],
+      "gif": "pet.gif"
+    },
+    {
+      "row": 6,
+      "name": "shake",
+      "frames": [
+        "shake_00.png",
+        "shake_01.png",
+        "shake_02.png",
+        "shake_03.png",
+        "shake_04.png",
+        "shake_05.png",
+        "shake_06.png",
+        "shake_07.png"
+      ],
+      "frame_count": 8,
+      "ms_per_frame": [
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90,
+        90
+      ],
+      "gif": "shake.gif"
+    },
+    {
+      "row": 7,
+      "name": "speaking",
+      "frames": [
+        "speaking_00.png",
+        "speaking_01.png",
+        "speaking_02.png",
+        "speaking_03.png",
+        "speaking_04.png",
+        "speaking_05.png"
+      ],
+      "frame_count": 6,
+      "ms_per_frame": [
+        140,
+        160,
+        120,
+        180,
+        120,
+        160
+      ],
+      "gif": "speaking.gif"
+    },
+    {
+      "row": 8,
+      "name": "listening",
+      "frames": [
+        "listening_00.png",
+        "listening_01.png",
+        "listening_02.png",
+        "listening_03.png"
+      ],
+      "frame_count": 4,
+      "ms_per_frame": [
+        220,
+        220,
+        220,
+        400
+      ],
+      "gif": "listening.gif"
+    },
+    {
+      "row": 9,
+      "name": "look_left",
+      "frames": [
+        "look_left_00.png",
+        "look_left_01.png",
+        "look_left_02.png",
+        "look_left_03.png",
+        "look_left_04.png",
+        "look_left_05.png",
+        "look_left_06.png"
+      ],
+      "frame_count": 7,
+      "ms_per_frame": [
+        200,
+        90,
+        90,
+        700,
+        300,
+        90,
+        90
+      ],
+      "gif": "look_left.gif"
+    },
+    {
+      "row": 10,
+      "name": "look_right",
+      "frames": [
+        "look_right_00.png",
+        "look_right_01.png",
+        "look_right_02.png",
+        "look_right_03.png",
+        "look_right_04.png",
+        "look_right_05.png"
+      ],
+      "frame_count": 6,
+      "ms_per_frame": [
+        200,
+        90,
+        90,
+        700,
+        300,
+        200
+      ],
+      "gif": "look_right.gif"
+    },
+    {
+      "row": 11,
+      "name": "email",
+      "frames": [
+        "email_00.png",
+        "email_01.png",
+        "email_02.png",
+        "email_03.png",
+        "email_04.png",
+        "email_05.png",
+        "email_06.png",
+        "email_07.png",
+        "email_08.png",
+        "email_09.png",
+        "email_10.png",
+        "email_11.png"
+      ],
+      "frame_count": 12,
+      "ms_per_frame": [
+        260,
+        260,
+        260,
+        360,
+        300,
+        110,
+        110,
+        110,
+        110,
+        160,
+        160,
+        900
+      ],
+      "gif": "email.gif"
+    }
+  ]
+}
