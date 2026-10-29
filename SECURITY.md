@@ -4,7 +4,7 @@
 
 Please **don't open a public issue** for security problems. Use GitHub's private reporting instead:
 
-**[Report a vulnerability](https://github.com/dax8it/The-one-above-all-stackchan/security/advisories/new)** (Security tab > Report a vulnerability).
+**[Report a vulnerability](https://github.com/dax8it/nous-girl-stackchan/security/advisories/new)** (Security tab > Report a vulnerability).
 
 Include what you found, which version (Settings > About) and how to reproduce it. Don't include real passwords, tokens or other people's data.
 
