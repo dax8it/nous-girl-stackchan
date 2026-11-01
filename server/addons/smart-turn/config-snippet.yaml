@@ -1,0 +1,16 @@
+# Merge into data/.config.yaml by hand, or let switch-vad.sh do it. Keep SileroVAD so you can switch back.
+selected_module:
+  VAD: SileroSmartTurn
+
+VAD:
+  SileroSmartTurn:
+    type: silero_smartturn
+    threshold: 0.5                    # same Silero settings as SileroVAD
+    threshold_low: 0.3
+    model_dir: models/snakers4_silero-vad
+    min_silence_duration_ms: 300      # first smart-turn check after 0.3 s of silence (SileroVAD alone needs ~800)
+    smart_turn_model: data/smart-turn/smart-turn-v3.2-cpu.onnx
+    smart_turn_threshold: 0.5         # >= this = you are done
+    smart_turn_recheck_ms: 300        # while you pause, ask again every 0.3 s
+    smart_turn_max_wait_ms: 2500      # after 2.5 s of silence she answers anyway
+    smart_turn_threads: 1
