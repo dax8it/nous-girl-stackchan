@@ -15,6 +15,7 @@ New here? Get the stock voice server running first ([docs/SELF-HOSTING.md](../do
 | [actor-mode](./addons/actor-mode/) | server | scripted scenes with cues (two example scripts) | any |
 | [multilingual](./addons/multilingual/) | server | Phonon voices in en, es, fr, de, pt, picked per sentence | any |
 | [local-stt-mlx](./addons/local-stt-mlx/) | host (Apple Silicon) | optional local speech-to-text | any |
+| [smart-turn](./addons/smart-turn/) | server | Pipecat smart-turn end-of-turn model: waits when you pause mid-sentence, answers faster when you are done | any |
 | [stackchan-tools](./addons/stackchan-tools/) | Hermes | 15 robot tools for the brain | any (some tools need newer) |
 | [local-memes](./addons/local-memes/) | Hermes | classic memes made on your computer | any |
 | [meme-previews](./addons/meme-previews/) | server + Hermes | show a saved meme on her screen | **dj7** |
