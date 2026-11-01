@@ -137,7 +137,7 @@ class VADProvider(SileroVADProvider):
     def __init__(self, config):
         super().__init__(config)
         self.st_enabled = False
-        self.st_threshold = float(config.get("smart_turn_threshold", 0.5) or 0.5)
+        self.st_threshold = float(config.get("smart_turn_threshold", 0.85) or 0.85)
         self.st_recheck_ms = int(config.get("smart_turn_recheck_ms", 300) or 300)
         self.st_max_wait_ms = int(config.get("smart_turn_max_wait_ms", 2500) or 2500)
         self.st_log = str(config.get("smart_turn_log", True)).lower() not in ("false", "0", "no")

@@ -55,7 +55,7 @@ docker exec -i -e PYTHONDONTWRITEBYTECODE=1 -w /opt/xiaozhi-esp32-server <contai
 | Setting | Default | Effect |
 |---|---|---|
 | `min_silence_duration_ms` | 300 | silence before the first check. Lower = faster when you are done |
-| `smart_turn_threshold` | 0.5 | higher = she waits more often |
+| `smart_turn_threshold` | 0.85 | higher = she waits more often. 0.5 cut off long questions at ~450 ms pauses (scores were 0.6 to 0.8), 0.85 fixed it |
 | `smart_turn_recheck_ms` | 300 | how often she re-checks while you pause |
 | `smart_turn_max_wait_ms` | 2500 | longest pause before she answers anyway |
 | `smart_turn_threads` | 1 | ONNX threads (2 or 4 was not faster in tests) |
