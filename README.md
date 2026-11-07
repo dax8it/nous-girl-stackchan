@@ -10,6 +10,31 @@
 
 Nous-Girl runs custom firmware on the M5Stack StackChan K151 (CoreS3). The [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) voice server runs in Docker on your computer and handles listening and speaking with local models. Her brain is [Hermes Agent](https://hermes-agent.nousresearch.com/) from Nous Research, which gives her long-term memory and tools, or a plain local model through [Ollama](https://ollama.com/) if you want to keep it simple.
 
+## Theory of mind: uncertainty and misunderstanding repair
+
+A core goal of Nous-Girl is to adapt to the person speaking. The [SOUL.md example](./examples/nous-girl/SOUL.md) uses theory-of-mind-inspired guidance: consider what someone knows, believes, or intends, while treating those interpretations as uncertain. This is a conversation-design goal, not proof of mind reading, consciousness, or reliable human-like understanding.
+
+The core rules are:
+
+- **Uncertainty:** treat guesses about someone's thoughts, feelings, and intent as guesses. Ask a short question when the distinction matters. Do not insist you know how someone feels.
+- **Misunderstanding repair:** notice corrections and signs that an explanation did not land. Try a different example or explanation instead of repeating the same words. Check understanding without turning every reply into a quiz.
+- **Different perspectives:** distinguish what the speaker knows from what another person in a story has seen or been told. Do not assume everyone shares the same information.
+
+### Try it in conversation
+
+Load the SOUL example into your intended Hermes profile using the [personality notes](./examples/nous-girl/README.md), then start a conversation that loads those instructions. **Test the behavior with your own model and setup.** These are suggested manual checks, not results already demonstrated by this project.
+
+| Try this | What to look for |
+|---|---|
+| Ask "What is a variable?" Then say "So it must always be the same number?" | She identifies the misconception, explains with a different example, and offers a brief check that fits the conversation. |
+| Say "Great, another error." If needed, clarify "I was joking" or "I'm actually frustrated." | She treats the intent as uncertain and accepts the correction instead of claiming to know your mood. |
+| Ask "Explain gravity. I am new to this." In a separate fresh conversation, say "I understand basic physics; explain gravity." | The explanation fits the stated background rather than delivering the same script. |
+| Say "A person puts a toy in a drawer and leaves. Someone moves it to a box while they are away. Where will the first person look first, if nobody tells them?" | She distinguishes the person's last-known location from the toy's actual location and explains that assumption. |
+
+Try variations and follow-up corrections. Note the model, prompt, response, and whether she changed her explanation or revised an assumption. Remove personal information before sharing examples. Success on these prompts does not establish a general theory-of-mind capability; failures are useful feedback for the instructions and model choice.
+
+SOUL.md guides responses. It does not enforce safety rules or enable tools. Keep safeguards in code and use the [optional-feature notes](./examples/nous-girl/README.md#optional-features) for device capabilities.
+
 ## Where to get help
 
 New to this? No question is too basic. Pick the one that fits:
