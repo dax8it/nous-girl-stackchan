@@ -115,6 +115,8 @@ These are the tools the stackchan MCP server gives her brain. List the ones you 
 
 ## SOUL.md: her personality and rules
 
+For a complete, shareable version of the original character, see the [Nous-Girl personality example](../examples/nous-girl/README.md). Its optional meme section explains when the tools may be used; the accompanying notes link to the implementations and setup requirements. No personal or deployment-specific details are included in the example.
+
 **What it is:** a plain Markdown file that Hermes reads at the start of every conversation. It tells her who she is, how to talk, what she must never do, and how to use her tools. It guides the model; it does not enforce anything by itself, so keep hard safety checks in code too (like the email allow-list).
 
 **Where it lives:** in the profile's home, `~/.hermes/profiles/nous-girl/SOUL.md`. Edit it with any text editor. Changes apply to new conversations after a gateway restart.
