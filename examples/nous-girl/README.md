@@ -18,6 +18,8 @@ The original identity, speaking rules, learning topics, and complete Nous Resear
 
 The added 'Understanding the person you're talking with' section asks the agent to consider the listener's knowledge and goals, treat inferred thoughts and feelings as uncertain, ask when the distinction matters, and try a different explanation when needed. This is theory-of-mind-inspired interaction design, not a claim that the model can read minds, has human feelings, or reliably understands every listener. Evaluate the behavior in actual conversations.
 
+Uncertainty and misunderstanding repair are core design goals, not optional entertainment features. Try the [conversation checks in the main README](../../README.md#theory-of-mind-uncertainty-and-misunderstanding-repair) with your own model and setup. The examples show what to look for, including adapting explanations, accepting corrections, and tracking different perspectives; they are not claims of completed behavioral tests.
+
 ## Use or adapt it
 
 Read the example before using it. Change the name, personality, and language rules to suit your robot. For a calmer assistant, replace the gaming-style paragraph and the playful-response instruction with the tone you prefer.
