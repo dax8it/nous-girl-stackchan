@@ -8,6 +8,8 @@
 
 > **Current firmware: `v3.6.7-dj7`** (Oct 28, 2026), with a robot, boy or girl face. Public checkpoints: v3.6, v3.6.6, v3.6.7-dj5, v3.6.7-dj7. Full history, checksums and rollbacks: [VERSIONS.md](./VERSIONS.md).
 
+The complete sanitized dj7 firmware snapshot, build configuration and instructions are in [firmware-src/v3.6.7-dj7/BUILD.md](./firmware-src/v3.6.7-dj7/BUILD.md). It preserves the historical tribute art under its separate terms and explains how to use the CC0 starter faces.
+
 Nous-Girl runs custom firmware on the M5Stack StackChan K151 (CoreS3). The [xiaozhi-esp32-server](https://github.com/xinnan-tech/xiaozhi-esp32-server) voice server runs in Docker on your computer and handles listening and speaking with local models. Her brain is [Hermes Agent](https://hermes-agent.nousresearch.com/) from Nous Research, which gives her long-term memory and tools, or a plain local model through [Ollama](https://ollama.com/) if you want to keep it simple.
 
 ## Theory of mind: uncertainty and misunderstanding repair
