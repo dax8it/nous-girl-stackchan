@@ -9,7 +9,7 @@
 - broken relative links in Markdown files
 Run locally: python3 .github/scripts/safety_scan.py
 """
-import os, re, subprocess, sys
+import json, os, re, subprocess, sys
 
 MAX_BYTES = 2 * 1024 * 1024
 ALLOWED_IPS = {"192.168.1.10", "192.168.1.25", "192.168.4.1", "127.0.0.1", "0.0.0.0"}
@@ -31,8 +31,17 @@ files = [f for f in files if f and os.path.isfile(f)]
 private = [d.strip().lower() for d in os.environ.get("PRIVATE_DOMAINS", "").splitlines() if d.strip()]
 problems = []
 
+allowlist = set()
+if os.path.isfile(".github/safety-scan-allowlist.json"):
+    with open(".github/safety-scan-allowlist.json") as allowlist_file:
+        allowlist = {
+            (entry["path"], entry["line"], entry["category"])
+            for entry in json.load(allowlist_file)
+        }
+
 def add(f, line_no, kind):
-    problems.append(f"{f}:{line_no}: {kind}")   # never print the match itself
+    if (f, line_no, kind) not in allowlist:
+        problems.append(f"{f}:{line_no}: {kind}")   # never print the match itself
 
 for f in files:
     size = os.path.getsize(f)
