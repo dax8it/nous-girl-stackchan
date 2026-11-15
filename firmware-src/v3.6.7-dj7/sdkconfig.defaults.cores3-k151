@@ -1,0 +1,24 @@
+# Board-specific options from main/boards/m5stack/core-s3/config.json (sdkconfig_append).
+# idf.py does NOT read config.json, so they are restated here and passed via SDKCONFIG_DEFAULTS.
+CONFIG_SPIRAM_MODE_QUAD=y
+CONFIG_CAMERA_GC0308=y
+CONFIG_CAMERA_GC0308_AUTO_DETECT_DVP_INTERFACE_SENSOR=y
+CONFIG_CAMERA_GC0308_DVP_YUV422_320X240_20FPS=y
+# Wi-Fi provisioning: keep the setup-hotspot web page (has the Custom OTA URL field).
+CONFIG_USE_HOTSPOT_WIFI_PROVISIONING=y
+# FAT filesystem for the microSD agent folder (long file names).
+CONFIG_FATFS_LFN_HEAP=y
+# headphone-girl v2: English UI, voice prompts and setup-hotspot page (lang=en-US)
+CONFIG_LANGUAGE_EN_US=y
+# headphone-girl v3 wake words:
+#   "Hey Nous-Girl" (primary) and optional "Hey YuB" = MultiNet7 English custom phrases
+#   "Jarvis" (say "Hey Jarvis") = prebuilt WakeNet9, runs alongside (hybrid)
+CONFIG_SR_WN_WN9_JARVIS_TTS=y
+# CONFIG_SR_WN_WN9_NIHAOXIAOZHI_TTS is not set
+# CONFIG_SR_WN_WN9_HIFAIRY_TTS2 is not set
+# CONFIG_SR_MN_EN_NONE is not set
+CONFIG_SR_MN_EN_MULTINET7_QUANT=y
+# Larger fonts for the Settings screen, and LVGL widgets it uses.
+CONFIG_LV_FONT_MONTSERRAT_20=y
+CONFIG_LV_FONT_MONTSERRAT_16=y
+CONFIG_LV_USE_KEYBOARD=y

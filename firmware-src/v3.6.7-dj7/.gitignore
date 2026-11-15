@@ -1,0 +1,17 @@
+tmp/
+managed_components/
+build/
+dist/
+.vscode/
+.devcontainer/
+sdkconfig.old
+.env
+releases/
+main/mmap_generate_emoji.h
+.DS_Store
+.cache
+*.pyc
+*.bin
+mmap_generate_*.h
+.clangd
+/build-*/

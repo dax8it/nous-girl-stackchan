@@ -1,0 +1,11 @@
+# headphone-girl v3.6 partition table (16 MB CoreS3 / K151)
+# Two OTA app slots of 5.4375 MB each (was 3.9375 MB) for the on-device face
+# detector. Assets moved from 0x800000 (8 MB) to 0xB00000 (5 MB, 4.68 MB used).
+# NVS, otadata and phy_init are unchanged.
+# Name,   Type, SubType, Offset,   Size, Flags
+nvs,      data, nvs,     0x9000,   0x4000,
+otadata,  data, ota,     0xd000,   0x2000,
+phy_init, data, phy,     0xf000,   0x1000,
+ota_0,    app,  ota_0,   0x20000,  0x570000,
+ota_1,    app,  ota_1,   0x590000, 0x570000,
+assets,   data, spiffs,  0xB00000, 0x500000,

@@ -1,0 +1,107 @@
+[
+  {
+    "path": "firmware-src/v3.6.7-dj7/.github/ISSUE_TEMPLATE/01_build_flash_bug.yml",
+    "line": 9,
+    "category": "email address"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/.github/ISSUE_TEMPLATE/02_runtime_bug.yml",
+    "line": 9,
+    "category": "email address"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/.github/ISSUE_TEMPLATE/05_technical_question.yml",
+    "line": 9,
+    "category": "email address"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/.github/SUPPORT.md",
+    "line": 10,
+    "category": "email address"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/78__esp-wifi-connect/assets/wifi_configuration.html",
+    "line": 1620,
+    "category": "assigned secret"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/espressif__esp-dl/fbs_loader/lib/esp32/libfbs_model.a",
+    "line": 0,
+    "category": "file is 4035866 bytes (limit 2097152)"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/espressif__esp-dl/fbs_loader/lib/esp32c2/libfbs_model.a",
+    "line": 0,
+    "category": "file is 4378350 bytes (limit 2097152)"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/espressif__esp-dl/fbs_loader/lib/esp32c3/libfbs_model.a",
+    "line": 0,
+    "category": "file is 4378358 bytes (limit 2097152)"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/espressif__esp-dl/fbs_loader/lib/esp32c5/libfbs_model.a",
+    "line": 0,
+    "category": "file is 4414266 bytes (limit 2097152)"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/espressif__esp-dl/fbs_loader/lib/esp32c6/libfbs_model.a",
+    "line": 0,
+    "category": "file is 4378402 bytes (limit 2097152)"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/espressif__esp-dl/fbs_loader/lib/esp32p4/libfbs_model.a",
+    "line": 0,
+    "category": "file is 4439506 bytes (limit 2097152)"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/espressif__esp-dl/fbs_loader/lib/esp32s2/libfbs_model.a",
+    "line": 0,
+    "category": "file is 4073554 bytes (limit 2097152)"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/espressif__esp-dl/fbs_loader/lib/esp32s3/libfbs_model.a",
+    "line": 0,
+    "category": "file is 4028446 bytes (limit 2097152)"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/espressif__esp-dl/fbs_loader/lib/esp32s31/libfbs_model.a",
+    "line": 0,
+    "category": "file is 7112286 bytes (limit 2097152)"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/mooncake/library.json",
+    "line": 13,
+    "category": "email address"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/mooncake_log/library.json",
+    "line": 13,
+    "category": "email address"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/components/smooth_ui_toolkit/library.json",
+    "line": 13,
+    "category": "email address"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/main/Kconfig.projbuild",
+    "line": 1008,
+    "category": "LAN IP that is not a documented example"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/main/mcp_server.cc",
+    "line": 407,
+    "category": "assigned secret"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/main/protocols/mqtt_protocol.cc",
+    "line": 84,
+    "category": "assigned secret"
+  },
+  {
+    "path": "firmware-src/v3.6.7-dj7/main/protocols/websocket_protocol.cc",
+    "line": 83,
+    "category": "assigned secret"
+  }
+]

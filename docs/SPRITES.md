@@ -132,6 +132,8 @@ It writes `out/<face>/gifs/` (12 GIFs and `_emote_aliases.json`), `hg_mouth_fram
 
 ### Build and flash
 
+Start with the [complete dj7 source and build instructions](../firmware-src/v3.6.7-dj7/BUILD.md). In that historical snapshot, mouth placement is embedded in `hg_mouth_frames.h`; `hg_face_layout.h` is not read. Follow BUILD.md to adjust `SetScowl` and `ShowAngerMark` for a new face. Copying the layout header alone does not move those overlays.
+
 1. Copy your 12 GIFs and `_emote_aliases.json` into the firmware tree's `fairy-assets/`.
 2. Copy `hg_mouth_frames.h` and `hg_face_layout.h` into `main/boards/m5stack/core-s3/`.
 3. Delete the old assets image so it is rebuilt (the build does not notice changed GIFs): `rm -f build/generated_assets.bin`, then `idf.py build`. Both the app (`xiaozhi.bin`) and the assets (`generated_assets.bin`) change, because the mouths are in the app and the GIFs are in the assets.
